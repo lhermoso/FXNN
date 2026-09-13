@@ -7,13 +7,16 @@
 - Descarte de ambiguidades; negativos com stop antes do alvo.
 - Seleção retrospectiva não sobreposta, explicitamente separada da modelagem.
 
-## Etapa 2 — primeira implementação
+## Etapa 2 — concluída: primeira implementação
 
 - Features causais M1 com testes de invariância a mudanças futuras.
 - Unicidade dos rótulos e splits temporais com expurgo.
 - Baseline logístico, constante e seleção agrupada interna.
 - Relatório reproduzível com hashes, configurações, versões e métricas externas.
 - CI com dados sintéticos; sem downloads externos nos testes.
+
+Primeira execução: [research_v1](experiments/research-v1.md). Resultado preservado:
+ganho sobre modelo constante não foi consistente entre os três meses externos.
 
 ## Etapa 3 — estudos subsequentes
 
