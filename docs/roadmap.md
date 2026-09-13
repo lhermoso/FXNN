@@ -22,8 +22,9 @@ ganho sobre modelo constante não foi consistente entre os três meses externos.
 
 - Auditoria pré-AFML concluída: [universo e ingestão](experiments/universe-v1.md),
   com [regra de candidatos comuns](experiments/afml-eligibility.md).
-- Comparar árvore/ensemble, MDI, SFI e grupos aprendidos dentro do treino.
-- Comparar diferenciação fracionária contra baseline simples.
+- [afml_v1 concluído](experiments/afml-v1.md): FFD contra controle comum,
+  SFI e permutação internas; sem ganho consistente nos três meses.
+- Comparar árvore/ensemble, MDI e grupos aprendidos dentro do treino.
 - Ampliar histórico e obter bid/ask ou ticks, corrigir censura e calendário.
 - Calibração, thresholds internos e simulação causal de posições/custos.
 - Teste final em dados novos. Paper trading somente após esses controles.
