@@ -30,7 +30,9 @@ resultados, nem mover meses entre conjuntos em função de desempenho.
   registrada; revisões posteriores tornam 2024 exploratório e exigem nova
   confirmação. Não testar candidatos repetidamente nesse ano.
 - Esta reserva não autoriza executar modelagem imediatamente: protocolo
-  operacional acima ainda está pendente. Nenhum label novo foi gerado aqui.
+  específico de cada experimento ainda deve ser registrado. Na reserva inicial
+  nenhum label novo foi gerado; a auditoria posterior da #4 está relatada em
+  [multiyear-v1-data.md](multiyear-v1-data.md).
 
 Auditoria técnica de cobertura de todos os anos é permitida antes dos labels:
 timestamps, duplicatas, integridade e confronto de disponibilidade entre fontes.

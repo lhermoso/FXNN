@@ -294,3 +294,8 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREAD
 
 Saídas existentes são protegidas contra sobrescrita. Comandos para reprodução;
 não repetir busca após olhar resultados. O protocolo AFML precisa estar commitado.
+
+Auditoria de desenvolvimento 2022–2023 concluída sem treino: [resultado e
+suporte por fold](docs/experiments/multiyear-v1-data.md). Contrato executável em
+`configs/multiyear_v1.json`; `.venv/bin/python -m fxnn.data_audit` aplica calendário
+multianual, expurgo e pisos de classe. Confirmação 2024 permanece reservada.

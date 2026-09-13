@@ -9,7 +9,8 @@ rotulação retrospectiva e seleção ótima não demonstram uma estratégia luc
 
 ## Dados e rótulos
 
-Ampliação de 13/09/2026: 2022–2024 disponíveis, ainda sem novos labels.
+Ampliação de 13/09/2026: 2022–2024 disponíveis. Labels 2022–2023 foram
+auditados após pré-registro, sem treino; 2024 segue sem labels nesta sequência.
 [Reserva multiyear_v1](experiments/multiyear-v1-protocol.md): desenvolvimento
 2022–2023, confirmação histórica 2024, 2025 exploratório. Protocolo operacional
 deve ser congelado antes de abrir confirmação; não altera experimentos antigos.
