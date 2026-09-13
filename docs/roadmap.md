@@ -20,6 +20,8 @@ ganho sobre modelo constante não foi consistente entre os três meses externos.
 
 ## Etapa 3 — estudos subsequentes
 
+- Auditoria pré-AFML concluída: [universo e ingestão](experiments/universe-v1.md),
+  com [regra de candidatos comuns](experiments/afml-eligibility.md).
 - Comparar árvore/ensemble, MDI, SFI e grupos aprendidos dentro do treino.
 - Comparar diferenciação fracionária contra baseline simples.
 - Ampliar histórico e obter bid/ask ou ticks, corrigir censura e calendário.
