@@ -102,7 +102,8 @@ em `requirements-lock.txt`. Reprodução da aquisição existente:
 
 Reaquisição pode retornar outra versão do provedor: comparar hashes e preservar
 original antes de trocar insumos. Esses comandos não autorizam substituir
-arquivos históricos já usados. A auditoria real usa somente arquivos existentes.
+arquivos históricos já usados. A auditoria real usa somente arquivos existentes e rejeita divergência de
+hash/linhas entre manifesto local e inventário versionado.
 
 Política operacional escolhida: `censor_all_reset_all`, definida no
 [protocolo](experiments/multiyear-v1-protocol.md). Classificação da lacuna serve

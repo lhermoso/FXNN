@@ -17,6 +17,7 @@ from .protocol import (class_support, load_protocol, partition_indices,
                        require_training_support, utc_epoch)
 
 CONCLUSIVE = ('take_profit', 'stop_loss', 'timeout')
+SOURCE_INVENTORY = Path(__file__).resolve().parents[1] / 'docs/experiments/multiyear-v1-sources.json'
 
 
 def digest(path):
@@ -25,7 +26,9 @@ def digest(path):
 
 
 def load_development(root, protocol):
-    candles, provenance = [], {}
+    inventory = json.loads(SOURCE_INVENTORY.read_text())
+    sources = {item['year_in_source_timezone']: item for item in inventory['years']}
+    candles, provenance = [], {'versioned_source_inventory': digest(SOURCE_INVENTORY)}
     begin, end = map(utc_epoch, protocol['development'])
     for year in protocol['source_years']:
         path = root / f'EURUSD_{year}_m1_bid_utc.csv'
@@ -40,6 +43,10 @@ def load_development(root, protocol):
         actual = digest(path)
         if actual != manifest['csv_sha256']:
             raise ValueError('Candle hash disagrees with manifest')
+        registered = sources[year]
+        if any(manifest.get(key) != registered[key]
+               for key in ('csv_sha256', 'archive_sha256', 'rows')):
+            raise ValueError('Data version differs from preregistered source inventory')
         rows = 0
         with path.open() as stream:
             for row in csv.DictReader(stream):

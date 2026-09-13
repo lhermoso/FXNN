@@ -74,7 +74,8 @@ Nenhum timeout ou caso boundary nesta execução. Contagens não são retornos.
 
 Todas as partições passam nos pisos registrados. Isso não prova independência,
 poder estatístico ou validade econômica. O baixo suporte positivo de 2023Q2
-(799 em 12.446 externos) é uma limitação relevante para a próxima amostragem.
+(799 em 12.446 externos) serve somente à interpretação. Não pode mudar folds,
+pesos de classe, amostragem, limiares CUSUM ou pisos nas etapas #5–#9.
 CUSUM pode reduzir suporte abaixo do piso; nesse caso abortar a comparação,
 sem baixar piso ou buscar outro trimestre.
 
@@ -90,5 +91,9 @@ Próxima etapa: pré-registrar detalhes da #5 dentro do teto global; usar folds,
 guarda de suporte e regra de parada existentes. Não executar os runners históricos
 de 2025 com outro CSV supondo que o calendário seja automaticamente adaptado.
 
-Validação local: 64 testes sintéticos, compileall e git diff --check passaram.
+Validação local: 67 testes sintéticos, compileall e git diff --check passaram.
 CI do SHA publicado deve passar separadamente; sucesso local não substitui CI.
+
+Após a auditoria original, validação de entrada foi reforçada para comparar
+manifestos ao inventário versionado e rejeitar alterações no orçamento registrado.
+Nenhuma contagem, label, partição ou decisão experimental foi recalculada/alterada.

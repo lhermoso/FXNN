@@ -36,6 +36,21 @@ def load_protocol(path):
             raise ValueError('Protocol limits must be positive integers')
     if protocol['lookback_minutes'] < 241:
         raise ValueError('Buffer cannot be shorter than feature history')
+    expected_budget = {
+        'total_model_fits': 1000, 'cusum_thresholds': 2, 'barrier_scales': 2,
+        'primary_rules': 1, 'acceptance_thresholds': 3, 'bagging_members': 20,
+        'confirmation_runs': 1,
+    }
+    budget = protocol.get('budget', {})
+    if not isinstance(budget, dict):
+        raise ValueError('Expected preregistered budget object')
+    if any(type(budget.get(key)) is not int or budget[key] != value
+           for key, value in expected_budget.items()):
+        raise ValueError('Budget differs from preregistered multiyear limits')
+    seeds = budget.get('bagging_seeds')
+    if (not isinstance(seeds, list) or seeds != [0, 1, 2]
+            or any(type(seed) is not int for seed in seeds)):
+        raise ValueError('Budget requires seeds 0, 1, 2')
     if not protocol['folds']:
         raise ValueError('At least one fold required')
     names = set()

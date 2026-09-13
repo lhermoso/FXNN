@@ -41,6 +41,55 @@ class ProtocolTests(unittest.TestCase):
         altered['folds'][0]['test_end'] = '2024-02-01T00:00:00+00:00'
         self.reject_config(altered)
 
+    def test_budget_cannot_drift_from_preregistration(self):
+        for key, value in [('total_model_fits', 1001), ('total_model_fits', 1000.0),
+                           ('bagging_members', 21), ('bagging_seeds', [0, 1, 3]),
+                           ('bagging_seeds', [False, 1, 2]), ('primary_rules', True)]:
+            with self.subTest(key=key, value=value):
+                altered = copy.deepcopy(self.protocol)
+                altered['budget'][key] = value
+                self.reject_config(altered)
+        altered = copy.deepcopy(self.protocol)
+        del altered['budget']
+        self.reject_config(altered)
+
+    def test_matching_local_manifest_and_csv_cannot_replace_registered_data(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            csv_path = root/'EURUSD_2022_m1_bid_utc.csv'
+            csv_path.write_text('timestamp,open,high,low,close\n')
+            manifest = dict(source='HistData.com', price_side='bid', symbol='EURUSD',
+                            timeframe='M1', output_timezone='UTC',
+                            source_timezone='UTC-05:00 fixed, no DST',
+                            year_in_source_timezone=2022, rows=0, archive_sha256='changed',
+                            csv_sha256=hashlib.sha256(csv_path.read_bytes()).hexdigest())
+            (root/'EURUSD_2022_manifest.json').write_text(json.dumps(manifest))
+            with self.assertRaisesRegex(ValueError, 'preregistered source inventory'):
+                load_development(root, self.protocol)
+
+    def test_registered_fixture_loads_without_reading_confirmation(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            inventory = {'years': []}
+            for year in (2022, 2023):
+                csv_path = root/f'EURUSD_{year}_m1_bid_utc.csv'
+                csv_path.write_text(f'timestamp,open,high,low,close\n{year}-01-03T12:00:00+00:00,1.1,1.1,1.1,1.1\n')
+                manifest = dict(source='HistData.com', price_side='bid', symbol='EURUSD',
+                                timeframe='M1', output_timezone='UTC',
+                                source_timezone='UTC-05:00 fixed, no DST',
+                                year_in_source_timezone=year, rows=1, archive_sha256='fixture',
+                                csv_sha256=hashlib.sha256(csv_path.read_bytes()).hexdigest())
+                (root/f'EURUSD_{year}_manifest.json').write_text(json.dumps(manifest))
+                inventory['years'].append(manifest)
+            path = root/'sources.json'
+            path.write_text(json.dumps(inventory))
+            with patch('fxnn.data_audit.SOURCE_INVENTORY', path):
+                candles, hashes = load_development(root, self.protocol)
+            self.assertEqual([c.timestamp.year for c in candles], [2022, 2023])
+            self.assertIn('versioned_source_inventory', hashes)
+
     def test_utc_and_year_boundary_with_horizon_and_buffer(self):
         fold = self.protocol['folds'][-1]
         outer = utc_epoch(fold['test_start'])
