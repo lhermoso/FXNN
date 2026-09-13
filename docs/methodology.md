@@ -9,6 +9,13 @@ rotulação retrospectiva e seleção ótima não demonstram uma estratégia luc
 
 ## Dados e rótulos
 
+Ampliação de 13/09/2026: 2022–2024 disponíveis, ainda sem novos labels.
+[Reserva multiyear_v1](experiments/multiyear-v1-protocol.md): desenvolvimento
+2022–2023, confirmação histórica 2024, 2025 exploratório. Protocolo operacional
+deve ser congelado antes de abrir confirmação; não altera experimentos antigos.
+[Triagem de lacunas](data-coverage.md) não autoriza mudar censura nem preencher
+dados. Bid/ask segue requisito para validação econômica.
+
 Base inicial: HistData EUR/USD M1, ano 2025, bid-only. Horário original EST fixo
 convertido para UTC. Arquivo ZIP original, hashes, lacunas e quarentena preservados.
 120 linhas de 60 timestamps repetidos foram isoladas, sem inferir horário correto.

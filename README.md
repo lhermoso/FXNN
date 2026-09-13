@@ -30,7 +30,32 @@ Dados brutos, ambiente e outputs volumosos são ignorados pelo Git.
 Primeiro resultado: [research_v1](docs/experiments/research-v1.md). Ganho preditivo
 não foi consistente entre meses; ainda não existe estratégia validada.
 
-## Base anual disponível — EUR/USD, 2025
+## Base disponível — EUR/USD, 2022–2025
+
+Quatro arquivos anuais HistData M1 disponíveis localmente, com registros nos
+12 meses de cada ano. Total: 1.439.606 candles normalizados.
+
+| Ano | Candles | Linhas em quarentena | Lacunas |
+|---|---:|---:|---:|
+| 2022 | 372.745 | 120 | 1.111 |
+| 2023 | 322.518 | 120 | 1.871 |
+| 2024 | 372.379 | 0 | 1.601 |
+| 2025 | 371.964 | 120 | 966 |
+
+2022–2024 baixados em 13/09/2026 pelo downloader existente. Cada ano tem CSV
+`data/histdata/EURUSD/EURUSD_<ano>_m1_bid_utc.csv`, ZIP original, manifesto
+com hashes, relatório de lacunas e quarentena. Para reproduzir, execute
+`python3 scripts/download_histdata.py --year <ano>` para cada ano desejado.
+Validação de ingestão verifica CRC, OHLC, ordem temporal e presença dos 12 meses.
+
+2023 tem cobertura menor, especialmente entre março e julho; presença dos
+12 meses não significa série completa. Lacunas incluem fechamentos de mercado
+e possíveis falhas de dados, ainda sem classificação e sem preenchimento.
+2022 e 2023 tiveram 60 timestamps duplicados cada: todas as 120 ocorrências
+de cada ano foram isoladas. Os novos anos ainda não foram rotulados nem usados
+nos experimentos existentes, que continuam restritos a 2025.
+
+### Base inicial de pesquisa — 2025
 
 HistData M1, com os 12 meses de 2025. Arquivo normalizado:
 `data/histdata/EURUSD/EURUSD_2025_m1_bid_utc.csv`.

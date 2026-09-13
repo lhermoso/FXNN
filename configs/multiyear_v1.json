@@ -1,0 +1,30 @@
+{
+  "experiment": "multiyear_v1",
+  "kind": "research_data_protocol",
+  "development": ["2022-01-01T00:00:00+00:00", "2024-01-01T00:00:00+00:00"],
+  "confirmation": ["2024-01-01T00:00:00+00:00", "2025-01-01T00:00:00+00:00"],
+  "confirmation_locked": true,
+  "source": "HistData",
+  "price_side": "bid",
+  "source_years": [2022, 2023],
+  "gap_policy": "censor_all_reset_all",
+  "horizon_minutes": 4320,
+  "lookback_minutes": 241,
+  "minimum_rows": 1000,
+  "minimum_per_class": 100,
+  "folds": [
+    {"name": "2023Q2", "validation_start": "2023-01-01T00:00:00+00:00", "test_start": "2023-04-01T00:00:00+00:00", "test_end": "2023-07-01T00:00:00+00:00"},
+    {"name": "2023Q3", "validation_start": "2023-04-01T00:00:00+00:00", "test_start": "2023-07-01T00:00:00+00:00", "test_end": "2023-10-01T00:00:00+00:00"},
+    {"name": "2023Q4", "validation_start": "2023-07-01T00:00:00+00:00", "test_start": "2023-10-01T00:00:00+00:00", "test_end": "2024-01-01T00:00:00+00:00"}
+  ],
+  "budget": {
+    "total_model_fits": 1000,
+    "cusum_thresholds": 2,
+    "barrier_scales": 2,
+    "primary_rules": 1,
+    "acceptance_thresholds": 3,
+    "bagging_members": 20,
+    "bagging_seeds": [0, 1, 2],
+    "confirmation_runs": 1
+  }
+}
