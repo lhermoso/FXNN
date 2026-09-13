@@ -1,0 +1,472 @@
+{
+  "audit": "universe_v1",
+  "training_performed": false,
+  "reconciliation": "All saved conclusive keys, outcomes and entry/end times match reconstruction.",
+  "monthly": {
+    "2025-01": {
+      "candidates": 63208,
+      "outcomes": {
+        "take_profit": 11729,
+        "stop_loss": 31712,
+        "timeout": 0,
+        "censored": 19767,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 19767,
+      "conclusive": {
+        "rows": 43441,
+        "positives": 11729,
+        "negatives": 31712,
+        "positive_fraction": 0.2699983886190465
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 7424,
+        "positives": 1951,
+        "negatives": 5473,
+        "positive_fraction": 0.2627963362068966
+      },
+      "retained": {
+        "rows": 36017,
+        "positives": 9778,
+        "negatives": 26239,
+        "positive_fraction": 0.2714829108476553
+      }
+    },
+    "2025-02": {
+      "candidates": 57462,
+      "outcomes": {
+        "take_profit": 7731,
+        "stop_loss": 25469,
+        "timeout": 0,
+        "censored": 24262,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 24262,
+      "conclusive": {
+        "rows": 33200,
+        "positives": 7731,
+        "negatives": 25469,
+        "positive_fraction": 0.23286144578313253
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 7878,
+        "positives": 2101,
+        "negatives": 5777,
+        "positive_fraction": 0.2666920538207667
+      },
+      "retained": {
+        "rows": 25322,
+        "positives": 5630,
+        "negatives": 19692,
+        "positive_fraction": 0.22233630834847168
+      }
+    },
+    "2025-03": {
+      "candidates": 60456,
+      "outcomes": {
+        "take_profit": 10917,
+        "stop_loss": 32275,
+        "timeout": 0,
+        "censored": 17264,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 17264,
+      "conclusive": {
+        "rows": 43192,
+        "positives": 10917,
+        "negatives": 32275,
+        "positive_fraction": 0.25275513984071124
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 8091,
+        "positives": 2600,
+        "negatives": 5491,
+        "positive_fraction": 0.32134470399209
+      },
+      "retained": {
+        "rows": 35101,
+        "positives": 8317,
+        "negatives": 26784,
+        "positive_fraction": 0.23694481638699752
+      }
+    },
+    "2025-04": {
+      "candidates": 63224,
+      "outcomes": {
+        "take_profit": 13628,
+        "stop_loss": 36249,
+        "timeout": 0,
+        "censored": 13347,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 13347,
+      "conclusive": {
+        "rows": 49877,
+        "positives": 13628,
+        "negatives": 36249,
+        "positive_fraction": 0.2732321510916855
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 9181,
+        "positives": 2966,
+        "negatives": 6215,
+        "positive_fraction": 0.3230584903605272
+      },
+      "retained": {
+        "rows": 40696,
+        "positives": 10662,
+        "negatives": 30034,
+        "positive_fraction": 0.26199135050127775
+      }
+    },
+    "2025-05": {
+      "candidates": 63032,
+      "outcomes": {
+        "take_profit": 12781,
+        "stop_loss": 33132,
+        "timeout": 0,
+        "censored": 17119,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 17119,
+      "conclusive": {
+        "rows": 45913,
+        "positives": 12781,
+        "negatives": 33132,
+        "positive_fraction": 0.2783743166423453
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 7896,
+        "positives": 2387,
+        "negatives": 5509,
+        "positive_fraction": 0.30230496453900707
+      },
+      "retained": {
+        "rows": 38017,
+        "positives": 10394,
+        "negatives": 27623,
+        "positive_fraction": 0.2734040034721309
+      }
+    },
+    "2025-06": {
+      "candidates": 60574,
+      "outcomes": {
+        "take_profit": 10037,
+        "stop_loss": 30693,
+        "timeout": 0,
+        "censored": 19844,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 19844,
+      "conclusive": {
+        "rows": 40730,
+        "positives": 10037,
+        "negatives": 30693,
+        "positive_fraction": 0.24642769457402405
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 9334,
+        "positives": 2553,
+        "negatives": 6781,
+        "positive_fraction": 0.27351617741589884
+      },
+      "retained": {
+        "rows": 31396,
+        "positives": 7484,
+        "negatives": 23912,
+        "positive_fraction": 0.23837431519938845
+      }
+    },
+    "2025-07": {
+      "candidates": 66080,
+      "outcomes": {
+        "take_profit": 9580,
+        "stop_loss": 28757,
+        "timeout": 0,
+        "censored": 27743,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 27743,
+      "conclusive": {
+        "rows": 38337,
+        "positives": 9580,
+        "negatives": 28757,
+        "positive_fraction": 0.24988914103868326
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 8621,
+        "positives": 2460,
+        "negatives": 6161,
+        "positive_fraction": 0.28534972740981324
+      },
+      "retained": {
+        "rows": 29716,
+        "positives": 7120,
+        "negatives": 22596,
+        "positive_fraction": 0.23960156144837796
+      }
+    },
+    "2025-08": {
+      "candidates": 60282,
+      "outcomes": {
+        "take_profit": 6933,
+        "stop_loss": 23411,
+        "timeout": 0,
+        "censored": 29938,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 29938,
+      "conclusive": {
+        "rows": 30344,
+        "positives": 6933,
+        "negatives": 23411,
+        "positive_fraction": 0.22848009491167942
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 8359,
+        "positives": 2100,
+        "negatives": 6259,
+        "positive_fraction": 0.2512262232324441
+      },
+      "retained": {
+        "rows": 21985,
+        "positives": 4833,
+        "negatives": 17152,
+        "positive_fraction": 0.21983170343415964
+      }
+    },
+    "2025-09": {
+      "candidates": 63078,
+      "outcomes": {
+        "take_profit": 6886,
+        "stop_loss": 23878,
+        "timeout": 0,
+        "censored": 32314,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 32314,
+      "conclusive": {
+        "rows": 30764,
+        "positives": 6886,
+        "negatives": 23878,
+        "positive_fraction": 0.2238330516187752
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 8725,
+        "positives": 2161,
+        "negatives": 6564,
+        "positive_fraction": 0.24767908309455589
+      },
+      "retained": {
+        "rows": 22039,
+        "positives": 4725,
+        "negatives": 17314,
+        "positive_fraction": 0.21439266754389946
+      }
+    },
+    "2025-10": {
+      "candidates": 65664,
+      "outcomes": {
+        "take_profit": 5599,
+        "stop_loss": 23869,
+        "timeout": 0,
+        "censored": 36196,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 36196,
+      "conclusive": {
+        "rows": 29468,
+        "positives": 5599,
+        "negatives": 23869,
+        "positive_fraction": 0.19000271480928466
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 8014,
+        "positives": 1247,
+        "negatives": 6767,
+        "positive_fraction": 0.1556026952832543
+      },
+      "retained": {
+        "rows": 21454,
+        "positives": 4352,
+        "negatives": 17102,
+        "positive_fraction": 0.20285261489698891
+      }
+    },
+    "2025-11": {
+      "candidates": 57574,
+      "outcomes": {
+        "take_profit": 2406,
+        "stop_loss": 16503,
+        "timeout": 0,
+        "censored": 38665,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 38665,
+      "conclusive": {
+        "rows": 18909,
+        "positives": 2406,
+        "negatives": 16503,
+        "positive_fraction": 0.127240996350944
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 6415,
+        "positives": 1033,
+        "negatives": 5382,
+        "positive_fraction": 0.16102883865939205
+      },
+      "retained": {
+        "rows": 12494,
+        "positives": 1373,
+        "negatives": 11121,
+        "positive_fraction": 0.10989274851928926
+      }
+    },
+    "2025-12": {
+      "candidates": 63294,
+      "outcomes": {
+        "take_profit": 2550,
+        "stop_loss": 17386,
+        "timeout": 0,
+        "censored": 43358,
+        "ambiguous": 0,
+        "boundary": 0
+      },
+      "excluded_labels": 43358,
+      "conclusive": {
+        "rows": 19936,
+        "positives": 2550,
+        "negatives": 17386,
+        "positive_fraction": 0.12790930979133228
+      },
+      "excluded_feature_warmup_or_gaps": {
+        "rows": 5956,
+        "positives": 673,
+        "negatives": 5283,
+        "positive_fraction": 0.11299529885829415
+      },
+      "retained": {
+        "rows": 13980,
+        "positives": 1877,
+        "negatives": 12103,
+        "positive_fraction": 0.1342632331902718
+      }
+    }
+  },
+  "folds": [
+    {
+      "outer_month": "2025-07",
+      "inner": {
+        "training_rows": 171652,
+        "training_excluded_horizon_and_buffer": 3501,
+        "evaluation_before_horizon_filter": 31396,
+        "evaluation_excluded_right_boundary": 1761,
+        "evaluation": {
+          "rows": 29635,
+          "positives": 6901,
+          "negatives": 22734,
+          "positive_fraction": 0.23286654293909229
+        }
+      },
+      "outer": {
+        "training_rows": 204785,
+        "training_excluded_horizon_and_buffer": 1764,
+        "evaluation_before_horizon_filter": 29716,
+        "evaluation_excluded_right_boundary": 4871,
+        "evaluation": {
+          "rows": 24845,
+          "positives": 6080,
+          "negatives": 18765,
+          "positive_fraction": 0.24471724693097202
+        }
+      }
+    },
+    {
+      "outer_month": "2025-08",
+      "inner": {
+        "training_rows": 204785,
+        "training_excluded_horizon_and_buffer": 1764,
+        "evaluation_before_horizon_filter": 29716,
+        "evaluation_excluded_right_boundary": 4871,
+        "evaluation": {
+          "rows": 24845,
+          "positives": 6080,
+          "negatives": 18765,
+          "positive_fraction": 0.24471724693097202
+        }
+      },
+      "outer": {
+        "training_rows": 231394,
+        "training_excluded_horizon_and_buffer": 4871,
+        "evaluation_before_horizon_filter": 21985,
+        "evaluation_excluded_right_boundary": 445,
+        "evaluation": {
+          "rows": 21540,
+          "positives": 4785,
+          "negatives": 16755,
+          "positive_fraction": 0.22214484679665739
+        }
+      }
+    },
+    {
+      "outer_month": "2025-09",
+      "inner": {
+        "training_rows": 231394,
+        "training_excluded_horizon_and_buffer": 4871,
+        "evaluation_before_horizon_filter": 21985,
+        "evaluation_excluded_right_boundary": 445,
+        "evaluation": {
+          "rows": 21540,
+          "positives": 4785,
+          "negatives": 16755,
+          "positive_fraction": 0.22214484679665739
+        }
+      },
+      "outer": {
+        "training_rows": 257805,
+        "training_excluded_horizon_and_buffer": 445,
+        "evaluation_before_horizon_filter": 22039,
+        "evaluation_excluded_right_boundary": 1631,
+        "evaluation": {
+          "rows": 20408,
+          "positives": 4725,
+          "negatives": 15683,
+          "positive_fraction": 0.23152685221481772
+        }
+      }
+    }
+  ],
+  "buffer_minutes": 241,
+  "hashes": {
+    "data/histdata/EURUSD/EURUSD_2025_m1_bid_utc.csv": "7b28db6b6729b25ffe13facdca86c002a848785c8ed0ec6b0e31083e7f6056ae",
+    "output/eurusd_2025/all_trades.csv": "93e40a696ad4354531de3a292ea441a3c60fceca4aa70a55338e5be1aea9392e",
+    "output/eurusd_2025/summary.json": "9639730c377451a9a74aa4d4fa7dba6141049abad58161a136ddf5ae4d976b62"
+  },
+  "source_hashes": {
+    "__init__.py": "8f333b42f8d9c3a446346523957b930f28e3db7737cdcab330f9644956b03d3f",
+    "__main__.py": "2c44d7ba850712c191bd91dfbc842187c5c6358a5bd8e8ed349f76e0d6bd8a02",
+    "audit.py": "1302be554342e5e02d4207356b56412e21e36877448830c4cfd586b0f3a39dbd",
+    "features.py": "e477d63f7ef55fe878c0853bbe6958931810b1b406bae0508470e6125f95366e",
+    "indexed.py": "80dfb4f0d7fd86faceb8647fd217078f4403c7eb9e9a366db81b54ecd8df357b",
+    "labeling.py": "fc89201c8a847e2981ea2ec68788f491cf621f30864caa2ea4a1e40fd2ee7362",
+    "neural.py": "06bbd19e548ea401d8cc9196c2db5f4f574800f229364b5d1dc1c5404bbdce28",
+    "research.py": "470ed6eead02f1d7f0156b35d3f19fa6db56497256c8f5c854d24b9bf60440b8",
+    "temporal.py": "d14d3ecc3996906d32ddba7e78bcf8f835f75a5e90d4eaa5b9672b551b8d4823"
+  },
+  "limitations": [
+    "Counts are descriptive; eligibility is not selected using class proportions or model scores.",
+    "October\u2013December counted only; no model training, selection or evaluation.",
+    "Conclusive labels and overlapping candidates do not represent an executable portfolio."
+  ]
+}

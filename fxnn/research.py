@@ -58,6 +58,8 @@ def load_dataset(candles_path, labels_path):
     indices=[]; sides=[]; starts=[]; ends=[]; labels=[]; seen=set(); dropped=0
     with labels_path.open() as f:
         for row in csv.DictReader(f):
+            if row['side'] not in ('long', 'short'):
+                raise ValueError('Invalid labeled side')
             i=int(row['entry_index']); side={'long':1,'short':-1}[row['side']]
             if not 0<=i<len(candles) or (i,side) in seen:
                 raise ValueError('Invalid or duplicate labeled entry')

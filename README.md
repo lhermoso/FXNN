@@ -235,3 +235,37 @@ futuras de **rotulação**, nunca features de entrada. Ao dividir treino/teste,
 considerar o horizonte adicional usado para determinar negativos difíceis.
 A etapa de rotulação não treina modelos. O comando `fxnn.research`, descrito acima,
 executa o primeiro baseline seguindo esses controles.
+
+## Experimento com rede neural
+
+MLP 28 → 32 → 16 → 1, três seeds fixas, seleção de épocas na validação temporal
+interna. Todas as features são mantidas para comparar com logística completa.
+[Protocolo prévio](docs/experiments/neural-v1-protocol.md).
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+  .venv/bin/python -m fxnn.neural --output output/neural_v1
+```
+
+Média das três redes é previsão principal; resultados individuais também são
+preservados. Não utiliza validação aleatória nem escolhe seed pelo teste.
+
+[Resultado neural_v1](docs/experiments/neural-v1.md): rede perdeu para logística
+nos três meses externos; preservar esse resultado antes de novas tentativas.
+
+## Auditoria e diferenciação fracionária
+
+[Auditoria de ingestão](docs/experiments/universe-v1.md) reconcilia labels e
+contagens mensais. [afml_v1](docs/experiments/afml-v1.md) compara logística com
+FFD causal de log-preços, escolhendo d somente na validação interna e usando
+os mesmos candidatos em todas as representações. SFI e permutação são diagnósticos.
+FFD melhorou julho/agosto, piorou setembro: sem ganho consistente.
+
+```bash
+.venv/bin/python -m fxnn.audit --output output/universe_v1.json
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+  .venv/bin/python -m fxnn.afml --output output/afml_v1
+```
+
+Saídas existentes são protegidas contra sobrescrita. Comandos para reprodução;
+não repetir busca após olhar resultados. O protocolo AFML precisa estar commitado.

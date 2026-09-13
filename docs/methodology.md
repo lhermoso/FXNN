@@ -110,3 +110,12 @@ Simulação causal com uma posição por vez e tratamento de censura/mercado fec
 Agrupamento de importância é extensão discutida no livro posterior *Machine
 Learning for Asset Managers*. O baseline aqui é uma escolha do projeto, não uma
 reprodução integral do AFML.
+
+## Experimento AFML subsequente
+
+[afml_v1](experiments/afml-v1-protocol.md) preserva o protocolo histórico acima
+para research_v1. Na nova comparação, usa interseção de candidatos válidos da
+grade fixa de FFD e buffer derivado do maior histórico efetivo (445 minutos).
+Escolhe d pela log-loss interna; SFI, ADF e permutação não eliminam features.
+[Resultado](experiments/afml-v1.md): sem ganho consistente. Esses diagnósticos
+não justificam alterar o universo ou repetir busca nos meses externos já vistos.
