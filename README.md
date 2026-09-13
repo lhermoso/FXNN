@@ -1,4 +1,34 @@
-# FXNN — primeiro passo: rotulação histórica
+# FXNN — pesquisa de machine learning para Forex
+
+Protocolo: [metodologia](docs/methodology.md), [decisões](docs/decisions.md)
+e [roadmap](docs/roadmap.md). Rotulação retrospectiva e previsão causal são etapas
+separadas. Resultados de classificação não representam rentabilidade executável.
+
+## Ambiente e baseline
+
+Python 3.13. Rotulador usa biblioteca padrão; pesquisa adiciona NumPy e scikit-learn.
+
+```bash
+python3.13 -m venv .venv
+.venv/bin/pip install -r requirements-lock.txt
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+Depois de baixar e rotular a base anual pelos comandos abaixo:
+
+```bash
+.venv/bin/python -m fxnn.research --output output/research_v1
+```
+
+Implementa 28 features causais, unicidade, expurgo temporal e regressão logística.
+Seleção por famílias ocorre na validação interna. Julho–setembro são avaliações
+externas; outubro–dezembro ficam fora da modelagem inicial. Relatório JSON inclui
+hashes de código/dados, parâmetros e métricas; previsões ficam no CSV local.
+Diretório de experimento não vazio é recusado para preservar histórico.
+Dados brutos, ambiente e outputs volumosos são ignorados pelo Git.
+
+Primeiro resultado: [research_v1](docs/experiments/research-v1.md). Ganho preditivo
+não foi consistente entre meses; ainda não existe estratégia validada.
 
 ## Base anual disponível — EUR/USD, 2025
 
@@ -203,4 +233,5 @@ depende do futuro; não usá-la como filtro prévio de uma avaliação preditiva
 Campos de saída, PnL, duração, resultado e alvo posterior ao stop são informações
 futuras de **rotulação**, nunca features de entrada. Ao dividir treino/teste,
 considerar o horizonte adicional usado para determinar negativos difíceis.
-Nenhum modelo de ML foi treinado nesta etapa.
+A etapa de rotulação não treina modelos. O comando `fxnn.research`, descrito acima,
+executa o primeiro baseline seguindo esses controles.
