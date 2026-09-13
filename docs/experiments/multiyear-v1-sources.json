@@ -1,0 +1,112 @@
+{
+  "verified_on": "2026-09-13",
+  "source": "HistData.com",
+  "price_side": "bid",
+  "timezone": "UTC-05:00 fixed to UTC",
+  "years": [
+    {
+      "year_in_source_timezone": 2022,
+      "rows": 372745,
+      "first_timestamp": "2022-01-02 22:03:00+00:00",
+      "last_timestamp": "2022-12-30 21:58:00+00:00",
+      "duplicate_timestamps": 60,
+      "quarantined_rows": 120,
+      "gaps": 1111,
+      "archive_sha256": "5ed361f3d93107f644834cac06870e830f9dc887d5aa5fde4b90c2accdf773f3",
+      "csv_sha256": "c7cb59048e78a1c66e4da3abca24cd2f25d358001cf6f56a05becf9a5af10602",
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/eurusd/2022",
+      "months_source_timezone": {
+        "202201": 30472,
+        "202202": 28689,
+        "202203": 32975,
+        "202204": 29708,
+        "202205": 31930,
+        "202206": 31528,
+        "202207": 30124,
+        "202208": 33036,
+        "202209": 31178,
+        "202210": 30501,
+        "202211": 31537,
+        "202212": 31067
+      }
+    },
+    {
+      "year_in_source_timezone": 2023,
+      "rows": 322518,
+      "first_timestamp": "2023-01-01 22:04:00+00:00",
+      "last_timestamp": "2023-12-29 21:58:00+00:00",
+      "duplicate_timestamps": 60,
+      "quarantined_rows": 120,
+      "gaps": 1871,
+      "archive_sha256": "26e41c4bccfd70f2c76ef7f3ffcba0e3b7097231927a41640f4a7c442815f34a",
+      "csv_sha256": "7825afc1008e3eb1fc448185049f88861d6456e01c92951da653762749d8cf67",
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/eurusd/2023",
+      "months_source_timezone": {
+        "202301": 31822,
+        "202302": 25671,
+        "202303": 22906,
+        "202304": 20173,
+        "202305": 23354,
+        "202306": 21833,
+        "202307": 22104,
+        "202308": 32987,
+        "202309": 29534,
+        "202310": 32002,
+        "202311": 31501,
+        "202312": 28631
+      }
+    },
+    {
+      "year_in_source_timezone": 2024,
+      "rows": 372379,
+      "first_timestamp": "2024-01-01 22:00:00+00:00",
+      "last_timestamp": "2024-12-31 21:58:00+00:00",
+      "duplicate_timestamps": 0,
+      "quarantined_rows": 0,
+      "gaps": 1601,
+      "archive_sha256": "58f074ba6b835eb2fbeaeb6678502a23b26768eefdfa509eb75ff5296bb2904d",
+      "csv_sha256": "09aab54e89e959cd3907f023bbdee11fc523ec12587a9387a2a09f357cbed5f5",
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/eurusd/2024",
+      "months_source_timezone": {
+        "202401": 31703,
+        "202402": 30142,
+        "202403": 30026,
+        "202404": 31509,
+        "202405": 32420,
+        "202406": 28954,
+        "202407": 32843,
+        "202408": 31156,
+        "202409": 30488,
+        "202410": 33008,
+        "202411": 29716,
+        "202412": 30414
+      }
+    },
+    {
+      "year_in_source_timezone": 2025,
+      "rows": 371964,
+      "first_timestamp": "2025-01-01 22:00:00+00:00",
+      "last_timestamp": "2025-12-31 21:57:00+00:00",
+      "duplicate_timestamps": 60,
+      "quarantined_rows": 120,
+      "gaps": 966,
+      "archive_sha256": "b7c23d20b9577588a8b13508d58fedbe487e569b7b8b5dd368bd1d2b61115de0",
+      "csv_sha256": "7b28db6b6729b25ffe13facdca86c002a848785c8ed0ec6b0e31083e7f6056ae",
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/1-minute-bar-quotes/eurusd/2025",
+      "months_source_timezone": {
+        "202501": 31604,
+        "202502": 28731,
+        "202503": 30527,
+        "202504": 31613,
+        "202505": 31216,
+        "202506": 30587,
+        "202507": 33040,
+        "202508": 30138,
+        "202509": 31542,
+        "202510": 32532,
+        "202511": 29087,
+        "202512": 31347
+      }
+    }
+  ]
+}
