@@ -127,3 +127,7 @@ grade fixa de FFD e buffer derivado do maior histórico efetivo (445 minutos).
 Escolhe d pela log-loss interna; SFI, ADF e permutação não eliminam features.
 [Resultado](experiments/afml-v1.md): sem ganho consistente. Esses diagnósticos
 não justificam alterar o universo ou repetir busca nos meses externos já vistos.
+
+[cusum_v1 (#5)](experiments/cusum-v1.md) foi executado somente em 2022–2023:
+parada por suporte interno insuficiente, zero ajustes. Redução de redundância
+observada não demonstra previsibilidade; confirmação 2024 continua fechada.

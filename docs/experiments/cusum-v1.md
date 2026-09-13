@@ -72,6 +72,26 @@ Versões: Python 3.13.5, NumPy 2.4.6, scikit-learn 1.8.0.
 
 Validação técnica: 82 testes sintéticos, compileall e git diff --check passaram antes da execução. Revisão independente e CI precisam aprovar o SHA final do PR separadamente. Nenhum merge automático.
 
+Após revisão, evidência publicada passou a ser cópia **byte a byte** do relatório
+original, acompanhada do [snapshot integral do ledger](cusum-v1-ledger.jsonl) e
+[manifesto de hashes](cusum-v1-evidence.json). Exportação sem treino:
+
+```bash
+.venv/bin/python -m fxnn.cusum_evidence \
+  --report output/cusum_v1/report.json \
+  --ledger /Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl \
+  --destination docs/experiments
+```
+
+O helper valida cadeia do ledger e vínculo ao hash do relatório, preserva o prefixo
+histórico da execução e recusa substituir evidência divergente. Aceita caminhos
+explícitos: auditoria independente pode usar os dois arquivos publicados em outra
+máquina, sem dados de mercado. O runner científico mantém ledger canônico fixado
+no pré-registro; portabilidade desse caminho é limitação operacional conhecida.
+Permitir outro ledger vazio nesta execução permitiria contornar orçamento/histórico.
+Não houve reexecução científica após revisão. Testes adicionais cobrem conclusão
+em três folds, exportação reproduzível e hashes publicados; suíte final: 85 testes.
+
 ## Limites e decisão
 
 Encerrar comparação registrada como **inconclusiva por suporte interno**. Não inferir ausência universal de sinal nem recomendar nova grade a partir destes resultados. Bid-only, ausência de custos/calendário confirmado, censura seletiva e labels sobrepostos impedem alegação de lucro. 2024 permanece reservado; #6–#9 não foram executadas.

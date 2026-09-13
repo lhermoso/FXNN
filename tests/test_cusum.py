@@ -11,7 +11,7 @@ from unittest.mock import patch
 import numpy as np
 
 from fxnn.cusum import cusum_events, interval_diagnostics, next_entries
-from fxnn.cusum_research import (choose, fit_score, inspect_internal, load_contract,
+from fxnn.cusum_research import (choose, conclusion, fit_score, inspect_internal, load_contract,
                                  main, prepare, run_models)
 from fxnn.features import build_features, orient_features
 from fxnn.fit_ledger import FitLedger
@@ -202,6 +202,21 @@ def new_ledger(directory):
 
 
 class RunnerTests(unittest.TestCase):
+    def test_three_fold_conclusion_rule(self):
+        def reports(losses, briers, eligible=True):
+            return [dict(selected_threshold='0.001', external_support={'eligible': eligible},
+                         common_external_scores={'temporal': {'log_loss': .5, 'brier': .2},
+                                                 '0.001': {'log_loss': loss, 'brier': brier}})
+                    for loss, brier in zip(losses, briers)]
+        self.assertEqual(conclusion(reports([.4, .4, .4], [.21, .19, .19])),
+                         'consistent_exploratory_classification_gain')
+        for losses, briers in [([.4, .6, .4], [.19]*3), ([.4]*3, [.21]*3),
+                               ([.4, .5, .4], [.19]*3)]:
+            self.assertEqual(conclusion(reports(losses, briers)),
+                             'no_consistent_gain_preserve_temporal_control')
+        self.assertEqual(conclusion(reports([.4]*3, [.19]*3, False)),
+                         'inconclusive_external_support')
+
     def test_contract_and_tie_order(self):
         spec, _ = load_contract()
         self.assertEqual(spec['max_model_fits'], 21)

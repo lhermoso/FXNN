@@ -1030,12 +1030,5 @@
   "status": "stopped_insufficient_internal_support",
   "conclusion": "Inconclusive predictability; no models fitted and no external metrics. No profit inference.",
   "fits_consumed": 0,
-  "global_fits_consumed": 0,
-  "artifacts": {
-    "output/cusum_v1/report.json": "096eb95e732e358edf0c2132385fe418c0b12f1054cbbf97ddeb4e072702d44d",
-    "output/cusum_v1/preflight.json": "d772c29ff3c131d7aec332d2f8ea7d62fedd905730a3e19c222d82b180c1784a",
-    "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl": "7d8788de40381c53b9ad7cc1612d278d87cdeed253ed64f17b346b054be02a49"
-  },
-  "preregistration_commit": "f5cd246",
-  "execution_commit": "94150fa27008784307fdb8465ea210421dc08429"
+  "global_fits_consumed": 0
 }
