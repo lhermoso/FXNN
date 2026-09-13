@@ -1,0 +1,12 @@
+{
+  "experiment": "cusum_v1",
+  "kind": "causal_cusum_comparison",
+  "parent_protocol_sha256": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+  "thresholds": [0.0005, 0.001],
+  "crossing": "strict_reset_triggered",
+  "internal_evaluation": "intersection",
+  "max_model_fits": 21,
+  "seed": 0,
+  "tie_tolerance": 1e-12,
+  "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl"
+}
