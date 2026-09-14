@@ -37,3 +37,39 @@ Censurar toda lacuna e reiniciar histórico; nenhuma promoção de fim de semana
 candidato a fechamento confirmado. Isso permite exploração condicionada a
 conclusivos, mantendo bloqueio econômico e confirmação 2024 fechada. Novos
 runners devem usar `fxnn.protocol`; calendários de experimentos antigos não mudam.
+
+## Após merge do PR #12 — manter CUSUM como linha ativa
+
+Léo decidiu manter CUSUM em pesquisa, inclusive em paralelo ao baseline temporal.
+O encerramento de `cusum_v1` não exclui a hipótese nem justifica promover somente
+o baseline às pesquisas seguintes. Nenhum modelo foi ajustado nessa execução.
+
+Os pisos de 1.000 candidatos e 100 por classe foram escolhidos pelo agente na #4
+como regras operacionais, sem cálculo de poder estatístico apresentado. A parada
+com 624 candidatos/40 positivos na validação interna de abril–junho de 2023
+demonstrou descumprimento dessa regra, não inutilidade científica da amostra.
+Também preservar a distinção entre candidatos por lado e eventos distintos.
+
+Manter duas linhas explícitas:
+
+- **Temporal:** treino em todos os candidatos elegíveis, como controle ativo.
+- **CUSUM:** treino em candidatos dos eventos causais, como hipótese ativa.
+
+Retomada exige novo identificador e pré-registro, porque suporte e interseção
+de `cusum_v1` já foram examinados. Preservar protocolo, resultados, hashes e
+ledger da execução encerrada; não editar seu histórico para remover a parada.
+Revisar os critérios de suporte com justificativa ligada ao modelo e à incerteza
+das estimativas, sem reutilizar automaticamente 1.000/100 como veto à pesquisa.
+Não basta substituir esses números por outro piso arbitrário.
+
+A interseção entre limiares também é decisão de desenho a revisar: manter CUSUM
+não exige que uma interseção escassa encerre todas as linhas. Comparações entre
+modelos devem continuar usando as mesmas identidades de avaliação; métricas de
+populações distintas serão apresentadas separadamente. Congelar o desenho antes
+de novos ajustes e explicitar que revisão usa conhecimento da auditoria anterior.
+
+Desenvolvimento continua em 2022–2023, confirmação 2024 fechada, sem 2025.
+Manter causalidade, expurgo, buffer, política de lacunas e ledger global de ajustes.
+Manter duas linhas não autoriza abrir confirmação duas vezes nem escolher uma
+vencedora retrospectivamente. O resultado anterior permanece inconclusivo, e
+nenhuma nova execução foi realizada ao registrar esta decisão.

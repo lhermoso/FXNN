@@ -41,6 +41,11 @@ Pré-requisito neural/AFML integrado pelo PR #10 (`fd8ed59`). Etapa #4 possui
 [contrato executável e limites](experiments/multiyear-v1-protocol.md),
 [inventário verificável](experiments/multiyear-v1-sources.json) e auditoria de
 suporte em `python -m fxnn.data_audit`. [Etapa #5, CUSUM](experiments/cusum-v1.md),
-executada: parada por suporte interno insuficiente, zero ajustes; previsibilidade
-inconclusiva. #6–#9 não executadas. Bid/ask/calendário continuam bloqueios econômicos;
+executada: parada pelo piso operacional registrado, zero ajustes; previsibilidade
+inconclusiva. **CUSUM permanece como linha ativa em paralelo ao controle temporal**,
+por decisão de Léo após merge do PR #12; ver [registro da decisão](decisions.md).
+Próximo trabalho é definir novo protocolo de comparação, revisando justificativa
+de suporte e desenho de avaliação comum antes de novos ajustes. O corte 1.000/100
+não constitui evidência para descartar CUSUM. #6–#9 não executadas.
+Bid/ask/calendário continuam bloqueios econômicos;
 2024 só pode ser aberto após congelamento final na #9.
