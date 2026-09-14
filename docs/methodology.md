@@ -1,5 +1,11 @@
 # Metodologia de pesquisa
 
+Atualização de 14/09/2026: a reconstrução [session_dataset_v1](experiments/session-dataset-v1-protocol.md)
+usa 72 horas de mercado aberto, ignora gaps de até 14 minutos de sessão e
+censura a partir de 15. Features passam a contar candles observados, sem fill.
+Essa versão substitui o contrato de dados para a próxima pesquisa; as regras
+e resultados históricos abaixo continuam documentando as versões anteriores.
+
 ## Objetivo e hipótese
 
 Estimar, antes de uma entrada, probabilidade de TP 50 pips ocorrer antes de SL

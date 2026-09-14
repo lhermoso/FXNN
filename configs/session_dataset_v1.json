@@ -1,0 +1,13 @@
+{
+  "experiment": "session_dataset_v1",
+  "kind": "dataset_rebuild_no_fits",
+  "parent_protocol_sha256": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+  "source_years": [2022, 2023],
+  "calendar": "Sunday 17:00 through Friday 17:00 America/New_York; UTC timestamps; historical DST",
+  "horizon_open_minutes": 4320,
+  "censor_from_missing_minutes": 15,
+  "feature_history": "241 observed candles; reset on gaps of at least 15 open minutes; no fill",
+  "thresholds": [0.0005, 0.001],
+  "new_model_fits": 0,
+  "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl"
+}
