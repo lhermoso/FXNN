@@ -4,16 +4,29 @@ import hashlib
 import json
 from pathlib import Path
 
-from .fit_ledger import FitLedger
+from .fit_ledger import _hash
+
+
+def verify_ledger(raw_bytes):
+    """Verify a captured ledger snapshot without opening or creating writable state."""
+    records = []
+    for line in raw_bytes.splitlines():
+        record = json.loads(line)
+        content = {key: value for key, value in record.items() if key != 'sha256'}
+        if (record['sha256'] != _hash(content) or record['sequence'] != len(records)
+                or record['previous'] != (records[-1]['sha256'] if records else None)):
+            raise ValueError('Corrupt ledger snapshot')
+        records.append(record)
+    if not records or records[0]['kind'] != 'genesis' or records[0]['total_budget'] != 1000:
+        raise ValueError('Invalid global budget origin')
+    return records
 
 
 def export_evidence(report_path, ledger_path, destination):
     report_bytes = Path(report_path).read_bytes()
     report = json.loads(report_bytes)
-    records = FitLedger(ledger_path).records()
     raw_lines = Path(ledger_path).read_bytes().splitlines(keepends=True)
-    if [json.loads(line) for line in raw_lines] != records:
-        raise ValueError('Ledger changed during export; no evidence written')
+    records = verify_ledger(b''.join(raw_lines))
     finished = [r for r in records if r['kind'] == 'run_finished'
                 and r.get('experiment') == 'cusum_v1']
     report_hash = hashlib.sha256(report_bytes).hexdigest()

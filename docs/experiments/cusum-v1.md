@@ -90,7 +90,9 @@ máquina, sem dados de mercado. O runner científico mantém ledger canônico fi
 no pré-registro; portabilidade desse caminho é limitação operacional conhecida.
 Permitir outro ledger vazio nesta execução permitiria contornar orçamento/histórico.
 Não houve reexecução científica após revisão. Testes adicionais cobrem conclusão
-em três folds, exportação reproduzível e hashes publicados; suíte final: 85 testes.
+em três folds, exportação reproduzível, cadeia/hash do snapshot publicado e leitura
+sem permissão de escrita. Caminho de ledger inexistente falha sem criar arquivo
+ou diretório. Suíte final: 86 testes.
 
 ## Limites e decisão
 
