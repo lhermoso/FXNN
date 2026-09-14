@@ -205,6 +205,7 @@ class MLPComparisonTests(unittest.TestCase):
             predictions = control/'predictions.csv'
             predictions.write_text('fold,phase,universe,entry_index,side,entry_epoch,y,temporal,constant,cusum\n')
             report = json.loads((source/'docs/experiments/cusum-temporal-v2.json').read_text())
+            report['versions'] = module.versions()  # Synthetic fixture follows its runtime.
             report['predictions_sha256'] = digest(predictions)
             report_path = control/'report.json'
             report_path.write_text(json.dumps(report))
@@ -224,9 +225,15 @@ class MLPComparisonTests(unittest.TestCase):
             duplicated = raw + (json.dumps(duplicate)+'\n').encode()
             with patch.object(module, 'ROOT', root):
                 self.assertEqual(module.load_controls(control, spec, raw)[0], report)
+                with patch.object(module, 'versions', return_value={**report['versions'], 'python': 'mismatch'}):
+                    with self.assertRaisesRegex(ValueError, 'Control versions or predictions changed'):
+                        module.load_controls(control, spec, raw)
                 for invalid in (missing, duplicated):
                     with self.assertRaisesRegex(ValueError, 'linked to canonical ledger'):
                         module.load_controls(control, spec, invalid)
                 predictions.write_text('tampered\n')
                 with self.assertRaisesRegex(ValueError, 'artifact hash mismatch'):
                     module.load_controls(control, spec, raw)
+                changed_spec = {**spec, 'controls_predictions_sha256': digest(predictions)}
+                with self.assertRaisesRegex(ValueError, 'Control versions or predictions changed'):
+                    module.load_controls(control, changed_spec, raw)
