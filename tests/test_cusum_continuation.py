@@ -140,3 +140,47 @@ class ContinuationTests(unittest.TestCase):
         self.assertAlmostEqual(result['log_loss']['delta'], score(y, a)['log_loss'] - score(y, b)['log_loss'])
         self.assertEqual(result['status'], 'descriptive_not_confidence_interval')
         self.assertIsNone(paired_sensitivity(y, a, b, np.arange(4))['brier']['delete_week_min'])
+
+    def test_conclusion_strict_three_fold_rule_and_missing_metrics(self):
+        def reports(losses, briers):
+            return [{'phases': {'refit': {'evaluations': {'h': {'scores': {
+                'cusum': {'log_loss': loss, 'brier': brier},
+                'temporal': {'log_loss': .5, 'brier': .2},
+                'constant': {'log_loss': .5, 'brier': .2}}}}}}}
+                    for loss, brier in zip(losses, briers)]
+        def verdict(rows):
+            return conclusion(rows, ['h'])['descriptive']['h']['temporal']
+        self.assertEqual(verdict(reports([.4]*3, [.21, .19, .19])), 'consistent_descriptive_gain')
+        for loss, brier in [([.4, .5, .4], [.19]*3), ([.4]*3, [.21]*3)]:
+            self.assertEqual(verdict(reports(loss, brier)), 'mixed_or_unfavorable_predictive_result')
+        self.assertEqual(verdict(reports([None, .4, .4], [.2]*3)), 'inconclusive_empty_evaluation')
+        rows = reports([.4]*3, [.19]*3)
+        rows[0]['phases']['refit']['evaluations']['h']['scores']['cusum'] = None
+        self.assertEqual(verdict(rows), 'technically_unavailable_comparison')
+
+    def test_published_continuation_evidence_and_budget(self):
+        from fxnn.cusum_evidence import export_evidence, verify_ledger
+        from fxnn.data_audit import digest
+        root = Path(__file__).resolve().parents[1] / 'docs/experiments'
+        manifest = json.loads((root/'cusum-temporal-v2-evidence.json').read_text())
+        for name, expected in manifest['files'].items():
+            self.assertEqual(digest(root/name), expected)
+        raw = (root/'cusum-temporal-v2-ledger.jsonl').read_bytes()
+        self.assertTrue(raw.startswith((root/'cusum-v1-ledger.jsonl').read_bytes()))
+        records = verify_ledger(raw)
+        fits = [r for r in records if r['kind'] == 'fit_started']
+        self.assertEqual(len(fits), 24)
+        self.assertEqual(len({r['fit_id'] for r in fits}), 24)
+        self.assertTrue(all(r['experiment'] == EXPERIMENT for r in fits))
+        self.assertEqual(sum(r['kind'] == 'fit_finished' and r['status'] == 'succeeded' for r in records), 24)
+        self.assertEqual(records[-1]['consumed_total'], 24)
+        report = json.loads((root/'cusum-temporal-v2.json').read_text())
+        self.assertEqual(report['conclusion'], conclusion(report['folds'], ['0.0005', '0.001']))
+        self.assertEqual(report['years'], [2022, 2023])
+        self.assertFalse(report['confirmation_opened'])
+        with tempfile.TemporaryDirectory() as tmp:
+            actual = export_evidence(root/'cusum-temporal-v2.json',
+                                     root/'cusum-temporal-v2-ledger.jsonl', tmp, EXPERIMENT)
+            self.assertEqual(actual, manifest)
+            self.assertEqual((Path(tmp)/'cusum-temporal-v2.json').read_bytes(),
+                             (root/'cusum-temporal-v2.json').read_bytes())
