@@ -144,3 +144,42 @@ class MLPComparisonTests(unittest.TestCase):
             reports[0]['phases']['refit']['evaluations']['temporal']['scores']['mlp_temporal'] = None
             self.assertEqual(conclusion(reports, ['temporal'])['descriptive']['temporal']['mlp_temporal-vs-constant'],
                              'technically_unavailable_comparison')
+
+    def test_conclusion_negative_undefined_and_brier_rule(self):
+        def reports(losses, briers):
+            return [{'phases': {'refit': {'evaluations': {'temporal': {'scores': {
+                'mlp_temporal': {'log_loss': ll, 'brier': b},
+                'logistic_temporal': {'log_loss': .5, 'brier': .2},
+                'constant': {'log_loss': .5, 'brier': .2}}}}}}} for ll, b in zip(losses, briers)]
+        def verdict(rows):
+            return conclusion(rows, ['temporal'])['descriptive']['temporal']['mlp_temporal-vs-constant']
+        self.assertEqual(verdict(reports([.4]*3, [.19]*3)), 'consistent_descriptive_gain')
+        self.assertEqual(verdict(reports([.4, .5, .4], [.19]*3)), 'mixed_or_unfavorable_predictive_result')
+        self.assertEqual(verdict(reports([.4]*3, [.21]*3)), 'mixed_or_unfavorable_predictive_result')
+        self.assertEqual(verdict(reports([None, .4, .4], [.19]*3)), 'inconclusive_undefined_metrics')
+
+    def test_published_evidence_budget_aliases_and_prior_prefix(self):
+        from fxnn.cusum_evidence import export_evidence, verify_ledger
+        from fxnn.data_audit import digest
+        root = Path(__file__).resolve().parents[1]/'docs/experiments'
+        manifest = json.loads((root/'mlp-cusum-v1-evidence.json').read_text())
+        for name, expected in manifest['files'].items():
+            self.assertEqual(digest(root/name), expected)
+        raw = (root/'mlp-cusum-v1-ledger.jsonl').read_bytes()
+        self.assertTrue(raw.startswith((root/'cusum-temporal-v2-ledger.jsonl').read_bytes()))
+        records = verify_ledger(raw)
+        fits = [r for r in records if r['kind'] == 'fit_started' and r['experiment'] == EXPERIMENT]
+        self.assertEqual(len(fits), 12)
+        self.assertEqual(len({r['hashes']['training_contract']['sha256'] for r in fits}), 12)
+        self.assertEqual(records[-1]['consumed_total'], 36)
+        report = json.loads((root/'mlp-cusum-v1.json').read_text())
+        self.assertEqual(report['conclusion'], conclusion(report['folds'], ['temporal', '0.0005', '0.001']))
+        self.assertEqual(report['years'], [2022, 2023])
+        self.assertFalse(report['confirmation_opened'])
+        aliases = [f for r in report['folds'] for p in r['phases'].values() for f in p['fits'].values() if f['reused']]
+        self.assertEqual(len(aliases), 6)
+        for alias in aliases:
+            original = next(f for f in fits if f['fit_id'] == alias['fit_id'])
+            self.assertEqual(alias['contract'], original['hashes']['training_contract'])
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(export_evidence(root/'mlp-cusum-v1.json', root/'mlp-cusum-v1-ledger.jsonl', tmp, EXPERIMENT), manifest)

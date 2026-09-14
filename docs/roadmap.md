@@ -55,3 +55,9 @@ Continuação autorizada executada em [cusum_temporal_v2](experiments/cusum-temp
 identidades. Ganho descritivo contra logística temporal; contra constante,
 resultado misto. Inferência inconclusiva. Ambas linhas permanecem ativas;
 #6–#9 continuam não executadas, confirmação 2024 fechada.
+
+Continuação neural autorizada: [mlp_cusum_v1](experiments/mlp-cusum-v1.md).
+12 MLPs únicas e controles anteriores verificados; global 36/1.000. Efeito
+descritivo CUSUM persistiu na MLP, sem ganho contra constante. Sem estabilização
+da loss nas 20 épocas fixas; não extrapolar para outras inicializações ou redes
+convergidas. Temporal e CUSUM seguem ativos, #6–#9 não executadas, 2024 fechado.

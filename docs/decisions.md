@@ -85,3 +85,15 @@ Ambos CUSUM melhoram log-loss sobre logística temporal nos três externos;
 ambos perdem para constante em Q2/Q4. Ganho descritivo não estabelece
 superioridade inferencial nem lucro. Temporal e CUSUM seguem ativos;
 2024 fechado, nenhum 2025 ou avanço para #6–#9.
+
+## Após PR #14 — mlp_cusum_v1
+
+[Comparação exploratória executada](experiments/mlp-cusum-v1.md): arquitetura
+fixa MLP 28→16→1, seed 0, 20 épocas, treino temporal e eventos nos dois limiares.
+12 ajustes únicos; controles v2 reutilizados por contrato/hashes/identidades,
+sem repetir refits como internos. Global 36/1.000, saldo 964.
+CUSUM preservou ganho descritivo sobre MLP temporal; nenhuma MLP superou constante
+nos externos. Arquitetura não melhorou logística consistentemente. Todas MLPs
+completaram épocas mas sem estabilização da loss pelo diagnóstico pré-fixado;
+nenhuma extensão de treino ou troca de seed. Inferência inconclusiva, linhas
+ativas, confirmação 2024 fechada, nenhum uso de 2025 ou execução #6–#9.

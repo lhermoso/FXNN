@@ -1,0 +1,7 @@
+{
+  "experiment": "mlp_cusum_v1",
+  "files": {
+    "mlp-cusum-v1.json": "5eebfdc7d5f109600be06f12c8cf457e807a71f1d4e21185314a7852bc072aec",
+    "mlp-cusum-v1-ledger.jsonl": "cae316a1d17b0593317476d878db57e7e92d006791f43f46659591211912f037"
+  }
+}
