@@ -129,5 +129,10 @@ Escolhe d pela log-loss interna; SFI, ADF e permutação não eliminam features.
 não justificam alterar o universo ou repetir busca nos meses externos já vistos.
 
 [cusum_v1 (#5)](experiments/cusum-v1.md) foi executado somente em 2022–2023:
-parada por suporte interno insuficiente, zero ajustes. Redução de redundância
-observada não demonstra previsibilidade; confirmação 2024 continua fechada.
+parada pelo piso operacional registrado, zero ajustes. Redução de redundância
+observada não demonstra previsibilidade; tampouco essa parada demonstra ausência
+de sinal. Por [decisão posterior de Léo](decisions.md), CUSUM permanece ativo em
+paralelo ao controle temporal. O piso 1.000/100 não teve cálculo de poder
+estatístico apresentado; sua adequação e a interseção de avaliação serão revistas
+em novo protocolo antes de novos ajustes, preservando a execução histórica.
+Confirmação 2024 continua fechada.
