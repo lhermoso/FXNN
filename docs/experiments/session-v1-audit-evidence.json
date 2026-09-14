@@ -1,0 +1,421 @@
+{
+  "status": "verified",
+  "new_fits": 0,
+  "ledger_consumed": 87,
+  "ledger_sha256": "9b06ec50cfd9afda1e0bbc890c4125fc3a419c4dacb63177144c393b7ad40645",
+  "source_implementation": "d496120",
+  "audit_script_sha256": "52b71a37f1a5c8aed7ed9a7e32d6643c55a4be42e581c0beec7ef99bfbb7d011",
+  "source_differences": [
+    {
+      "file": "session_neural.py",
+      "executed_sha256": "b460afb6f9db1af6b4b06c9c058778d4c7c62a01ee6fbc6d40acf4d7d90984b4",
+      "current_sha256": "3702d5afbaf7f1d05e1ac41fee9cdc76ff9ae2e0c07ed42de1acb328897bcfe9",
+      "identical_ast": true
+    }
+  ],
+  "full_feature_rows": 1105737,
+  "causal_entry_checks": 12,
+  "scalar_label_checks": 129,
+  "unique_training_sets": 12,
+  "unique_models": 39,
+  "probability_values": 2321307,
+  "prediction_archives": 18,
+  "external": [
+    {
+      "fold": "2023Q2",
+      "universe": "temporal",
+      "prevalence": 0.07384389200748463,
+      "constant_probability": 0.2565378771156076,
+      "models": {
+        "constant": {
+          "log_loss": 0.37501042415007263,
+          "brier": 0.10176806381535862,
+          "roc_auc": 0.5,
+          "average_precision": 0.07384389200748463
+        },
+        "logistic_temporal": {
+          "log_loss": 0.4237412291749441,
+          "brier": 0.12187689545176422,
+          "roc_auc": 0.37469857214172864,
+          "average_precision": 0.05395769027463097
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.37625792438078065,
+          "brier": 0.10583603660686836,
+          "roc_auc": 0.6292895578252726,
+          "average_precision": 0.10587686858930477
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.37304085843058626,
+          "brier": 0.10483637085368516,
+          "roc_auc": 0.6346786102697531,
+          "average_precision": 0.11279399546115867
+        }
+      }
+    },
+    {
+      "fold": "2023Q2",
+      "universe": "0.0005",
+      "prevalence": 0.07412398921832884,
+      "constant_probability": 0.2565378771156076,
+      "models": {
+        "constant": {
+          "log_loss": 0.3753084592057417,
+          "brier": 0.10190444993849089,
+          "roc_auc": 0.5,
+          "average_precision": 0.07412398921832884
+        },
+        "logistic_temporal": {
+          "log_loss": 0.4211672897936411,
+          "brier": 0.12097827899977594,
+          "roc_auc": 0.3621807595606722,
+          "average_precision": 0.05405594141158167
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.3860143708913089,
+          "brier": 0.10970011879036783,
+          "roc_auc": 0.5496360989810771,
+          "average_precision": 0.08476882781306144
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.38389444190385874,
+          "brier": 0.10907703409641617,
+          "roc_auc": 0.5491861849940453,
+          "average_precision": 0.08763610176520657
+        },
+        "logistic_event": {
+          "log_loss": 0.3921007381032159,
+          "brier": 0.10878328775273688,
+          "roc_auc": 0.33010453883816326,
+          "average_precision": 0.0520959821781659
+        },
+        "mlp20_event": {
+          "log_loss": 0.3774207375034647,
+          "brier": 0.10419936001972635,
+          "roc_auc": 0.4806933968506021,
+          "average_precision": 0.06731482156456109
+        },
+        "mlpbudget_event": {
+          "log_loss": 0.3669347057037604,
+          "brier": 0.1034727136722668,
+          "roc_auc": 0.5475453222178114,
+          "average_precision": 0.08118203105786506
+        }
+      }
+    },
+    {
+      "fold": "2023Q2",
+      "universe": "0.001",
+      "prevalence": 0.08050847457627118,
+      "constant_probability": 0.2565378771156076,
+      "models": {
+        "constant": {
+          "log_loss": 0.38210181656670056,
+          "brier": 0.10501321065602884,
+          "roc_auc": 0.5,
+          "average_precision": 0.08050847457627118
+        },
+        "logistic_temporal": {
+          "log_loss": 0.4214114689641133,
+          "brier": 0.12153097162749965,
+          "roc_auc": 0.41013824884792627,
+          "average_precision": 0.06691224483502664
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.3884797659371827,
+          "brier": 0.11063873849818813,
+          "roc_auc": 0.5915595440213437,
+          "average_precision": 0.10719482171320797
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.38677702446266576,
+          "brier": 0.11022816989824781,
+          "roc_auc": 0.6068396798447732,
+          "average_precision": 0.11381556181004254
+        },
+        "logistic_event": {
+          "log_loss": 0.3970392566433122,
+          "brier": 0.11112908078548822,
+          "roc_auc": 0.3849138976473442,
+          "average_precision": 0.06406072215582143
+        },
+        "mlp20_event": {
+          "log_loss": 0.3892485333635998,
+          "brier": 0.10856444885749666,
+          "roc_auc": 0.5161290322580645,
+          "average_precision": 0.15305270273676436
+        },
+        "mlpbudget_event": {
+          "log_loss": 0.37877306919827003,
+          "brier": 0.10859890171646333,
+          "roc_auc": 0.6041717196216347,
+          "average_precision": 0.11133893729470525
+        }
+      }
+    },
+    {
+      "fold": "2023Q3",
+      "universe": "temporal",
+      "prevalence": 0.23103470974901025,
+      "constant_probability": 0.23741104038194033,
+      "models": {
+        "constant": {
+          "log_loss": 0.540636561065481,
+          "brier": 0.1776983302325413,
+          "roc_auc": 0.5,
+          "average_precision": 0.23103470974901025
+        },
+        "logistic_temporal": {
+          "log_loss": 0.5367023159205278,
+          "brier": 0.17626957866325443,
+          "roc_auc": 0.5644716820438344,
+          "average_precision": 0.28275350816910183
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.5730179740181803,
+          "brier": 0.18640699290079132,
+          "roc_auc": 0.479988286696611,
+          "average_precision": 0.222413400393975
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.5767831515211954,
+          "brier": 0.18801314593830398,
+          "roc_auc": 0.4661439132693007,
+          "average_precision": 0.21560285492350362
+        }
+      }
+    },
+    {
+      "fold": "2023Q3",
+      "universe": "0.0005",
+      "prevalence": 0.24416176191380293,
+      "constant_probability": 0.23741104038194033,
+      "models": {
+        "constant": {
+          "log_loss": 0.555954861949191,
+          "brier": 0.18459236817415112,
+          "roc_auc": 0.5,
+          "average_precision": 0.24416176191380293
+        },
+        "logistic_temporal": {
+          "log_loss": 0.5538287779513509,
+          "brier": 0.18376015396857467,
+          "roc_auc": 0.5546608833639414,
+          "average_precision": 0.28458683280773367
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.5964917927032579,
+          "brier": 0.19549463765004343,
+          "roc_auc": 0.4865707366600997,
+          "average_precision": 0.24011462400551367
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.6017846288313663,
+          "brier": 0.19781741955060425,
+          "roc_auc": 0.47133682816082456,
+          "average_precision": 0.22980085236686015
+        },
+        "logistic_event": {
+          "log_loss": 0.5527892916988866,
+          "brier": 0.18338725321715024,
+          "roc_auc": 0.5618622750444081,
+          "average_precision": 0.29748226082492907
+        },
+        "mlp20_event": {
+          "log_loss": 0.5626934938663465,
+          "brier": 0.1867198590624256,
+          "roc_auc": 0.531047553640289,
+          "average_precision": 0.2610266883901056
+        },
+        "mlpbudget_event": {
+          "log_loss": 0.5921417368274663,
+          "brier": 0.19426717216558048,
+          "roc_auc": 0.5156401929382295,
+          "average_precision": 0.2575408330360132
+        }
+      }
+    },
+    {
+      "fold": "2023Q3",
+      "universe": "0.001",
+      "prevalence": 0.24985574148874784,
+      "constant_probability": 0.23741104038194033,
+      "models": {
+        "constant": {
+          "log_loss": 0.5625993158037007,
+          "brier": 0.18758272051949368,
+          "roc_auc": 0.5,
+          "average_precision": 0.24985574148874784
+        },
+        "logistic_temporal": {
+          "log_loss": 0.562034100021624,
+          "brier": 0.18724357331651595,
+          "roc_auc": 0.548996269319595,
+          "average_precision": 0.2904192506280555
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.6047413876461931,
+          "brier": 0.1989841599723797,
+          "roc_auc": 0.48980280689287625,
+          "average_precision": 0.24898318670965813
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.6134327952638036,
+          "brier": 0.20230594688383405,
+          "roc_auc": 0.4684988452655889,
+          "average_precision": 0.23534511827849047
+        },
+        "logistic_event": {
+          "log_loss": 0.559781813993268,
+          "brier": 0.18647446805694556,
+          "roc_auc": 0.5533203055604903,
+          "average_precision": 0.30526592988337053
+        },
+        "mlp20_event": {
+          "log_loss": 0.5656724341862098,
+          "brier": 0.18867809537438854,
+          "roc_auc": 0.5408349618049387,
+          "average_precision": 0.27162011682875153
+        },
+        "mlpbudget_event": {
+          "log_loss": 0.6123423707676916,
+          "brier": 0.2034770345591879,
+          "roc_auc": 0.49166992360987744,
+          "average_precision": 0.24124126910458135
+        }
+      }
+    },
+    {
+      "fold": "2023Q4",
+      "universe": "temporal",
+      "prevalence": 0.30706404581033403,
+      "constant_probability": 0.22837753690521304,
+      "models": {
+        "constant": {
+          "log_loss": 0.6331089093235915,
+          "brier": 0.21896728426459883,
+          "roc_auc": 0.5,
+          "average_precision": 0.30706404581033403
+        },
+        "logistic_temporal": {
+          "log_loss": 0.6461939544525618,
+          "brier": 0.22321601486765033,
+          "roc_auc": 0.4623218667431351,
+          "average_precision": 0.2791542446940892
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.7076802862593248,
+          "brier": 0.23817472921606653,
+          "roc_auc": 0.44433369040121473,
+          "average_precision": 0.2726543424914273
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.7076802862593248,
+          "brier": 0.23817472921606653,
+          "roc_auc": 0.44433369040121473,
+          "average_precision": 0.2726543424914273
+        }
+      }
+    },
+    {
+      "fold": "2023Q4",
+      "universe": "0.0005",
+      "prevalence": 0.3013524448040689,
+      "constant_probability": 0.22837753690521304,
+      "models": {
+        "constant": {
+          "log_loss": 0.6261550621153541,
+          "brier": 0.215864485997526,
+          "roc_auc": 0.5,
+          "average_precision": 0.3013524448040689
+        },
+        "logistic_temporal": {
+          "log_loss": 0.6398929564198068,
+          "brier": 0.22032221378703506,
+          "roc_auc": 0.4560997766792404,
+          "average_precision": 0.27011652392498126
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.6898170950467007,
+          "brier": 0.2325499718696277,
+          "roc_auc": 0.456625076760958,
+          "average_precision": 0.2767243705405421
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.6898170950467007,
+          "brier": 0.2325499718696277,
+          "roc_auc": 0.456625076760958,
+          "average_precision": 0.2767243705405421
+        },
+        "logistic_event": {
+          "log_loss": 0.639209258205273,
+          "brier": 0.22012096032916603,
+          "roc_auc": 0.44726246116891927,
+          "average_precision": 0.2684884242406173
+        },
+        "mlp20_event": {
+          "log_loss": 0.6579595786886077,
+          "brier": 0.22540453411442551,
+          "roc_auc": 0.4542091533332978,
+          "average_precision": 0.27353453481805484
+        },
+        "mlpbudget_event": {
+          "log_loss": 0.7029059201827836,
+          "brier": 0.23540381125126078,
+          "roc_auc": 0.4574442834124996,
+          "average_precision": 0.2763205986340278
+        }
+      }
+    },
+    {
+      "fold": "2023Q4",
+      "universe": "0.001",
+      "prevalence": 0.29428369795342274,
+      "constant_probability": 0.22837753690521304,
+      "models": {
+        "constant": {
+          "log_loss": 0.6175488962611245,
+          "brier": 0.2120244251363939,
+          "roc_auc": 0.5,
+          "average_precision": 0.29428369795342274
+        },
+        "logistic_temporal": {
+          "log_loss": 0.6333413049332187,
+          "brier": 0.21713951870028173,
+          "roc_auc": 0.4498051558752998,
+          "average_precision": 0.2609029878283098
+        },
+        "mlp20_temporal": {
+          "log_loss": 0.6747275691839073,
+          "brier": 0.22706155015070337,
+          "roc_auc": 0.4646444844124701,
+          "average_precision": 0.27879146830447055
+        },
+        "mlpbudget_temporal": {
+          "log_loss": 0.6747275691839073,
+          "brier": 0.22706155015070337,
+          "roc_auc": 0.4646444844124701,
+          "average_precision": 0.27879146830447055
+        },
+        "logistic_event": {
+          "log_loss": 0.6251446535747847,
+          "brier": 0.21459340056902576,
+          "roc_auc": 0.44400719424460433,
+          "average_precision": 0.26153936044962944
+        },
+        "mlp20_event": {
+          "log_loss": 0.6368602711161765,
+          "brier": 0.2180966599646118,
+          "roc_auc": 0.4623003597122302,
+          "average_precision": 0.27538694034018935
+        },
+        "mlpbudget_event": {
+          "log_loss": 0.6899595484218497,
+          "brier": 0.23268065035417437,
+          "roc_auc": 0.4392697841726619,
+          "average_precision": 0.25798067218945003
+        }
+      }
+    }
+  ]
+}

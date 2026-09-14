@@ -44,6 +44,31 @@ def reference(candles,clock,horizon,threshold):
 
 
 class SessionDataTests(unittest.TestCase):
+    def test_dst_transition_weekends_and_exact_session_deadline(self):
+        def epoch(text):
+            return int(datetime.fromisoformat(text).timestamp())
+        clock = weekly_fx_clock(epoch('2023-01-01T00:00:00+00:00'),
+                                epoch('2024-01-10T00:00:00+00:00'))
+        # Both DST transitions happen during the scheduled weekly closure.
+        for friday, sunday in (
+            ('2023-03-10T21:59:00+00:00', '2023-03-12T21:00:00+00:00'),
+            ('2023-11-03T20:59:00+00:00', '2023-11-05T22:00:00+00:00'),
+        ):
+            start, reopen = epoch(friday), epoch(sunday)
+            self.assertEqual(clock.missing_open_minutes(np.array([start, reopen])).tolist(), [0])
+            self.assertEqual(clock.deadlines(np.array([start]), 1).tolist(), [start + 60])
+            self.assertEqual(clock.deadlines(np.array([start]), 2).tolist(), [reopen + 60])
+
+    def test_current_candle_and_future_cannot_change_entry_features_or_cusum(self):
+        source = [candle(i, str(1.1 + i * .000001)) for i in range(400)]
+        breaks = np.zeros(len(source), dtype=bool)
+        original = session_features(source, breaks)
+        changed = source[:300] + [candle(300, '1.2')]
+        truncated = session_features(changed, breaks[:301])
+        np.testing.assert_array_equal(original.values[:301], truncated.values)
+        np.testing.assert_array_equal(session_events(source, breaks, .0005)[:301],
+                                      session_events(changed, breaks[:301], .0005))
+
     def test_missing_fourteen_continues_fifteen_censors(self):
         clock=SessionClock(0,np.ones(10000,dtype=bool))
         short,_=session_labels([candle(0),candle(15,'1.1051')],clock)
