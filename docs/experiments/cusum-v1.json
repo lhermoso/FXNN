@@ -1,0 +1,1034 @@
+{
+  "experiment": "cusum_v1",
+  "hashes": {
+    "code_sha": "94150fa27008784307fdb8465ea210421dc08429",
+    "cusum_protocol": "6e4b56cfee9b6a8968ca1f48cc7a88fdf5558067e2ec3c78f44cb629e55e324e",
+    "parent_protocol": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+    "source_hashes": {
+      "__init__.py": "8f333b42f8d9c3a446346523957b930f28e3db7737cdcab330f9644956b03d3f",
+      "__main__.py": "2c44d7ba850712c191bd91dfbc842187c5c6358a5bd8e8ed349f76e0d6bd8a02",
+      "afml.py": "d9e81dc00d19a6da7e413347d7919b1dc24c8871a7736ae90d7a09295e158bc1",
+      "audit.py": "1302be554342e5e02d4207356b56412e21e36877448830c4cfd586b0f3a39dbd",
+      "cusum.py": "059990a179d671fc2629a7568dfe2ca258fcf181769f15ce1be9990fd34601b7",
+      "cusum_research.py": "2f89ff3075b3e7e13bf08076c7bad69294e101b0d7e6fb036f97c23368dfb91e",
+      "data_audit.py": "fa0d25f58cd65497892eb38f6e0e89bdb7be3f57dc6575b24e437fe2cc89e8f5",
+      "features.py": "e477d63f7ef55fe878c0853bbe6958931810b1b406bae0508470e6125f95366e",
+      "fit_ledger.py": "a46d9c85e188ae191cc9be8119b6556cad5f2aabfef27cc815e035735db8acf1",
+      "fracdiff.py": "d5d94bd965f4072f0e6566212b7537104b626f3318f5fb203ab993692f051527",
+      "indexed.py": "80dfb4f0d7fd86faceb8647fd217078f4403c7eb9e9a366db81b54ecd8df357b",
+      "labeling.py": "fc89201c8a847e2981ea2ec68788f491cf621f30864caa2ea4a1e40fd2ee7362",
+      "neural.py": "06bbd19e548ea401d8cc9196c2db5f4f574800f229364b5d1dc1c5404bbdce28",
+      "protocol.py": "897f97bdd7f9098442c24528fa622b42165cd6b577576aea910b116ed1df8851",
+      "research.py": "470ed6eead02f1d7f0156b35d3f19fa6db56497256c8f5c854d24b9bf60440b8",
+      "temporal.py": "d14d3ecc3996906d32ddba7e78bcf8f835f75a5e90d4eaa5b9672b551b8d4823"
+    }
+  },
+  "fits_before": 0,
+  "confirmation_opened": false,
+  "years": [
+    2022,
+    2023
+  ],
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.4.6",
+    "sklearn": "1.8.0"
+  },
+  "input_hashes": {
+    "versioned_source_inventory": "723687f91aee8c6d2de83026014c5ea67650f95720fb3343d2428d2044f2aa5c",
+    "EURUSD_2022_m1_bid_utc.csv": "c7cb59048e78a1c66e4da3abca24cd2f25d358001cf6f56a05becf9a5af10602",
+    "EURUSD_2022_manifest.json": "931d66e0023226ba1b653e718f8a591ee04e826207091273a515a69ee781a34b",
+    "EURUSD_2023_m1_bid_utc.csv": "7825afc1008e3eb1fc448185049f88861d6456e01c92951da653762749d8cf67",
+    "EURUSD_2023_manifest.json": "d114ee694efda9170edd0941d6f3691ba0ec3bbe5fe7e9f573389b11077b2bba"
+  },
+  "causal_sampling": {
+    "candles": 695263,
+    "feature_eligible_openings": 483367,
+    "gap_resets": 2983,
+    "thresholds": {
+      "0.0005": {
+        "closed_events": 52411,
+        "next_continuous_openings": 52338,
+        "lost_next_opening": 73,
+        "warmup_excluded": 8447,
+        "eligible_openings": 43891,
+        "density_per_eligible_opening": 0.09080264064365172
+      },
+      "0.001": {
+        "closed_events": 17853,
+        "next_continuous_openings": 17835,
+        "lost_next_opening": 18,
+        "warmup_excluded": 2443,
+        "eligible_openings": 15392,
+        "density_per_eligible_opening": 0.031843299190883946
+      }
+    }
+  },
+  "internal_preflight": [
+    {
+      "fold": "2023Q2",
+      "support": {
+        "temporal": {
+          "train": {
+            "rows": 378214,
+            "positive": 93309,
+            "negative": 284905,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 57057,
+            "positive": 11989,
+            "negative": 45068,
+            "eligible": true
+          },
+          "refit": {
+            "rows": 437752,
+            "positive": 105985,
+            "negative": 331767,
+            "eligible": true
+          }
+        },
+        "0.0005": {
+          "train": {
+            "rows": 45254,
+            "positive": 11154,
+            "negative": 34100,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 5228,
+            "positive": 1117,
+            "negative": 4111,
+            "eligible": true
+          },
+          "refit": {
+            "rows": 50712,
+            "positive": 12319,
+            "negative": 38393,
+            "eligible": true
+          }
+        },
+        "0.001": {
+          "train": {
+            "rows": 16492,
+            "positive": 4050,
+            "negative": 12442,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 1874,
+            "positive": 402,
+            "negative": 1472,
+            "eligible": true
+          },
+          "refit": {
+            "rows": 18460,
+            "positive": 4469,
+            "negative": 13991,
+            "eligible": true
+          }
+        }
+      },
+      "coverage": {
+        "temporal": {
+          "train": {
+            "observed_side_candidates": 739520,
+            "sampled_side_candidates": 739520,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 247790,
+              "stop_loss": 368797,
+              "take_profit": 122933
+            },
+            "warmup_excluded_all_outcomes": 164012,
+            "conclusive_excluded_history": 113516,
+            "feature_eligible": 575508,
+            "retained": 378214,
+            "retained_coverage": 0.5114317395067071,
+            "censored_fraction": 0.33506869320640414
+          },
+          "validation": {
+            "observed_side_candidates": 154722,
+            "sampled_side_candidates": 154722,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 73439,
+              "stop_loss": 64278,
+              "take_profit": 17005
+            },
+            "warmup_excluded_all_outcomes": 54106,
+            "conclusive_excluded_history": 24226,
+            "feature_eligible": 100616,
+            "retained": 57057,
+            "retained_coverage": 0.36877108620622795,
+            "censored_fraction": 0.47465131009164824
+          },
+          "refit": {
+            "observed_side_candidates": 899978,
+            "sampled_side_candidates": 899978,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 323520,
+              "stop_loss": 435424,
+              "take_profit": 141034
+            },
+            "warmup_excluded_all_outcomes": 219406,
+            "conclusive_excluded_history": 138706,
+            "feature_eligible": 680572,
+            "retained": 437752,
+            "retained_coverage": 0.48640300096224576,
+            "censored_fraction": 0.3594754538444273
+          }
+        },
+        "0.0005": {
+          "train": {
+            "observed_side_candidates": 739520,
+            "sampled_side_candidates": 68852,
+            "density": 0.09310363479013414,
+            "outcomes": {
+              "censored": 17572,
+              "stop_loss": 38546,
+              "take_profit": 12734
+            },
+            "warmup_excluded_all_outcomes": 7174,
+            "conclusive_excluded_history": 6026,
+            "feature_eligible": 61678,
+            "retained": 45254,
+            "retained_coverage": 0.061193747295543055,
+            "censored_fraction": 0.2552140823795968
+          },
+          "validation": {
+            "observed_side_candidates": 154722,
+            "sampled_side_candidates": 11356,
+            "density": 0.07339615568568142,
+            "outcomes": {
+              "censored": 4916,
+              "stop_loss": 5071,
+              "take_profit": 1369
+            },
+            "warmup_excluded_all_outcomes": 2866,
+            "conclusive_excluded_history": 1212,
+            "feature_eligible": 8490,
+            "retained": 5228,
+            "retained_coverage": 0.033789635604503564,
+            "censored_fraction": 0.4328989080662205
+          },
+          "refit": {
+            "observed_side_candidates": 899978,
+            "sampled_side_candidates": 80612,
+            "density": 0.08957107840413876,
+            "outcomes": {
+              "censored": 22630,
+              "stop_loss": 43816,
+              "take_profit": 14166
+            },
+            "warmup_excluded_all_outcomes": 10088,
+            "conclusive_excluded_history": 7270,
+            "feature_eligible": 70524,
+            "retained": 50712,
+            "retained_coverage": 0.056348044063299324,
+            "censored_fraction": 0.28072743512132187
+          }
+        },
+        "0.001": {
+          "train": {
+            "observed_side_candidates": 739520,
+            "sampled_side_candidates": 24168,
+            "density": 0.03268065772392904,
+            "outcomes": {
+              "stop_loss": 13755,
+              "censored": 5855,
+              "take_profit": 4558
+            },
+            "warmup_excluded_all_outcomes": 2126,
+            "conclusive_excluded_history": 1821,
+            "feature_eligible": 22042,
+            "retained": 16492,
+            "retained_coverage": 0.022300951968844657,
+            "censored_fraction": 0.24226249586229726
+          },
+          "validation": {
+            "observed_side_candidates": 154722,
+            "sampled_side_candidates": 3812,
+            "density": 0.024637737361202672,
+            "outcomes": {
+              "censored": 1571,
+              "stop_loss": 1754,
+              "take_profit": 487
+            },
+            "warmup_excluded_all_outcomes": 862,
+            "conclusive_excluded_history": 367,
+            "feature_eligible": 2950,
+            "retained": 1874,
+            "retained_coverage": 0.012112046121430695,
+            "censored_fraction": 0.4121196222455404
+          },
+          "refit": {
+            "observed_side_candidates": 899978,
+            "sampled_side_candidates": 28130,
+            "density": 0.031256319598923527,
+            "outcomes": {
+              "stop_loss": 15590,
+              "censored": 7476,
+              "take_profit": 5064
+            },
+            "warmup_excluded_all_outcomes": 2998,
+            "conclusive_excluded_history": 2194,
+            "feature_eligible": 25132,
+            "retained": 18460,
+            "retained_coverage": 0.020511612506083483,
+            "censored_fraction": 0.26576608602915036
+          }
+        }
+      },
+      "overlap": {
+        "temporal": {
+          "train": {
+            "rows": 378214,
+            "raw_uniqueness_mean": 0.00454839783212601,
+            "raw_uniqueness_min": 0.0005152224198631618,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 1963,
+            "concurrency_active_mean": 306.79693946469575
+          },
+          "validation": {
+            "rows": 57057,
+            "raw_uniqueness_mean": 0.004973726652353703,
+            "raw_uniqueness_min": 0.0008243998672323636,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 1226,
+            "concurrency_active_mean": 281.4358786098874
+          },
+          "refit": {
+            "rows": 437752,
+            "raw_uniqueness_mean": 0.00459986215068524,
+            "raw_uniqueness_min": 0.0005152224198631618,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 1963,
+            "concurrency_active_mean": 303.0905492508433
+          }
+        },
+        "0.0005": {
+          "train": {
+            "rows": 45254,
+            "raw_uniqueness_mean": 0.03796348318308794,
+            "raw_uniqueness_min": 0.007552973342438539,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 138,
+            "concurrency_active_mean": 29.537151088500703
+          },
+          "validation": {
+            "rows": 5228,
+            "raw_uniqueness_mean": 0.054482619437293704,
+            "raw_uniqueness_min": 0.012010638150172216,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 87,
+            "concurrency_active_mean": 20.433469037925864
+          },
+          "refit": {
+            "rows": 50712,
+            "raw_uniqueness_mean": 0.039675563888112046,
+            "raw_uniqueness_min": 0.007552973342438539,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 138,
+            "concurrency_active_mean": 28.208016660806535
+          }
+        },
+        "0.001": {
+          "train": {
+            "rows": 16492,
+            "raw_uniqueness_mean": 0.09857727857410499,
+            "raw_uniqueness_min": 0.021614641931981923,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 48,
+            "concurrency_active_mean": 10.786782979155044
+          },
+          "validation": {
+            "rows": 1874,
+            "raw_uniqueness_mean": 0.13969050955779208,
+            "raw_uniqueness_min": 0.03687958752613028,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 29,
+            "concurrency_active_mean": 7.70106906776203
+          },
+          "refit": {
+            "rows": 18460,
+            "raw_uniqueness_mean": 0.10274232166065489,
+            "raw_uniqueness_min": 0.021614641931981923,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 48,
+            "concurrency_active_mean": 10.366029134296236
+          }
+        }
+      },
+      "common_validation": {
+        "support": {
+          "rows": 1002,
+          "positive": 228,
+          "negative": 774,
+          "eligible": true
+        },
+        "identity_sha256": "6393ef185b7b4bd16fde76f840bdeab2606053932186dda01729b491dcd38235",
+        "cost": {
+          "0.0005": {
+            "before": 5228,
+            "retained": 1002,
+            "excluded": 4226
+          },
+          "0.001": {
+            "before": 1874,
+            "retained": 1002,
+            "excluded": 872
+          }
+        }
+      }
+    },
+    {
+      "fold": "2023Q3",
+      "support": {
+        "temporal": {
+          "train": {
+            "rows": 437752,
+            "positive": 105985,
+            "negative": 331767,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 12446,
+            "positive": 799,
+            "negative": 11647,
+            "eligible": true
+          },
+          "refit": {
+            "rows": 451267,
+            "positive": 106787,
+            "negative": 344480,
+            "eligible": true
+          }
+        },
+        "0.0005": {
+          "train": {
+            "rows": 50712,
+            "positive": 12319,
+            "negative": 38393,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 624,
+            "positive": 40,
+            "negative": 584,
+            "eligible": false
+          },
+          "refit": {
+            "rows": 51400,
+            "positive": 12359,
+            "negative": 39041,
+            "eligible": true
+          }
+        },
+        "0.001": {
+          "train": {
+            "rows": 18460,
+            "positive": 4469,
+            "negative": 13991,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 207,
+            "positive": 15,
+            "negative": 192,
+            "eligible": false
+          },
+          "refit": {
+            "rows": 18686,
+            "positive": 4484,
+            "negative": 14202,
+            "eligible": true
+          }
+        }
+      },
+      "coverage": {
+        "temporal": {
+          "train": {
+            "observed_side_candidates": 899978,
+            "sampled_side_candidates": 899978,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 323520,
+              "stop_loss": 435424,
+              "take_profit": 141034
+            },
+            "warmup_excluded_all_outcomes": 219406,
+            "conclusive_excluded_history": 138706,
+            "feature_eligible": 680572,
+            "retained": 437752,
+            "retained_coverage": 0.48640300096224576,
+            "censored_fraction": 0.3594754538444273
+          },
+          "validation": {
+            "observed_side_candidates": 124728,
+            "sampled_side_candidates": 124728,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 96596,
+              "stop_loss": 25565,
+              "take_profit": 2567
+            },
+            "warmup_excluded_all_outcomes": 76802,
+            "conclusive_excluded_history": 15686,
+            "feature_eligible": 47926,
+            "retained": 12446,
+            "retained_coverage": 0.0997851324482073,
+            "censored_fraction": 0.7744532101853634
+          },
+          "refit": {
+            "observed_side_candidates": 1030780,
+            "sampled_side_candidates": 1030780,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 424079,
+              "stop_loss": 463050,
+              "take_profit": 143651
+            },
+            "warmup_excluded_all_outcomes": 299716,
+            "conclusive_excluded_history": 155434,
+            "feature_eligible": 731064,
+            "retained": 451267,
+            "retained_coverage": 0.4377917693397233,
+            "censored_fraction": 0.41141562700091194
+          }
+        },
+        "0.0005": {
+          "train": {
+            "observed_side_candidates": 899978,
+            "sampled_side_candidates": 80612,
+            "density": 0.08957107840413876,
+            "outcomes": {
+              "censored": 22630,
+              "stop_loss": 43816,
+              "take_profit": 14166
+            },
+            "warmup_excluded_all_outcomes": 10088,
+            "conclusive_excluded_history": 7270,
+            "feature_eligible": 70524,
+            "retained": 50712,
+            "retained_coverage": 0.056348044063299324,
+            "censored_fraction": 0.28072743512132187
+          },
+          "validation": {
+            "observed_side_candidates": 124728,
+            "sampled_side_candidates": 5682,
+            "density": 0.04555512795843756,
+            "outcomes": {
+              "stop_loss": 1122,
+              "censored": 4461,
+              "take_profit": 99
+            },
+            "warmup_excluded_all_outcomes": 3024,
+            "conclusive_excluded_history": 597,
+            "feature_eligible": 2658,
+            "retained": 624,
+            "retained_coverage": 0.0050028862805464695,
+            "censored_fraction": 0.7851108764519535
+          },
+          "refit": {
+            "observed_side_candidates": 1030780,
+            "sampled_side_candidates": 86644,
+            "density": 0.08405673373561769,
+            "outcomes": {
+              "censored": 27340,
+              "stop_loss": 45033,
+              "take_profit": 14271
+            },
+            "warmup_excluded_all_outcomes": 13284,
+            "conclusive_excluded_history": 7904,
+            "feature_eligible": 73360,
+            "retained": 51400,
+            "retained_coverage": 0.049865150662605016,
+            "censored_fraction": 0.31554406537094315
+          }
+        },
+        "0.001": {
+          "train": {
+            "observed_side_candidates": 899978,
+            "sampled_side_candidates": 28130,
+            "density": 0.031256319598923527,
+            "outcomes": {
+              "stop_loss": 15590,
+              "censored": 7476,
+              "take_profit": 5064
+            },
+            "warmup_excluded_all_outcomes": 2998,
+            "conclusive_excluded_history": 2194,
+            "feature_eligible": 25132,
+            "retained": 18460,
+            "retained_coverage": 0.020511612506083483,
+            "censored_fraction": 0.26576608602915036
+          },
+          "validation": {
+            "observed_side_candidates": 124728,
+            "sampled_side_candidates": 1672,
+            "density": 0.013405169649156565,
+            "outcomes": {
+              "stop_loss": 334,
+              "censored": 1307,
+              "take_profit": 31
+            },
+            "warmup_excluded_all_outcomes": 854,
+            "conclusive_excluded_history": 158,
+            "feature_eligible": 818,
+            "retained": 207,
+            "retained_coverage": 0.001659611314219742,
+            "censored_fraction": 0.7816985645933014
+          },
+          "refit": {
+            "observed_side_candidates": 1030780,
+            "sampled_side_candidates": 29912,
+            "density": 0.029018801296105862,
+            "outcomes": {
+              "stop_loss": 15953,
+              "censored": 8863,
+              "take_profit": 5096
+            },
+            "warmup_excluded_all_outcomes": 3904,
+            "conclusive_excluded_history": 2363,
+            "feature_eligible": 26008,
+            "retained": 18686,
+            "retained_coverage": 0.018128019558004617,
+            "censored_fraction": 0.29630248729606845
+          }
+        }
+      },
+      "overlap": {
+        "temporal": {
+          "train": {
+            "rows": 437752,
+            "raw_uniqueness_mean": 0.00459986215068524,
+            "raw_uniqueness_min": 0.0005152224198631618,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 1963,
+            "concurrency_active_mean": 303.0905492508433
+          },
+          "validation": {
+            "rows": 12446,
+            "raw_uniqueness_mean": 0.010133695939651629,
+            "raw_uniqueness_min": 0.002459473936252442,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 422,
+            "concurrency_active_mean": 104.18884261288909
+          },
+          "refit": {
+            "rows": 451267,
+            "raw_uniqueness_mean": 0.004758581985318802,
+            "raw_uniqueness_min": 0.0005152224198631618,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 1963,
+            "concurrency_active_mean": 291.3553167361715
+          }
+        },
+        "0.0005": {
+          "train": {
+            "rows": 50712,
+            "raw_uniqueness_mean": 0.039675563888112046,
+            "raw_uniqueness_min": 0.007552973342438539,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 138,
+            "concurrency_active_mean": 28.208016660806535
+          },
+          "validation": {
+            "rows": 624,
+            "raw_uniqueness_mean": 0.18656721065148182,
+            "raw_uniqueness_min": 0.04359837505489445,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 25,
+            "concurrency_active_mean": 4.880901947386403
+          },
+          "refit": {
+            "rows": 51400,
+            "raw_uniqueness_mean": 0.041559436100178766,
+            "raw_uniqueness_min": 0.007552973342438539,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 138,
+            "concurrency_active_mean": 27.037395837345763
+          }
+        },
+        "0.001": {
+          "train": {
+            "rows": 18460,
+            "raw_uniqueness_mean": 0.10274232166065489,
+            "raw_uniqueness_min": 0.021614641931981923,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 48,
+            "concurrency_active_mean": 10.366029134296236
+          },
+          "validation": {
+            "rows": 207,
+            "raw_uniqueness_mean": 0.45491275581183005,
+            "raw_uniqueness_min": 0.11067538126371801,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 10,
+            "concurrency_active_mean": 2.1440677966101696
+          },
+          "refit": {
+            "rows": 18686,
+            "raw_uniqueness_mean": 0.10692295979351263,
+            "raw_uniqueness_min": 0.021614641931981923,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 48,
+            "concurrency_active_mean": 10.038140976420165
+          }
+        }
+      },
+      "common_validation": {
+        "support": {
+          "rows": 84,
+          "positive": 7,
+          "negative": 77,
+          "eligible": false
+        },
+        "identity_sha256": "8bea3b0fcc3cb0968ff2454218cdb5f63e88db42f6f20898985e58fabf27cfaa",
+        "cost": {
+          "0.0005": {
+            "before": 624,
+            "retained": 84,
+            "excluded": 540
+          },
+          "0.001": {
+            "before": 207,
+            "retained": 84,
+            "excluded": 123
+          }
+        }
+      }
+    },
+    {
+      "fold": "2023Q4",
+      "support": {
+        "temporal": {
+          "train": {
+            "rows": 451267,
+            "positive": 106787,
+            "negative": 344480,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 38577,
+            "positive": 6359,
+            "negative": 32218,
+            "eligible": true
+          },
+          "refit": {
+            "rows": 490276,
+            "positive": 113146,
+            "negative": 377130,
+            "eligible": true
+          }
+        },
+        "0.0005": {
+          "train": {
+            "rows": 51400,
+            "positive": 12359,
+            "negative": 39041,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 2517,
+            "positive": 413,
+            "negative": 2104,
+            "eligible": true
+          },
+          "refit": {
+            "rows": 53940,
+            "positive": 12772,
+            "negative": 41168,
+            "eligible": true
+          }
+        },
+        "0.001": {
+          "train": {
+            "rows": 18686,
+            "positive": 4484,
+            "negative": 14202,
+            "eligible": true
+          },
+          "validation": {
+            "rows": 864,
+            "positive": 141,
+            "negative": 723,
+            "eligible": false
+          },
+          "refit": {
+            "rows": 19556,
+            "positive": 4625,
+            "negative": 14931,
+            "eligible": true
+          }
+        }
+      },
+      "coverage": {
+        "temporal": {
+          "train": {
+            "observed_side_candidates": 1030780,
+            "sampled_side_candidates": 1030780,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 424079,
+              "stop_loss": 463050,
+              "take_profit": 143651
+            },
+            "warmup_excluded_all_outcomes": 299716,
+            "conclusive_excluded_history": 155434,
+            "feature_eligible": 731064,
+            "retained": 451267,
+            "retained_coverage": 0.4377917693397233,
+            "censored_fraction": 0.41141562700091194
+          },
+          "validation": {
+            "observed_side_candidates": 163738,
+            "sampled_side_candidates": 163738,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 104355,
+              "stop_loss": 49986,
+              "take_profit": 9397
+            },
+            "warmup_excluded_all_outcomes": 67516,
+            "conclusive_excluded_history": 20806,
+            "feature_eligible": 96222,
+            "retained": 38577,
+            "retained_coverage": 0.23560199831438028,
+            "censored_fraction": 0.6373291477848758
+          },
+          "refit": {
+            "observed_side_candidates": 1200270,
+            "sampled_side_candidates": 1200270,
+            "density": 1.0,
+            "outcomes": {
+              "censored": 533035,
+              "stop_loss": 514177,
+              "take_profit": 153058
+            },
+            "warmup_excluded_all_outcomes": 371124,
+            "conclusive_excluded_history": 176959,
+            "feature_eligible": 829146,
+            "retained": 490276,
+            "retained_coverage": 0.4084714272621993,
+            "censored_fraction": 0.44409591175318885
+          }
+        },
+        "0.0005": {
+          "train": {
+            "observed_side_candidates": 1030780,
+            "sampled_side_candidates": 86644,
+            "density": 0.08405673373561769,
+            "outcomes": {
+              "censored": 27340,
+              "stop_loss": 45033,
+              "take_profit": 14271
+            },
+            "warmup_excluded_all_outcomes": 13284,
+            "conclusive_excluded_history": 7904,
+            "feature_eligible": 73360,
+            "retained": 51400,
+            "retained_coverage": 0.049865150662605016,
+            "censored_fraction": 0.31554406537094315
+          },
+          "validation": {
+            "observed_side_candidates": 163738,
+            "sampled_side_candidates": 7788,
+            "density": 0.047563790934297474,
+            "outcomes": {
+              "stop_loss": 2766,
+              "censored": 4493,
+              "take_profit": 529
+            },
+            "warmup_excluded_all_outcomes": 2178,
+            "conclusive_excluded_history": 778,
+            "feature_eligible": 5610,
+            "retained": 2517,
+            "retained_coverage": 0.01537211887283343,
+            "censored_fraction": 0.5769131997945557
+          },
+          "refit": {
+            "observed_side_candidates": 1200270,
+            "sampled_side_candidates": 94692,
+            "density": 0.07889224924392012,
+            "outcomes": {
+              "censored": 32034,
+              "stop_loss": 47856,
+              "take_profit": 14802
+            },
+            "warmup_excluded_all_outcomes": 15622,
+            "conclusive_excluded_history": 8718,
+            "feature_eligible": 79070,
+            "retained": 53940,
+            "retained_coverage": 0.04493988852508186,
+            "censored_fraction": 0.33829679381573946
+          }
+        },
+        "0.001": {
+          "train": {
+            "observed_side_candidates": 1030780,
+            "sampled_side_candidates": 29912,
+            "density": 0.029018801296105862,
+            "outcomes": {
+              "stop_loss": 15953,
+              "censored": 8863,
+              "take_profit": 5096
+            },
+            "warmup_excluded_all_outcomes": 3904,
+            "conclusive_excluded_history": 2363,
+            "feature_eligible": 26008,
+            "retained": 18686,
+            "retained_coverage": 0.018128019558004617,
+            "censored_fraction": 0.29630248729606845
+          },
+          "validation": {
+            "observed_side_candidates": 163738,
+            "sampled_side_candidates": 2474,
+            "density": 0.015109504207941956,
+            "outcomes": {
+              "stop_loss": 923,
+              "censored": 1369,
+              "take_profit": 182
+            },
+            "warmup_excluded_all_outcomes": 624,
+            "conclusive_excluded_history": 241,
+            "feature_eligible": 1850,
+            "retained": 864,
+            "retained_coverage": 0.005276722568982154,
+            "censored_fraction": 0.553354890864996
+          },
+          "refit": {
+            "observed_side_candidates": 1200270,
+            "sampled_side_candidates": 32468,
+            "density": 0.027050580286102292,
+            "outcomes": {
+              "stop_loss": 16894,
+              "censored": 10295,
+              "take_profit": 5279
+            },
+            "warmup_excluded_all_outcomes": 4584,
+            "conclusive_excluded_history": 2617,
+            "feature_eligible": 27884,
+            "retained": 19556,
+            "retained_coverage": 0.01629300074149983,
+            "censored_fraction": 0.31708143402735
+          }
+        }
+      },
+      "overlap": {
+        "temporal": {
+          "train": {
+            "rows": 451267,
+            "raw_uniqueness_mean": 0.004758581985318802,
+            "raw_uniqueness_min": 0.0005152224198631618,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 1963,
+            "concurrency_active_mean": 291.3553167361715
+          },
+          "validation": {
+            "rows": 38577,
+            "raw_uniqueness_mean": 0.00554138411709154,
+            "raw_uniqueness_min": 0.0009123865404705468,
+            "raw_uniqueness_max": 0.9080578512396694,
+            "concurrency_max": 1112,
+            "concurrency_active_mean": 224.84631638621897
+          },
+          "refit": {
+            "rows": 490276,
+            "raw_uniqueness_mean": 0.004827837864640727,
+            "raw_uniqueness_min": 0.0005152224198631618,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 1963,
+            "concurrency_active_mean": 283.80717184088024
+          }
+        },
+        "0.0005": {
+          "train": {
+            "rows": 51400,
+            "raw_uniqueness_mean": 0.041559436100178766,
+            "raw_uniqueness_min": 0.007552973342438539,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 138,
+            "concurrency_active_mean": 27.037395837345763
+          },
+          "validation": {
+            "rows": 2517,
+            "raw_uniqueness_mean": 0.08494993931561111,
+            "raw_uniqueness_min": 0.017948428629760576,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 61,
+            "concurrency_active_mean": 12.728020666610508
+          },
+          "refit": {
+            "rows": 53940,
+            "raw_uniqueness_mean": 0.043667347348739415,
+            "raw_uniqueness_min": 0.007552973342438539,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 138,
+            "concurrency_active_mean": 25.525460127990616
+          }
+        },
+        "0.001": {
+          "train": {
+            "rows": 18686,
+            "raw_uniqueness_mean": 0.10692295979351263,
+            "raw_uniqueness_min": 0.021614641931981923,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 48,
+            "concurrency_active_mean": 10.038140976420165
+          },
+          "validation": {
+            "rows": 864,
+            "raw_uniqueness_mean": 0.21062504902861262,
+            "raw_uniqueness_min": 0.047450216450185205,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 22,
+            "concurrency_active_mean": 5.083496345104499
+          },
+          "refit": {
+            "rows": 19556,
+            "raw_uniqueness_mean": 0.11165423448965016,
+            "raw_uniqueness_min": 0.021614641931981923,
+            "raw_uniqueness_max": 1.0,
+            "concurrency_max": 48,
+            "concurrency_active_mean": 9.568408632966088
+          }
+        }
+      },
+      "common_validation": {
+        "support": {
+          "rows": 393,
+          "positive": 67,
+          "negative": 326,
+          "eligible": false
+        },
+        "identity_sha256": "5d692d737091d10f5580f4f9075f6dee565d54a69c4e7ac079aa3be82ef2430a",
+        "cost": {
+          "0.0005": {
+            "before": 2517,
+            "retained": 393,
+            "excluded": 2124
+          },
+          "0.001": {
+            "before": 864,
+            "retained": 393,
+            "excluded": 471
+          }
+        }
+      }
+    }
+  ],
+  "support_failures": [
+    "2023Q3:0.0005",
+    "2023Q3:0.001",
+    "2023Q3:common_validation",
+    "2023Q4:0.001",
+    "2023Q4:common_validation"
+  ],
+  "status": "stopped_insufficient_internal_support",
+  "conclusion": "Inconclusive predictability; no models fitted and no external metrics. No profit inference.",
+  "fits_consumed": 0,
+  "global_fits_consumed": 0
+}

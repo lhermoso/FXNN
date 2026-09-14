@@ -40,6 +40,7 @@ Não executar busca ilimitada até encontrar lucro.
 Pré-requisito neural/AFML integrado pelo PR #10 (`fd8ed59`). Etapa #4 possui
 [contrato executável e limites](experiments/multiyear-v1-protocol.md),
 [inventário verificável](experiments/multiyear-v1-sources.json) e auditoria de
-suporte em `python -m fxnn.data_audit`. Próxima etapa é #5, CUSUM, após validar
-esse fechamento exploratório. Bid/ask/calendário continuam bloqueios econômicos;
+suporte em `python -m fxnn.data_audit`. [Etapa #5, CUSUM](experiments/cusum-v1.md),
+executada: parada por suporte interno insuficiente, zero ajustes; previsibilidade
+inconclusiva. #6–#9 não executadas. Bid/ask/calendário continuam bloqueios econômicos;
 2024 só pode ser aberto após congelamento final na #9.

@@ -1,0 +1,7 @@
+{
+  "experiment": "cusum_v1",
+  "files": {
+    "cusum-v1.json": "096eb95e732e358edf0c2132385fe418c0b12f1054cbbf97ddeb4e072702d44d",
+    "cusum-v1-ledger.jsonl": "7d8788de40381c53b9ad7cc1612d278d87cdeed253ed64f17b346b054be02a49"
+  }
+}
