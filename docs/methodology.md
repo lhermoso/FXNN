@@ -151,3 +151,14 @@ idênticos entre folds. [Resultado](experiments/mlp-cusum-v1.md): efeito descrit
 CUSUM persistiu, sem melhoria consistente de arquitetura ou ganho sobre constante.
 20 épocas completadas sem estabilização da loss; inferência inconclusiva, seed 0
 somente. Sem alteração de features/rótulos, abertura de 2024 ou execução #6–#9.
+
+## Continuação após PR #15 — orçamento Adam igual
+
+[mlp_adam_budget_v1](experiments/mlp-adam-budget-v1.md): 9.580 atualizações por
+ajuste, derivadas do maior treino temporal anterior sem scores. 12 ajustes novos,
+global 48/1.000, saldo 952. Com orçamento igual, MLP eventos melhora temporal
+somente Q2; perde Q3/Q4 nos dois limiares. Ganho descritivo anterior não persistiu.
+Todas MLPs perdem para constante em LL/Brier externos. Eventos atingiram diagnóstico
+de estabilização de loss; temporais não, sem prova de convergência. Igualar updates
+não iguala exposição ou regularização efetiva. Inferência inconclusiva, linhas
+ativas, 2024 fechado, nenhum 2025 ou #6–#9. Histórico preservado.

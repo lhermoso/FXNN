@@ -232,3 +232,47 @@ class AdamBudgetTests(unittest.TestCase):
                 predictions.write_text('modified')
                 with self.assertRaisesRegex(ValueError, 'artifact hash mismatch'):
                     new.load_mlp(root, spec, raw)
+
+    def test_published_evidence_exact_updates_prefix_scalers_and_losses(self):
+        root = new.ROOT/'docs/experiments'
+        manifest = json.loads((root/'mlp-adam-budget-v1-evidence.json').read_text())
+        for name, expected in manifest['files'].items():
+            self.assertEqual(new.digest(root/name), expected)
+        raw = (root/'mlp-adam-budget-v1-ledger.jsonl').read_bytes()
+        self.assertTrue(raw.startswith((root/'mlp-cusum-v1-ledger.jsonl').read_bytes()))
+        records = new.verify_ledger(raw)
+        starts = [r for r in records if r['kind'] == 'fit_started' and r['experiment'] == new.EXPERIMENT]
+        ends = [r for r in records if r['kind'] == 'fit_finished' and r['experiment'] == new.EXPERIMENT]
+        self.assertEqual(len(starts), 12)
+        self.assertEqual(len(ends), 12)
+        self.assertEqual(len({s['hashes']['training_contract']['sha256'] for s in starts}), 12)
+        self.assertEqual(records[-1]['consumed_total'], 48)
+        report = json.loads((root/'mlp-adam-budget-v1.json').read_text())
+        old = json.loads((root/'mlp-cusum-v1.json').read_text())
+        self.assertEqual(report['conclusion'], new.conclusion(report['folds'], ['temporal','0.0005','0.001']))
+        self.assertEqual(report['update_budget'], new.derive_budget(old)[0])
+        self.assertEqual(report['years'], [2022, 2023])
+        self.assertFalse(report['confirmation_opened'])
+        aliases = 0
+        for f, previous in zip(report['folds'], old['folds'], strict=True):
+            for phase in ('inner','refit'):
+                for name, fit in f['phases'][phase]['fits'].items():
+                    original = previous['phases'][phase]['fits'][name]
+                    for key in ('scaler_mean_sha256','scaler_scale_sha256','weight_min','weight_max','weight_mean'):
+                        self.assertEqual(fit[key], original[key])
+                    self.assertEqual(fit['loss_curve'][:20], original['loss_curve'])
+                    self.assertEqual(fit['updates'], 9580)
+                    n, batch = fit['support']['rows'], fit['contract']['parameters']['batch_size']
+                    complete, rem = divmod(9580, (n+batch-1)//batch)
+                    self.assertEqual((fit['epochs_completed'], fit['partial_epoch_batches']), (complete, rem))
+                    self.assertEqual(fit['sample_exposures'], complete*n+rem*batch)
+                    aliases += fit['reused']
+                    start = next(s for s in starts if s['fit_id'] == fit['fit_id'])
+                    end = next(s for s in ends if s['fit_id'] == fit['fit_id'])
+                    self.assertEqual(fit['contract'], start['hashes']['training_contract'])
+                    self.assertEqual(fit['updates'], end['result']['updates'])
+        self.assertEqual(aliases, 6)
+        for ev in report['folds'][-1]['phases']['refit']['evaluations'].values():
+            self.assertEqual(ev['scores']['mlp_temporal'], ev['scores']['mlp20_temporal'])
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(new.export_evidence(root/'mlp-adam-budget-v1.json', root/'mlp-adam-budget-v1-ledger.jsonl', tmp), manifest)
