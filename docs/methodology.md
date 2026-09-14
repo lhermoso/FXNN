@@ -157,3 +157,16 @@ idênticos entre folds. [Resultado](experiments/mlp-cusum-v1.md): efeito descrit
 CUSUM persistiu, sem melhoria consistente de arquitetura ou ganho sobre constante.
 20 épocas completadas sem estabilização da loss; inferência inconclusiva, seed 0
 somente. Sem alteração de features/rótulos, abertura de 2024 ou execução #6–#9.
+
+## Controles pareados após reconstrução de sessão
+
+[session_controls_v1](experiments/session-controls-v1.md): 16 ajustes novos,
+8 constantes próprias CUSUM e 8 logísticas com C=N_temporal/N_event. Ledger
+87→103/1.000. Igualar penalização L2 relativa preservou ganho CUSUM frente à
+logística temporal nos três externos, com mudanças mínimas frente ao original;
+essa diferença de L2 perdeu sustentação como explicação material do ganho.
+Prior próprio piorou Q2 e melhorou Q3/Q4. Logísticas original/equivalente
+perderam para constante própria em Q2/Q4 e ganharam só Q3, nos dois h.
+Sem contribuição informativa estável demonstrada; inferência continua mista.
+Controles anteriores preservados, sem novas buscas, 2024 fechado, nenhum
+2025/#6–#9 ou lucro alegado.
