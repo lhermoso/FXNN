@@ -144,3 +144,10 @@ ajuste substituem o veto 1.000/100 somente no novo experimento; métricas pequen
 são relatadas com limitações de precisão/dependência. [Resultados](experiments/cusum-temporal-v2.md):
 ganho descritivo contra logística temporal, sem ganho consistente contra constante,
 inferência inconclusiva. Nenhuma abertura de 2024 ou uso de 2025.
+
+[mlp_cusum_v1](experiments/mlp-cusum-v1-protocol.md) mantém essas linhas na
+arquitetura MLP fixa, com reutilização verificável de controles e de treinos
+idênticos entre folds. [Resultado](experiments/mlp-cusum-v1.md): efeito descritivo
+CUSUM persistiu, sem melhoria consistente de arquitetura ou ganho sobre constante.
+20 épocas completadas sem estabilização da loss; inferência inconclusiva, seed 0
+somente. Sem alteração de features/rótulos, abertura de 2024 ou execução #6–#9.
