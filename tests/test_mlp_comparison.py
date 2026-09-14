@@ -183,3 +183,50 @@ class MLPComparisonTests(unittest.TestCase):
             self.assertEqual(alias['contract'], original['hashes']['training_contract'])
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual(export_evidence(root/'mlp-cusum-v1.json', root/'mlp-cusum-v1-ledger.jsonl', tmp, EXPERIMENT), manifest)
+
+    def test_control_artifact_and_ledger_guards_without_market_data(self):
+        import shutil
+        from fxnn.cusum_evidence import verify_ledger
+        from fxnn.data_audit import digest
+        from fxnn.fit_ledger import _hash
+        from fxnn import mlp_comparison as module
+        spec, _ = load_contract()
+        source = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for folder in ('fxnn', 'configs', 'docs/experiments', 'controls'):
+                (root/folder).mkdir(parents=True, exist_ok=True)
+            for name in ('cusum.py', 'cusum_continuation.py', 'cusum_research.py', 'data_audit.py',
+                         'features.py', 'indexed.py', 'labeling.py', 'protocol.py', 'research.py', 'temporal.py'):
+                shutil.copy(source/'fxnn'/name, root/'fxnn'/name)
+            for name in ('configs/cusum_temporal_v2.json', 'docs/experiments/cusum-temporal-v2-protocol.md'):
+                shutil.copy(source/name, root/name)
+            control = root/'controls'
+            predictions = control/'predictions.csv'
+            predictions.write_text('fold,phase,universe,entry_index,side,entry_epoch,y,temporal,constant,cusum\n')
+            report = json.loads((source/'docs/experiments/cusum-temporal-v2.json').read_text())
+            report['predictions_sha256'] = digest(predictions)
+            report_path = control/'report.json'
+            report_path.write_text(json.dumps(report))
+            shutil.copy(report_path, root/'docs/experiments/cusum-temporal-v2.json')
+            spec = {**spec, 'controls_report_sha256': digest(report_path),
+                    'controls_predictions_sha256': digest(predictions)}
+            ledger = FitLedger(root/'ledger.jsonl')
+            ledger.initialize(0, {'synthetic': True})
+            missing = ledger.path.read_bytes()
+            ledger.start_run(old.EXPERIMENT, 24, {'synthetic': True})
+            ledger.finish_run(old.EXPERIMENT, 'completed', {'report_sha256': digest(report_path)})
+            raw = ledger.path.read_bytes()
+            records = verify_ledger(raw)
+            duplicate = {**records[-1], 'sequence': len(records), 'previous': records[-1]['sha256']}
+            duplicate.pop('sha256')
+            duplicate['sha256'] = _hash(duplicate)
+            duplicated = raw + (json.dumps(duplicate)+'\n').encode()
+            with patch.object(module, 'ROOT', root):
+                self.assertEqual(module.load_controls(control, spec, raw)[0], report)
+                for invalid in (missing, duplicated):
+                    with self.assertRaisesRegex(ValueError, 'linked to canonical ledger'):
+                        module.load_controls(control, spec, invalid)
+                predictions.write_text('tampered\n')
+                with self.assertRaisesRegex(ValueError, 'artifact hash mismatch'):
+                    module.load_controls(control, spec, raw)

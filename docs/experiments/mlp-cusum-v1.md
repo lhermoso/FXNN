@@ -56,7 +56,7 @@ N = candidatos por lado; não observações independentes. Métodos de cada univ
 
 ## Resposta à pergunta científica
 
-A MLP fixa não demonstrou melhoria consistente sobre logística e perdeu para constante em log-loss e Brier em todos os externos de todos os universos. O efeito descritivo da amostragem persistiu: MLP de eventos superou MLP temporal em log-loss nos três externos, com Brier médio menor, separadamente nos dois limiares. Isso não estabelece valor das features nem superioridade inferencial.
+A MLP fixa não demonstrou melhoria consistente sobre logística e perdeu para constante em log-loss e Brier em todos os externos de todos os universos. O efeito descritivo da amostragem persistiu: MLP de eventos superou MLP temporal em log-loss nos três externos, com Brier médio menor, separadamente nos dois limiares. Isso não estabelece valor das features nem superioridade inferencial. Esse contraste mistura amostragem com quantidades diferentes de atualizações Adam e regularização efetiva: são ganhos do procedimento fixo de 20 épocas, sem isolar mecanismo causal ou demonstrar persistência independente da otimização. Ver tabela de atualizações e ressalva abaixo.
 
 No temporal completo, MLP melhorou logística somente em Q2. Nos eventos h=0,0005, melhorou logística de eventos somente em Q2; em h=0,001, perdeu nos três externos. Nenhuma MLP venceu constante em log-loss ou Brier. Os 12 ajustes completaram épocas sem falha técnica, mas todos ficaram em training_loss_not_stabilized. Resultado vale para procedimento de 20 épocas e seed 0; não para redes neurais convergidas em geral.
 
@@ -171,7 +171,7 @@ Regra congelada: LL menor nos três externos e média dos deltas Brier ≤0. Res
 | 2023Q4:refit:0.0005 | 53940 / 12772 | succeeded | 20 / 1060 | training_loss_not_stabilized |
 | 2023Q4:refit:0.001 | 19556 / 4625 | succeeded | 20 / 400 | training_loss_not_stabilized |
 
-Completar 20 épocas não prova convergência. Diagnóstico usa apenas diferença absoluta entre duas últimas losses de treino <1e-4; não altera treinamento nem seleção. Curvas completas, pesos e hashes do scaler/contrato no JSON. Batch size igual à regra congelada não iguala quantidade de atualizações nem regularização efetiva entre amostras de tamanhos diferentes.
+Completar 20 épocas não prova convergência. No caminho `partial_fit`, scikit-learn não emite `ConvergenceWarning` por atingir limite de iterações; capturar esse aviso é proteção defensiva, não teste de convergência executado. O diagnóstico de otimização publicado é exclusivamente a variação de loss pré-registrada, além das verificações de finitude. Diagnóstico usa apenas diferença absoluta entre duas últimas losses de treino <1e-4; não altera treinamento nem seleção. Curvas completas, pesos e hashes do scaler/contrato no JSON. Batch size igual à regra congelada não iguala quantidade de atualizações nem regularização efetiva entre amostras de tamanhos diferentes.
 
 ## Cobertura, censura e dependência
 
@@ -206,4 +206,4 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREAD
 
 SHA-256 das previsões locais: `1d48f789c4f6c11759e79c7adff16625e14c4504e5429ce2673ab9c9fcb0b4d2`. Caminho: `output/mlp_cusum_v1/predictions.csv`. Fontes, versões e SHA executado constam no relatório e em cada tentativa do ledger.
 
-Testes sintéticos completos, compileall e git diff --check são executados na entrega. Revisão independente e CI do SHA final registrados no PR; nenhum merge automático.
+103 testes sintéticos completos, compileall e git diff --check são executados na entrega. Revisão independente e CI do SHA final registrados no PR; nenhum merge automático.
