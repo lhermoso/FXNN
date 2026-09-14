@@ -73,3 +73,15 @@ Manter causalidade, expurgo, buffer, política de lacunas e ledger global de aju
 Manter duas linhas não autoriza abrir confirmação duas vezes nem escolher uma
 vencedora retrospectivamente. O resultado anterior permanece inconclusivo, e
 nenhuma nova execução foi realizada ao registrar esta decisão.
+
+## Continuação após PRs #12/#13 — cusum_temporal_v2
+
+[Pré-registro](experiments/cusum-temporal-v2-protocol.md) substitui apenas nesta
+continuação a guarda operacional 1.000/100 por condições técnicas explícitas,
+sem alegar poder estatístico. Dois limiares fixos, avaliações pareadas separadas,
+sem seleção entre populações. Histórico multiyear_v1/cusum_v1 preservado.
+[Execução](experiments/cusum-temporal-v2.md): 24 ajustes, total 24/1.000.
+Ambos CUSUM melhoram log-loss sobre logística temporal nos três externos;
+ambos perdem para constante em Q2/Q4. Ganho descritivo não estabelece
+superioridade inferencial nem lucro. Temporal e CUSUM seguem ativos;
+2024 fechado, nenhum 2025 ou avanço para #6–#9.

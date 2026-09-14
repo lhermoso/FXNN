@@ -1,0 +1,8 @@
+{
+  "experiment": "cusum_temporal_v2",
+  "kind": "exploratory_paired_cusum_temporal",
+  "parent_protocol_sha256": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+  "thresholds": [0.0005, 0.001],
+  "max_model_fits": 24,
+  "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl"
+}

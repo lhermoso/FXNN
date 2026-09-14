@@ -1,0 +1,7 @@
+{
+  "experiment": "cusum_temporal_v2",
+  "files": {
+    "cusum-temporal-v2.json": "8464f04181d96f778e20fc0b321252b84e7546f4edc9f24d308111a7cbcd79e9",
+    "cusum-temporal-v2-ledger.jsonl": "44aa83015cf75b4477fb4e778231789f7d47c9214eb25803e060ea2b373f627e"
+  }
+}

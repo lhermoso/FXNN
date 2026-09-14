@@ -49,3 +49,9 @@ de suporte e desenho de avaliação comum antes de novos ajustes. O corte 1.000/
 não constitui evidência para descartar CUSUM. #6–#9 não executadas.
 Bid/ask/calendário continuam bloqueios econômicos;
 2024 só pode ser aberto após congelamento final na #9.
+
+Continuação autorizada executada em [cusum_temporal_v2](experiments/cusum-temporal-v2.md):
+24 ajustes, limiares separados comparados ao temporal e constante nas mesmas
+identidades. Ganho descritivo contra logística temporal; contra constante,
+resultado misto. Inferência inconclusiva. Ambas linhas permanecem ativas;
+#6–#9 continuam não executadas, confirmação 2024 fechada.

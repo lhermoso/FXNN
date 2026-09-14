@@ -136,3 +136,11 @@ paralelo ao controle temporal. O piso 1.000/100 não teve cálculo de poder
 estatístico apresentado; sua adequação e a interseção de avaliação serão revistas
 em novo protocolo antes de novos ajustes, preservando a execução histórica.
 Confirmação 2024 continua fechada.
+
+A [continuação exploratória cusum_temporal_v2](experiments/cusum-temporal-v2-protocol.md)
+foi pré-registrada após conhecer suporte de v1: mantém os dois limiares separados,
+sem interseção obrigatória ou ranking entre populações. Condições técnicas de
+ajuste substituem o veto 1.000/100 somente no novo experimento; métricas pequenas
+são relatadas com limitações de precisão/dependência. [Resultados](experiments/cusum-temporal-v2.md):
+ganho descritivo contra logística temporal, sem ganho consistente contra constante,
+inferência inconclusiva. Nenhuma abertura de 2024 ou uso de 2025.
