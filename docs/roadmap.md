@@ -61,3 +61,14 @@ Continuação neural autorizada: [mlp_cusum_v1](experiments/mlp-cusum-v1.md).
 descritivo CUSUM persistiu na MLP, sem ganho contra constante. Sem estabilização
 da loss nas 20 épocas fixas; não extrapolar para outras inicializações ou redes
 convergidas. Temporal e CUSUM seguem ativos, #6–#9 não executadas, 2024 fechado.
+
+## Continuação após PR #15 — orçamento Adam igual
+
+[mlp_adam_budget_v1](experiments/mlp-adam-budget-v1.md): 9.580 atualizações por
+ajuste, derivadas do maior treino temporal anterior sem scores. 12 ajustes novos,
+global 48/1.000, saldo 952. Com orçamento igual, MLP eventos melhora temporal
+somente Q2; perde Q3/Q4 nos dois limiares. Ganho descritivo anterior não persistiu.
+Todas MLPs perdem para constante em LL/Brier externos. Eventos atingiram diagnóstico
+de estabilização de loss; temporais não, sem prova de convergência. Igualar updates
+não iguala exposição ou regularização efetiva. Inferência inconclusiva, linhas
+ativas, 2024 fechado, nenhum 2025 ou #6–#9. Histórico preservado.
