@@ -72,7 +72,7 @@ class FitLedger:
     def consumed(self):
         return self._consumed(self.records())
 
-    def start_run(self, experiment, max_fits, hashes):
+    def start_run(self, experiment, max_fits, hashes, *, independent_failures=False):
         if type(max_fits) is not int or max_fits <= 0 or not hashes:
             raise ValueError('Run requires positive fit budget and hashes')
         with self._locked() as (stream, records):
@@ -86,8 +86,9 @@ class FitLedger:
                 raise ValueError('Unfinished research run blocks new budget reservation')
             if self._consumed(records) + max_fits > 1000:
                 raise ValueError('Insufficient global model fit budget')
+            policy = {'independent_failures': True} if independent_failures else {}
             self._append(stream, records, 'run_started', experiment=experiment,
-                         max_fits=max_fits, hashes=hashes)
+                         max_fits=max_fits, hashes=hashes, **policy)
 
     def start_fit(self, experiment, fit_id, fold, parameters, hashes):
         with self._locked() as (stream, records):
@@ -97,7 +98,8 @@ class FitLedger:
                 raise ValueError('No active experiment')
             fits = [r for r in records if r['kind'] == 'fit_started' and r['experiment'] == experiment]
             completed = {r['fit_id'] for r in records if r['kind'] == 'fit_finished'
-                         and r['experiment'] == experiment and r['status'] == 'succeeded'}
+                         and r['experiment'] == experiment
+                         and (r['status'] == 'succeeded' or runs[0].get('independent_failures', False))}
             if any(r['fit_id'] not in completed for r in fits):
                 raise ValueError('Failed or unfinished fit stops experiment')
             if any(r['fit_id'] == fit_id for r in fits):
