@@ -23,7 +23,7 @@ def verify_ledger(raw_bytes):
 
 
 def export_evidence(report_path, ledger_path, destination, experiment='cusum_v1'):
-    if experiment not in ('cusum_v1', 'cusum_temporal_v2'):
+    if experiment not in ('cusum_v1', 'cusum_temporal_v2', 'mlp_cusum_v1'):
         raise ValueError('Unknown evidence experiment')
     stem = experiment.replace('_', '-')
     report_bytes = Path(report_path).read_bytes()
@@ -64,7 +64,7 @@ def main():
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--ledger', type=Path, required=True)
     parser.add_argument('--destination', type=Path, required=True)
-    parser.add_argument('--experiment', default='cusum_v1', choices=['cusum_v1', 'cusum_temporal_v2'])
+    parser.add_argument('--experiment', default='cusum_v1', choices=['cusum_v1', 'cusum_temporal_v2', 'mlp_cusum_v1'])
     args = parser.parse_args()
     print(json.dumps(export_evidence(args.report, args.ledger, args.destination, args.experiment), indent=2))
 
