@@ -58,4 +58,3 @@ class FixedUpdates:
 
     def predict(self, X):
         return self.model.predict_proba(self.scaler.transform(X))[:, 1] if len(X) else np.empty(0)
-
