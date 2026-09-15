@@ -1,0 +1,61 @@
+{
+  "experiment": "volatility_barriers_v1",
+  "kind": "causal_volatility_tasks",
+  "source_years": [
+    2022,
+    2023
+  ],
+  "parent_protocol_sha256": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+  "thresholds": [
+    0.0005,
+    0.001
+  ],
+  "max_model_fits": 48,
+  "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl",
+  "expected_prior_fits": 103,
+  "ledger_before_sha256": "3e9ed64b3307b346e0108e8710ceb8031d93645b4504065f5de6ef76f058a2d1",
+  "history_buffer": 1941,
+  "horizon_open_minutes": 4320,
+  "censor_from_missing_minutes": 15,
+  "volatility": {
+    "lag": 1440,
+    "window": 500,
+    "span": 100,
+    "minimum": 100
+  },
+  "daily_return": "close_endpoint / close_exact_1440_open_minute_anchor - 1",
+  "tasks": {
+    "fixed": {
+      "tp_price": 0.005,
+      "sl_price": 0.002
+    },
+    "dynamic": {
+      "tp_multiple": 2.5,
+      "sl_multiple": 1.0
+    }
+  },
+  "logistic": {
+    "C": 1.0,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 1000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": 0,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.4.6",
+    "sklearn": "1.8.0"
+  },
+  "weights_clock": "scheduled_open_minutes_realized_exit",
+  "next_stage_task": "dynamic",
+  "confirmation_opened": false
+}
