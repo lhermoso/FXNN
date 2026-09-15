@@ -170,3 +170,31 @@ perderam para constante própria em Q2/Q4 e ganharam só Q3, nos dois h.
 Sem contribuição informativa estável demonstrada; inferência continua mista.
 Controles anteriores preservados, sem novas buscas, 2024 fechado, nenhum
 2025/#6–#9 ou lucro alegado.
+
+## Contrato anterior à reconstrução de sessão — PR #16, orçamento Adam igual
+
+[mlp_adam_budget_v1](experiments/mlp-adam-budget-v1.md): 9.580 atualizações por
+ajuste, derivadas do maior treino temporal anterior sem scores. 12 ajustes novos,
+global 48/1.000, saldo 952. Com orçamento igual, MLP eventos melhora temporal
+somente Q2; perde Q3/Q4 nos dois limiares. Ganho descritivo anterior não persistiu.
+Todas MLPs perdem para constante em LL/Brier externos. Eventos atingiram diagnóstico
+de estabilização de loss; temporais não, sem prova de convergência. Igualar updates
+não iguala exposição ou regularização efetiva. Inferência inconclusiva, linhas
+ativas, 2024 fechado, nenhum 2025 ou #6–#9. Histórico preservado.
+
+## Integração e continuação autorizadas em 15/09/2026
+
+Léo autorizou integrar a pesquisa de sessão e executar a sequência restante
+#6–#9, substituindo as reservas de autorização dessas etapas. Cada experimento
+novo continua exigindo protocolo, configuração e código registrados antes de
+abrir novos resultados ou ajustar modelos. Confirmar em 2024 exige congelar
+primeiro o pipeline completo e executar uma única avaliação; não retunar depois.
+2025 não é necessário à sequência planejada e permanece fora das execuções.
+
+Os protocolos e relatórios históricos acima preservam o escopo de suas datas;
+menções a ausência de autorização de merge não descrevem esta autorização nova.
+[session_stability_v1](experiments/session-stability-v1.md) permanece congelado,
+sem novos fits: mudança de distribuição e associações familiares instáveis,
+diferenças pré-entrada entre conclusivos/censurados, sem mecanismo causal
+exclusivo nem contribuição preditiva estável demonstrada. Ledger na integração:
+103/1.000. Nenhuma evidência de lucro; resultados negativos preservados.

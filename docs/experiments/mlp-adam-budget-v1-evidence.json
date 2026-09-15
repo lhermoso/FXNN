@@ -1,0 +1,7 @@
+{
+  "experiment": "mlp_adam_budget_v1",
+  "files": {
+    "mlp-adam-budget-v1.json": "3b46ec818c0f2fc7c1eedbe67fc4db4f8648efd5fa27d65c16e36ae13a4522dd",
+    "mlp-adam-budget-v1-ledger.jsonl": "f702acb00846d44ea0a17c34b4451c261437e64b1083afa0c9fff4929c42be1e"
+  }
+}
