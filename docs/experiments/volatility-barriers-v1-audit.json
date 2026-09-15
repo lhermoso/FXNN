@@ -1,0 +1,59 @@
+{
+  "experiment": "volatility_barriers_v1",
+  "preregistration_commit": "55b9da02f69c26fb41f994c1cf39fde4f245e046",
+  "data_manifest_sha256": "f884af4bdc922f048ac78bfe8228af2cb9965dd722864029787c38281c8dbc5b",
+  "dataset_report_sha256": "384b51b38be2d4bd1b573ccd86ba68a2cf6ca2028d9732edd73f0b30d8c5f1f5",
+  "models_report_sha256": "b57ce52754dbd38d97567a5cbd2a05d109eb182efdcc48e10b89ab75a1bb4412",
+  "ledger_before_sha256": "3e9ed64b3307b346e0108e8710ceb8031d93645b4504065f5de6ef76f058a2d1",
+  "ledger_after_sha256": "430161fa2aa56aa0a653f527f0b3467bee19b972b4a2591345d1a3e271f4e1d7",
+  "canonical_ledger_sha256": "430161fa2aa56aa0a653f527f0b3467bee19b972b4a2591345d1a3e271f4e1d7",
+  "fits_before": 103,
+  "fits_after": 141,
+  "new_fits": 38,
+  "max_new_fits": 48,
+  "fits_failed": 0,
+  "dataset_replay": {
+    "arrays_exact": 114,
+    "report_exact": true,
+    "new_fits": 0
+  },
+  "model_replay": {
+    "probabilities_exact": 1755074,
+    "metrics_exact": true,
+    "new_fits": 0
+  },
+  "confirmation_opened": false,
+  "source_input_hashes": {
+    "versioned_source_inventory": "723687f91aee8c6d2de83026014c5ea67650f95720fb3343d2428d2044f2aa5c",
+    "EURUSD_2022_m1_bid_utc.csv": "c7cb59048e78a1c66e4da3abca24cd2f25d358001cf6f56a05becf9a5af10602",
+    "EURUSD_2022_manifest.json": "931d66e0023226ba1b653e718f8a591ee04e826207091273a515a69ee781a34b",
+    "EURUSD_2023_m1_bid_utc.csv": "7825afc1008e3eb1fc448185049f88861d6456e01c92951da653762749d8cf67",
+    "EURUSD_2023_manifest.json": "d114ee694efda9170edd0941d6f3691ba0ec3bbe5fe7e9f573389b11077b2bba"
+  },
+  "artifacts": {
+    "volatility_dataset_v1/observed.npz": {
+      "sha256": "8ab0207207e2f9712171c2c05317c24064170e38898ef92229a743380f886e74",
+      "bytes": 125575412
+    },
+    "volatility_dataset_v1/fixed/dataset.npz": {
+      "sha256": "831786f411f5228e0732c3525fa1c3ae887680acaa602c595a300eac0d9c31e0",
+      "bytes": 107108463
+    },
+    "volatility_dataset_v1/fixed/candidates.npz": {
+      "sha256": "b1e87be778887f7517e6b4959a2435b809a5536fbf17b00a7525d6043d5fb65c",
+      "bytes": 19446162
+    },
+    "volatility_dataset_v1/dynamic/dataset.npz": {
+      "sha256": "f30450ee33189e225882ca96269036e9d13f9935022e1431be2b47fe98a091d3",
+      "bytes": 109437423
+    },
+    "volatility_dataset_v1/dynamic/candidates.npz": {
+      "sha256": "1db07bb05c80da10a42998874c18cc8bfa588fb2aabd2958684461187d4d55e5",
+      "bytes": 37420654
+    }
+  },
+  "support_csv_sha256": "0b84272499b7b63bf34e81c91d25cd3f4629dbaa220bc2d0e11c1fd3a257a8c5",
+  "full_aggregate_report_location": "output/volatility_dataset_v1/report.json",
+  "full_aggregate_report_bytes": 10172319,
+  "publication": "Aggregates only; full reports, model states, predictions and observations remain local."
+}
