@@ -1,0 +1,1105 @@
+{
+  "manifest": {
+    "config": {
+      "experiment": "session_dataset_v1",
+      "kind": "dataset_rebuild_no_fits",
+      "parent_protocol_sha256": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+      "source_years": [
+        2022,
+        2023
+      ],
+      "calendar": "Sunday 17:00 through Friday 17:00 America/New_York; UTC timestamps; historical DST",
+      "horizon_open_minutes": 4320,
+      "censor_from_missing_minutes": 15,
+      "feature_history": "241 observed candles; reset on gaps of at least 15 open minutes; no fill",
+      "thresholds": [
+        0.0005,
+        0.001
+      ],
+      "new_model_fits": 0,
+      "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl"
+    },
+    "hashes": {
+      "config": "69d8685065c36a1007631114bf960d93f5ee403f5fba141761ce59aaafaa7590",
+      "contract": "cc30aa9ab4866ab1670d345dc22fd1f0e5ef36670287d0de3ebb83a25bb271d6",
+      "parent": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+      "code_sha": "e006d04a116d52f194c233dadf845943feb562a0",
+      "sources": {
+        "__init__.py": "8f333b42f8d9c3a446346523957b930f28e3db7737cdcab330f9644956b03d3f",
+        "__main__.py": "2c44d7ba850712c191bd91dfbc842187c5c6358a5bd8e8ed349f76e0d6bd8a02",
+        "afml.py": "d9e81dc00d19a6da7e413347d7919b1dc24c8871a7736ae90d7a09295e158bc1",
+        "audit.py": "1302be554342e5e02d4207356b56412e21e36877448830c4cfd586b0f3a39dbd",
+        "cusum.py": "059990a179d671fc2629a7568dfe2ca258fcf181769f15ce1be9990fd34601b7",
+        "cusum_continuation.py": "197db5c24d4162117145bc972d306dea7f28a2ee1b60d957a50f8e6bdde9d50e",
+        "cusum_evidence.py": "67052820f38c0d1a9b1e415a61b81fc1e730ffe058f64d0498b830097dd818a4",
+        "cusum_research.py": "2f89ff3075b3e7e13bf08076c7bad69294e101b0d7e6fb036f97c23368dfb91e",
+        "data_audit.py": "fa0d25f58cd65497892eb38f6e0e89bdb7be3f57dc6575b24e437fe2cc89e8f5",
+        "features.py": "e477d63f7ef55fe878c0853bbe6958931810b1b406bae0508470e6125f95366e",
+        "fit_ledger.py": "260c35e48587577feb75b9478d8e8bce127d7b65cc981895d5ff7fe1c21b149a",
+        "fracdiff.py": "d5d94bd965f4072f0e6566212b7537104b626f3318f5fb203ab993692f051527",
+        "indexed.py": "80dfb4f0d7fd86faceb8647fd217078f4403c7eb9e9a366db81b54ecd8df357b",
+        "labeling.py": "fc89201c8a847e2981ea2ec68788f491cf621f30864caa2ea4a1e40fd2ee7362",
+        "mlp_comparison.py": "86721e5f4ac833e11a5b78faf65902413819a4dfefaa040837f2171b4c649f9b",
+        "neural.py": "06bbd19e548ea401d8cc9196c2db5f4f574800f229364b5d1dc1c5404bbdce28",
+        "protocol.py": "897f97bdd7f9098442c24528fa622b42165cd6b577576aea910b116ed1df8851",
+        "research.py": "470ed6eead02f1d7f0156b35d3f19fa6db56497256c8f5c854d24b9bf60440b8",
+        "session_clock.py": "51342c88894b9146dcd4e0735a66efb73684d5cf98dc3d98b1fb831b62f3493f",
+        "session_data.py": "e83e87d53a45235bdebde2cb7fd3c63d9ab7179dcc974523103774569d113ce3",
+        "session_dataset.py": "9f9d4b8f8166a2f70c32215752d97e220f61731f21aa4aab99f31a311f8742ea",
+        "temporal.py": "d14d3ecc3996906d32ddba7e78bcf8f835f75a5e90d4eaa5b9672b551b8d4823"
+      },
+      "ledger": "f702acb00846d44ea0a17c34b4451c261437e64b1083afa0c9fff4929c42be1e",
+      "historical_audit": "0c11ff686668a2f26347c889b9489b6e9b33bfde54384c7c1d3f532b9b849548"
+    },
+    "input_hashes": {
+      "versioned_source_inventory": "723687f91aee8c6d2de83026014c5ea67650f95720fb3343d2428d2044f2aa5c",
+      "EURUSD_2022_m1_bid_utc.csv": "c7cb59048e78a1c66e4da3abca24cd2f25d358001cf6f56a05becf9a5af10602",
+      "EURUSD_2022_manifest.json": "931d66e0023226ba1b653e718f8a591ee04e826207091273a515a69ee781a34b",
+      "EURUSD_2023_m1_bid_utc.csv": "7825afc1008e3eb1fc448185049f88861d6456e01c92951da653762749d8cf67",
+      "EURUSD_2023_manifest.json": "d114ee694efda9170edd0941d6f3691ba0ec3bbe5fe7e9f573389b11077b2bba"
+    },
+    "artifacts": {
+      "dataset": {
+        "sha256": "510c32501f75071c616d79d7406bc772b9e0d75c3aa10f1d6e084ca43baa05d5",
+        "bytes": 124134017,
+        "arrays": {
+          "X": {
+            "shape": [
+              1105737,
+              28
+            ],
+            "dtype": "float64"
+          },
+          "y": {
+            "shape": [
+              1105737
+            ],
+            "dtype": "int8"
+          },
+          "starts": {
+            "shape": [
+              1105737
+            ],
+            "dtype": "int64"
+          },
+          "ends": {
+            "shape": [
+              1105737
+            ],
+            "dtype": "int64"
+          },
+          "info_ends": {
+            "shape": [
+              1105737
+            ],
+            "dtype": "int64"
+          },
+          "entry_indices": {
+            "shape": [
+              1105737
+            ],
+            "dtype": "int64"
+          },
+          "sides": {
+            "shape": [
+              1105737
+            ],
+            "dtype": "int8"
+          },
+          "feature_names": {
+            "shape": [
+              28
+            ],
+            "dtype": "<U14"
+          },
+          "observed_stamps": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int64"
+          },
+          "cusum_0.0005": {
+            "shape": [
+              1105737
+            ],
+            "dtype": "bool"
+          },
+          "cusum_0.001": {
+            "shape": [
+              1105737
+            ],
+            "dtype": "bool"
+          },
+          "2023Q2_train": {
+            "shape": [
+              689952
+            ],
+            "dtype": "int64"
+          },
+          "2023Q2_validation": {
+            "shape": [
+              105770
+            ],
+            "dtype": "int64"
+          },
+          "2023Q2_refit": {
+            "shape": [
+              804307
+            ],
+            "dtype": "int64"
+          },
+          "2023Q2_test": {
+            "shape": [
+              14964
+            ],
+            "dtype": "int64"
+          },
+          "2023Q3_train": {
+            "shape": [
+              804307
+            ],
+            "dtype": "int64"
+          },
+          "2023Q3_validation": {
+            "shape": [
+              14964
+            ],
+            "dtype": "int64"
+          },
+          "2023Q3_refit": {
+            "shape": [
+              820380
+            ],
+            "dtype": "int64"
+          },
+          "2023Q3_test": {
+            "shape": [
+              106339
+            ],
+            "dtype": "int64"
+          },
+          "2023Q4_train": {
+            "shape": [
+              820380
+            ],
+            "dtype": "int64"
+          },
+          "2023Q4_validation": {
+            "shape": [
+              106339
+            ],
+            "dtype": "int64"
+          },
+          "2023Q4_refit": {
+            "shape": [
+              926669
+            ],
+            "dtype": "int64"
+          },
+          "2023Q4_test": {
+            "shape": [
+              164679
+            ],
+            "dtype": "int64"
+          }
+        }
+      },
+      "candidates": {
+        "sha256": "e5f2e3ae8250f22048acc18b6c13d6458d0dbfb7130a639c262d81d16c7dfd6b",
+        "bytes": 8929030,
+        "arrays": {
+          "starts": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "int64"
+          },
+          "outcomes": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "<U11"
+          },
+          "valid": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "bool"
+          },
+          "conclusive": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "bool"
+          },
+          "retained": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "bool"
+          },
+          "info_ends": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "int64"
+          },
+          "ends": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "int64"
+          },
+          "sides": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "int8"
+          },
+          "entry_indices": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "int64"
+          },
+          "entry_price": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "float64"
+          },
+          "exit_price": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "float64"
+          },
+          "pnl_pips": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "float64"
+          },
+          "timeout_stale_open_minutes": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "int64"
+          },
+          "cusum_0.0005": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "bool"
+          },
+          "cusum_0.001": {
+            "shape": [
+              1384174
+            ],
+            "dtype": "bool"
+          }
+        }
+      }
+    },
+    "report_sha256": "4d10d2652aefa6550b93aed5b9e90164d5a81e74a24579cab4a2ff43946aef41",
+    "schema": {
+      "feature_names": [
+        "return_5",
+        "volatility_5",
+        "range_pips_5",
+        "zscore_5",
+        "efficiency_5",
+        "return_15",
+        "volatility_15",
+        "range_pips_15",
+        "zscore_15",
+        "efficiency_15",
+        "return_60",
+        "volatility_60",
+        "range_pips_60",
+        "zscore_60",
+        "efficiency_60",
+        "return_240",
+        "volatility_240",
+        "range_pips_240",
+        "zscore_240",
+        "efficiency_240",
+        "body",
+        "upper_wick",
+        "lower_wick",
+        "hour_sin",
+        "hour_cos",
+        "weekday_sin",
+        "weekday_cos",
+        "direction"
+      ],
+      "feature_groups": {
+        "movement": [
+          0,
+          5,
+          10,
+          15
+        ],
+        "volatility": [
+          1,
+          2,
+          6,
+          7,
+          11,
+          12,
+          16,
+          17
+        ],
+        "position": [
+          3,
+          8,
+          13,
+          18
+        ],
+        "path": [
+          4,
+          9,
+          14,
+          19,
+          20,
+          21,
+          22
+        ],
+        "context": [
+          23,
+          24,
+          25,
+          26,
+          27
+        ]
+      },
+      "feature_windows_unit": "observed_candles",
+      "timestamps": "UTC epoch seconds"
+    },
+    "versions": {
+      "python": "3.13.5",
+      "numpy": "2.4.6"
+    }
+  },
+  "report": {
+    "diagnostics": {
+      "raw_observed_candles": 695263,
+      "session_observed_candles": 692087,
+      "excluded_outside_weekly_calendar": 3176,
+      "long_gap_resets": 744,
+      "tolerated_short_gap_events": 2194,
+      "synthetic_candles": 0,
+      "synthetic_entries": 0,
+      "outcomes": {
+        "stop_loss": 845422,
+        "take_profit": 315706,
+        "timeout": 936,
+        "boundary": 1,
+        "censored": 222062,
+        "ambiguous": 47
+      }
+    },
+    "all_development": {
+      "candidates": 1384174,
+      "outcomes": {
+        "stop_loss": 845422,
+        "take_profit": 315706,
+        "timeout": 936,
+        "boundary": 1,
+        "censored": 222062,
+        "ambiguous": 47
+      },
+      "feature_eligible": 1225454,
+      "retained": 1105737,
+      "positive": 304546,
+      "negative": 801191,
+      "censored_fraction": 0.16042925239167907
+    },
+    "monthly": {
+      "2022-01": {
+        "candidates": 60344,
+        "outcomes": {
+          "stop_loss": 41878,
+          "take_profit": 18419,
+          "timeout": 47
+        },
+        "feature_eligible": 59862,
+        "retained": 59862,
+        "positive": 18178,
+        "negative": 41684,
+        "censored_fraction": 0.0
+      },
+      "2022-02": {
+        "candidates": 57380,
+        "outcomes": {
+          "take_profit": 14879,
+          "stop_loss": 42315,
+          "timeout": 185,
+          "boundary": 1
+        },
+        "feature_eligible": 57380,
+        "retained": 57379,
+        "positive": 14879,
+        "negative": 42500,
+        "censored_fraction": 0.0
+      },
+      "2022-03": {
+        "candidates": 65948,
+        "outcomes": {
+          "stop_loss": 44786,
+          "take_profit": 19069,
+          "censored": 2093
+        },
+        "feature_eligible": 65236,
+        "retained": 63373,
+        "positive": 18912,
+        "negative": 44461,
+        "censored_fraction": 0.031737126220658704
+      },
+      "2022-04": {
+        "candidates": 59416,
+        "outcomes": {
+          "stop_loss": 37930,
+          "censored": 6841,
+          "take_profit": 14645
+        },
+        "feature_eligible": 57488,
+        "retained": 50647,
+        "positive": 14053,
+        "negative": 36594,
+        "censored_fraction": 0.1151373367443113
+      },
+      "2022-05": {
+        "candidates": 62784,
+        "outcomes": {
+          "stop_loss": 43009,
+          "take_profit": 16820,
+          "censored": 2955
+        },
+        "feature_eligible": 60374,
+        "retained": 57419,
+        "positive": 16085,
+        "negative": 41334,
+        "censored_fraction": 0.04706613149847095
+      },
+      "2022-06": {
+        "candidates": 62576,
+        "outcomes": {
+          "stop_loss": 41540,
+          "take_profit": 16878,
+          "censored": 4158
+        },
+        "feature_eligible": 60648,
+        "retained": 56490,
+        "positive": 16249,
+        "negative": 40241,
+        "censored_fraction": 0.06644720020455126
+      },
+      "2022-07": {
+        "candidates": 59650,
+        "outcomes": {
+          "stop_loss": 42464,
+          "take_profit": 14507,
+          "censored": 2679
+        },
+        "feature_eligible": 57490,
+        "retained": 54811,
+        "positive": 13833,
+        "negative": 40978,
+        "censored_fraction": 0.044911986588432526
+      },
+      "2022-08": {
+        "candidates": 65592,
+        "outcomes": {
+          "take_profit": 18851,
+          "stop_loss": 43564,
+          "censored": 3177
+        },
+        "feature_eligible": 63414,
+        "retained": 60237,
+        "positive": 17985,
+        "negative": 42252,
+        "censored_fraction": 0.048435784851811194
+      },
+      "2022-09": {
+        "candidates": 62356,
+        "outcomes": {
+          "stop_loss": 42744,
+          "take_profit": 16920,
+          "censored": 2692
+        },
+        "feature_eligible": 60428,
+        "retained": 57736,
+        "positive": 16434,
+        "negative": 41302,
+        "censored_fraction": 0.04317146706010649
+      },
+      "2022-10": {
+        "candidates": 59922,
+        "outcomes": {
+          "stop_loss": 42262,
+          "take_profit": 15420,
+          "censored": 2240
+        },
+        "feature_eligible": 57512,
+        "retained": 55272,
+        "positive": 14818,
+        "negative": 40454,
+        "censored_fraction": 0.0373819298421281
+      },
+      "2022-11": {
+        "candidates": 63074,
+        "outcomes": {
+          "take_profit": 19166,
+          "stop_loss": 43908
+        },
+        "feature_eligible": 63074,
+        "retained": 63074,
+        "positive": 19166,
+        "negative": 43908,
+        "censored_fraction": 0.0
+      },
+      "2022-12": {
+        "candidates": 62734,
+        "outcomes": {
+          "stop_loss": 47363,
+          "take_profit": 14718,
+          "timeout": 156,
+          "censored": 497
+        },
+        "feature_eligible": 62734,
+        "retained": 62237,
+        "positive": 14718,
+        "negative": 47519,
+        "censored_fraction": 0.007922338763668824
+      },
+      "2023-01": {
+        "candidates": 63046,
+        "outcomes": {
+          "censored": 1595,
+          "stop_loss": 45582,
+          "take_profit": 15869
+        },
+        "feature_eligible": 62082,
+        "retained": 60487,
+        "positive": 15587,
+        "negative": 44900,
+        "censored_fraction": 0.025298988040478382
+      },
+      "2023-02": {
+        "candidates": 51340,
+        "outcomes": {
+          "take_profit": 11876,
+          "stop_loss": 27931,
+          "censored": 11533
+        },
+        "feature_eligible": 43138,
+        "retained": 38075,
+        "positive": 11875,
+        "negative": 26200,
+        "censored_fraction": 0.22463965718737827
+      },
+      "2023-03": {
+        "candidates": 46292,
+        "outcomes": {
+          "take_profit": 2771,
+          "stop_loss": 13643,
+          "censored": 29878
+        },
+        "feature_eligible": 19390,
+        "retained": 8317,
+        "positive": 1538,
+        "negative": 6779,
+        "censored_fraction": 0.6454246954117342
+      },
+      "2023-04": {
+        "candidates": 39626,
+        "outcomes": {
+          "censored": 28074,
+          "stop_loss": 9939,
+          "take_profit": 1613
+        },
+        "feature_eligible": 17890,
+        "retained": 5551,
+        "positive": 586,
+        "negative": 4965,
+        "censored_fraction": 0.7084742340887297
+      },
+      "2023-05": {
+        "candidates": 46228,
+        "outcomes": {
+          "stop_loss": 10622,
+          "censored": 34801,
+          "take_profit": 805
+        },
+        "feature_eligible": 19262,
+        "retained": 5434,
+        "positive": 313,
+        "negative": 5121,
+        "censored_fraction": 0.7528121484814398
+      },
+      "2023-06": {
+        "candidates": 44028,
+        "outcomes": {
+          "stop_loss": 8765,
+          "censored": 34644,
+          "take_profit": 619
+        },
+        "feature_eligible": 18298,
+        "retained": 4411,
+        "positive": 206,
+        "negative": 4205,
+        "censored_fraction": 0.7868629054238212
+      },
+      "2023-07": {
+        "candidates": 43492,
+        "outcomes": {
+          "censored": 30711,
+          "stop_loss": 11720,
+          "take_profit": 1061
+        },
+        "feature_eligible": 19124,
+        "retained": 7197,
+        "positive": 760,
+        "negative": 6437,
+        "censored_fraction": 0.7061298629633036
+      },
+      "2023-08": {
+        "candidates": 65494,
+        "outcomes": {
+          "stop_loss": 45166,
+          "take_profit": 16082,
+          "censored": 4246
+        },
+        "feature_eligible": 63566,
+        "retained": 59320,
+        "positive": 15217,
+        "negative": 44103,
+        "censored_fraction": 0.06483036614040981
+      },
+      "2023-09": {
+        "candidates": 59064,
+        "outcomes": {
+          "stop_loss": 36922,
+          "take_profit": 11947,
+          "censored": 9863,
+          "timeout": 332
+        },
+        "feature_eligible": 56654,
+        "retained": 47039,
+        "positive": 11266,
+        "negative": 35773,
+        "censored_fraction": 0.16698835161858322
+      },
+      "2023-10": {
+        "candidates": 62924,
+        "outcomes": {
+          "stop_loss": 42260,
+          "take_profit": 15600,
+          "censored": 5064
+        },
+        "feature_eligible": 60514,
+        "retained": 55450,
+        "positive": 14958,
+        "negative": 40492,
+        "censored_fraction": 0.08047803699701227
+      },
+      "2023-11": {
+        "candidates": 63002,
+        "outcomes": {
+          "stop_loss": 42840,
+          "take_profit": 19899,
+          "timeout": 216,
+          "ambiguous": 47
+        },
+        "feature_eligible": 63002,
+        "retained": 62955,
+        "positive": 19899,
+        "negative": 43056,
+        "censored_fraction": 0.0
+      },
+      "2023-12": {
+        "candidates": 57862,
+        "outcomes": {
+          "stop_loss": 36269,
+          "take_profit": 17272,
+          "censored": 4321
+        },
+        "feature_eligible": 56894,
+        "retained": 52964,
+        "positive": 17031,
+        "negative": 35933,
+        "censored_fraction": 0.07467768137983478
+      }
+    },
+    "folds": [
+      {
+        "name": "2023Q2",
+        "support": {
+          "train": {
+            "rows": 689952,
+            "positive": 193560,
+            "negative": 496392,
+            "cusum": {
+              "0.0005": 65546,
+              "0.001": 23209
+            }
+          },
+          "validation": {
+            "rows": 105770,
+            "positive": 28990,
+            "negative": 76780,
+            "cusum": {
+              "0.0005": 8152,
+              "0.001": 2848
+            }
+          },
+          "refit": {
+            "rows": 804307,
+            "positive": 224300,
+            "negative": 580007,
+            "cusum": {
+              "0.0005": 74242,
+              "0.001": 26257
+            }
+          },
+          "test": {
+            "rows": 14964,
+            "positive": 1105,
+            "negative": 13859,
+            "cusum": {
+              "0.0005": 742,
+              "0.001": 236
+            }
+          }
+        },
+        "external_candidates": {
+          "candidates": 123894,
+          "outcomes": {
+            "censored": 92726,
+            "stop_loss": 28163,
+            "take_profit": 3005
+          },
+          "feature_eligible": 53176,
+          "retained": 14964,
+          "positive": 1105,
+          "negative": 13859,
+          "censored_fraction": 0.7484301096098278
+        }
+      },
+      {
+        "name": "2023Q3",
+        "support": {
+          "train": {
+            "rows": 804307,
+            "positive": 224300,
+            "negative": 580007,
+            "cusum": {
+              "0.0005": 74242,
+              "0.001": 26257
+            }
+          },
+          "validation": {
+            "rows": 14964,
+            "positive": 1105,
+            "negative": 13859,
+            "cusum": {
+              "0.0005": 742,
+              "0.001": 236
+            }
+          },
+          "refit": {
+            "rows": 820380,
+            "positive": 225415,
+            "negative": 594965,
+            "cusum": {
+              "0.0005": 75049,
+              "0.001": 26512
+            }
+          },
+          "test": {
+            "rows": 106339,
+            "positive": 24568,
+            "negative": 81771,
+            "cusum": {
+              "0.0005": 5267,
+              "0.001": 1733
+            }
+          }
+        },
+        "external_candidates": {
+          "candidates": 159438,
+          "outcomes": {
+            "censored": 43425,
+            "stop_loss": 89266,
+            "take_profit": 26415,
+            "timeout": 332
+          },
+          "feature_eligible": 130732,
+          "retained": 106339,
+          "positive": 24568,
+          "negative": 81771,
+          "censored_fraction": 0.2723629247732661
+        }
+      },
+      {
+        "name": "2023Q4",
+        "support": {
+          "train": {
+            "rows": 820380,
+            "positive": 225415,
+            "negative": 594965,
+            "cusum": {
+              "0.0005": 75049,
+              "0.001": 26512
+            }
+          },
+          "validation": {
+            "rows": 106339,
+            "positive": 24568,
+            "negative": 81771,
+            "cusum": {
+              "0.0005": 5267,
+              "0.001": 1733
+            }
+          },
+          "refit": {
+            "rows": 926669,
+            "positive": 249742,
+            "negative": 676927,
+            "cusum": {
+              "0.0005": 80321,
+              "0.001": 28249
+            }
+          },
+          "test": {
+            "rows": 164679,
+            "positive": 50567,
+            "negative": 114112,
+            "cusum": {
+              "0.0005": 8651,
+              "0.001": 2834
+            }
+          }
+        },
+        "external_candidates": {
+          "candidates": 175406,
+          "outcomes": {
+            "stop_loss": 116000,
+            "take_profit": 51450,
+            "censored": 7693,
+            "timeout": 216,
+            "ambiguous": 47
+          },
+          "feature_eligible": 172028,
+          "retained": 164679,
+          "positive": 50567,
+          "negative": 114112,
+          "censored_fraction": 0.04385824886263868
+        }
+      }
+    ],
+    "timeout_stale_open_minutes_max": 1,
+    "timeout_with_stale_price": 1,
+    "historical_monthly": {
+      "2022-01": {
+        "candidates": 60344,
+        "censored": 36617,
+        "ambiguous": 0,
+        "conclusive_without_history": 8752,
+        "retained": 14975,
+        "positive": 2521
+      },
+      "2022-02": {
+        "candidates": 57380,
+        "censored": 27577,
+        "ambiguous": 0,
+        "conclusive_without_history": 8791,
+        "retained": 21012,
+        "positive": 4498
+      },
+      "2022-03": {
+        "candidates": 65948,
+        "censored": 20654,
+        "ambiguous": 0,
+        "conclusive_without_history": 9787,
+        "retained": 35507,
+        "positive": 9631
+      },
+      "2022-04": {
+        "candidates": 60016,
+        "censored": 25441,
+        "ambiguous": 0,
+        "conclusive_without_history": 9025,
+        "retained": 25550,
+        "positive": 5975
+      },
+      "2022-05": {
+        "candidates": 63262,
+        "censored": 21012,
+        "ambiguous": 0,
+        "conclusive_without_history": 10256,
+        "retained": 31994,
+        "positive": 7270
+      },
+      "2022-06": {
+        "candidates": 63054,
+        "censored": 19254,
+        "ambiguous": 0,
+        "conclusive_without_history": 9854,
+        "retained": 33946,
+        "positive": 8546
+      },
+      "2022-07": {
+        "candidates": 60248,
+        "censored": 16782,
+        "ambiguous": 0,
+        "conclusive_without_history": 10078,
+        "retained": 33388,
+        "positive": 8188
+      },
+      "2022-08": {
+        "candidates": 66072,
+        "censored": 18237,
+        "ambiguous": 0,
+        "conclusive_without_history": 9363,
+        "retained": 38472,
+        "positive": 10708
+      },
+      "2022-09": {
+        "candidates": 62956,
+        "censored": 14543,
+        "ambiguous": 0,
+        "conclusive_without_history": 8116,
+        "retained": 40297,
+        "positive": 10582
+      },
+      "2022-10": {
+        "candidates": 60402,
+        "censored": 15597,
+        "ambiguous": 0,
+        "conclusive_without_history": 10261,
+        "retained": 34544,
+        "positive": 8751
+      },
+      "2022-11": {
+        "candidates": 63074,
+        "censored": 15494,
+        "ambiguous": 0,
+        "conclusive_without_history": 11021,
+        "retained": 36559,
+        "positive": 9447
+      },
+      "2022-12": {
+        "candidates": 62734,
+        "censored": 19107,
+        "ambiguous": 0,
+        "conclusive_without_history": 9176,
+        "retained": 34451,
+        "positive": 7879
+      },
+      "2023-01": {
+        "candidates": 63046,
+        "censored": 24014,
+        "ambiguous": 0,
+        "conclusive_without_history": 9351,
+        "retained": 29681,
+        "positive": 5565
+      },
+      "2023-02": {
+        "candidates": 51340,
+        "censored": 23052,
+        "ambiguous": 0,
+        "conclusive_without_history": 7853,
+        "retained": 20435,
+        "positive": 4896
+      },
+      "2023-03": {
+        "candidates": 46412,
+        "censored": 30338,
+        "ambiguous": 0,
+        "conclusive_without_history": 8064,
+        "retained": 8010,
+        "positive": 1531
+      },
+      "2023-04": {
+        "candidates": 39866,
+        "censored": 30347,
+        "ambiguous": 0,
+        "conclusive_without_history": 5687,
+        "retained": 3832,
+        "positive": 294
+      },
+      "2023-05": {
+        "candidates": 46588,
+        "censored": 35457,
+        "ambiguous": 0,
+        "conclusive_without_history": 5981,
+        "retained": 5150,
+        "positive": 299
+      },
+      "2023-06": {
+        "candidates": 44266,
+        "censored": 35589,
+        "ambiguous": 0,
+        "conclusive_without_history": 4781,
+        "retained": 3896,
+        "positive": 206
+      },
+      "2023-07": {
+        "candidates": 43612,
+        "censored": 32984,
+        "ambiguous": 0,
+        "conclusive_without_history": 5275,
+        "retained": 5353,
+        "positive": 153
+      },
+      "2023-08": {
+        "candidates": 65974,
+        "censored": 35146,
+        "ambiguous": 0,
+        "conclusive_without_history": 8861,
+        "retained": 21967,
+        "positive": 4814
+      },
+      "2023-09": {
+        "candidates": 59664,
+        "censored": 39128,
+        "ambiguous": 0,
+        "conclusive_without_history": 7506,
+        "retained": 13030,
+        "positive": 1842
+      },
+      "2023-10": {
+        "candidates": 63404,
+        "censored": 33084,
+        "ambiguous": 0,
+        "conclusive_without_history": 9039,
+        "retained": 21281,
+        "positive": 4701
+      },
+      "2023-11": {
+        "candidates": 63002,
+        "censored": 34461,
+        "ambiguous": 47,
+        "conclusive_without_history": 8270,
+        "retained": 20224,
+        "positive": 4165
+      },
+      "2023-12": {
+        "candidates": 57862,
+        "censored": 26796,
+        "ambiguous": 0,
+        "conclusive_without_history": 6396,
+        "retained": 24670,
+        "positive": 7583
+      }
+    },
+    "status": "completed",
+    "experiment": "session_dataset_v1",
+    "model_fits": 0,
+    "global_fits_consumed": 48,
+    "ledger_unchanged": true,
+    "confirmation_opened": false
+  }
+}

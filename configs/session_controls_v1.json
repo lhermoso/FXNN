@@ -1,0 +1,51 @@
+{
+  "dataset_manifest_sha256": "99447f5f8cf5bc210e575af1d7fd9daadc4c260b0d6fd4fdfe2dc314a98bc8c8",
+  "dataset_sha256": "510c32501f75071c616d79d7406bc772b9e0d75c3aa10f1d6e084ca43baa05d5",
+  "parent_protocol_sha256": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+  "thresholds": [
+    0.0005,
+    0.001
+  ],
+  "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl",
+  "weights_clock": "scheduled_open_minutes",
+  "logistic": {
+    "C": 1.0,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 1000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": 0,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.4.6",
+    "sklearn": "1.8.0"
+  },
+  "experiment": "session_controls_v1",
+  "kind": "paired_session_prior_regularization",
+  "max_model_fits": 16,
+  "expected_prior_fits": 87,
+  "C_rule": "N_temporal / N_event",
+  "logistic_source_sha256": "683755f12d707f3109e7207c60b27aec76e9a98433bb1b02617f972ccc03edb8",
+  "ledger_before_sha256": "9b06ec50cfd9afda1e0bbc890c4125fc3a419c4dacb63177144c393b7ad40645",
+  "frozen_files": {
+    "configs/session_models_v1.json": "a35934e87dfa0ceb005629f61adc5fb5b09ee865d365be8604b20a00d71855d1",
+    "docs/experiments/session-v1-audit-evidence.json": "86754060f8c60c88b5e3fd3c591cd6b0dcdef78ebc7bf61628b61a8975b4bdbf",
+    "docs/experiments/session-models-v1-evidence.json": "6efc845d0ffe2261759884e9b5ea2fd7c56878370b3d59d3dee48a8e8e71189e",
+    "docs/experiments/session-dataset-v1-evidence.json": "19605e489e951f8e671f00ba195c2e16bb8aa7e97d82ed3bb821fb6b6ac029bc",
+    "output/session_models_v1/report.json": "f3604c1a27fb8517d4ef24f74788e5994287039d87a46d7a49a4473cd66a507a",
+    "output/session_models_v1/verification.json": "040b0c38b757d39fda224159fb558c71b49be0668130cfe4e5df762609e5e031",
+    "output/session_models_v1/ledger-after.jsonl": "9b06ec50cfd9afda1e0bbc890c4125fc3a419c4dacb63177144c393b7ad40645",
+    "output/session_dataset_v1/dataset.npz": "510c32501f75071c616d79d7406bc772b9e0d75c3aa10f1d6e084ca43baa05d5",
+    "output/session_dataset_v1/manifest.json": "99447f5f8cf5bc210e575af1d7fd9daadc4c260b0d6fd4fdfe2dc314a98bc8c8",
+    "output/session_dataset_v1/candidates.npz": "e5f2e3ae8250f22048acc18b6c13d6458d0dbfb7130a639c262d81d16c7dfd6b"
+  }
+}
