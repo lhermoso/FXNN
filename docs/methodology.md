@@ -256,3 +256,21 @@ pelo externo Q2 vazio. Q3 preserva probabilidades, mas não decisões calibradas
 Replay integral de sorteios, modelos, predições e relatório passou sem novos
 fits nem alteração do ledger. Nenhuma seleção de seed, lucro alegado ou
 abertura de 2024/2025.
+
+## Etapa 9 — execução econômica bid/ask e confirmação única
+
+O [pré-registro economic_ticks_v1](experiments/economic-ticks-v1-protocol.md)
+reconstrói candles causais a partir dos ticks bid/ask HistData2022–2023 e fixa
+um primário temporal, logística ponderada C=1, threshold0,5 e unidade1000EUR.
+Todas oportunidades permanecem registradas; labels futuros não filtram as
+probabilidades operacionais. A carteira mantém uma posição, capital10000USD,
+três cenários de custo e duas políticas explícitas de incerteza. P0 inconclusivo
+não pode ser resgatado pelo cenário contrafactual P1.
+
+A [execução computacional](experiments/economic-ticks-v1-computation.md) fixa
+índice em disco, memória limitada, replay e checkpoints mensais sem reiniciar
+carteiras. Até14 ajustes novos pertencem a uma única reserva canônica. Somente
+após todos critérios técnicos, modelos finais, revisão e CI do SHA congelado
+será aberta2024 uma vez. Resultados negativos de desenvolvimento não dispensam
+confirmação tecnicamente executável.2025 permanece fora desta execução.
+Este registro é prospectivo; não constitui resultado econômico ou abertura.

@@ -1,0 +1,2961 @@
+{
+  "captured_utc": "2026-09-15T21:06:18.138827+00:00",
+  "base_sha": "04b355fe3ef8afd04ffe22b41b8ee7127497e8c9",
+  "releases": {
+    "6": {
+      "pr": 21,
+      "head_sha": "ca97ee7672dbdbb88b360a13fc4323df68680664",
+      "merge_sha": "0335d248b1451a3f821fed73c19f99b9e9b2fdad",
+      "issue": {
+        "number": 6,
+        "state": "CLOSED",
+        "url": "https://github.com/lhermoso/FXNN/issues/6"
+      },
+      "verification": "GitHub gh read this subtask"
+    },
+    "7": {
+      "pr": 22,
+      "head_sha": "106c2d3d8de62ee7f3285f817787280dd1255569",
+      "merge_sha": "9ded952a727ba539dd1c29ce6f5cae207849bf5a",
+      "issue": {
+        "number": 7,
+        "state": "CLOSED",
+        "url": "https://github.com/lhermoso/FXNN/issues/7"
+      },
+      "verification": "GitHub gh read this subtask"
+    },
+    "8": {
+      "pr": 23,
+      "head_sha": "362f6e5488376afef4da72251ba1527866d07679",
+      "merge_sha": "04b355fe3ef8afd04ffe22b41b8ee7127497e8c9",
+      "issue": {
+        "number": 8,
+        "state": "CLOSED",
+        "url": "https://github.com/lhermoso/FXNN/issues/8"
+      },
+      "verification": "GitHub gh read this subtask"
+    },
+    "19": {
+      "pr": 20,
+      "head_sha": "7436af76bceab1f81d2869ddd71121aa1ceec37b",
+      "merge_sha": "86619c2cad3768fa2133b240c08522182dc1ba42",
+      "issue": {
+        "number": 19,
+        "state": "CLOSED",
+        "url": "https://github.com/lhermoso/FXNN/issues/19"
+      },
+      "verification": "GitHub gh read this subtask"
+    }
+  },
+  "ledger": {
+    "path": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl",
+    "bytes": 2941796,
+    "sha256": "a9ac6750b4079365195e2e19c463035f35b0ac88671a6f4a5432fdc6db862bf3",
+    "event_counts": {
+      "genesis": 1,
+      "run_started": 9,
+      "run_finished": 9,
+      "fit_started": 291,
+      "fit_finished": 291
+    },
+    "fits": 291,
+    "verification": "byte_hash_and_metadata_event_count_read_only; must_rebind_atomically_at_reservation",
+    "fit_count_independently_confirmed": true
+  },
+  "stage8": {
+    "fits": 130,
+    "report": {
+      "path": "/Users/leohermoso/FXNN-issue8/output/sequential_bagging_v1/report.json",
+      "bytes": 14047531,
+      "sha256": "305cc2e0b5d857d2b6c7084bdc72be11188777656529d6e2a3833b5ac2447f90"
+    },
+    "replay": {
+      "status": "verified",
+      "model_fits": 0,
+      "ledger_unchanged": true,
+      "report_sha256": "305cc2e0b5d857d2b6c7084bdc72be11188777656529d6e2a3833b5ac2447f90"
+    },
+    "state_metadata": {
+      "path": "/Users/leohermoso/FXNN/.git/gh-workflow-suite/20260915-backlog/state/issue8-state.json",
+      "bytes": 2759,
+      "sha256": "a5bc119912e35bcc17e6d30834f85b9606b7c177a0cd461d39025fbcd039891d"
+    },
+    "preregistration_sha": "4174c9c264cbe8c701843b125d42e70e8a4f2964",
+    "aggregate_metadata_verification": "committed audit/protocol/reporting docs copied via git show base; report bytes hashed without reading model arrays"
+  },
+  "runtime": {
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "executable": "/Users/leohermoso/FXNN/.venv/bin/python",
+    "numpy": "2.4.6",
+    "sklearn": "1.8.0",
+    "tzpath": [
+      "/usr/share/zoneinfo",
+      "/usr/lib/zoneinfo",
+      "/usr/share/lib/zoneinfo",
+      "/etc/zoneinfo"
+    ],
+    "new_york_tzfile": {
+      "path": "/usr/share/zoneinfo/America/New_York",
+      "bytes": 3552,
+      "sha256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+      "resolved_path": "/private/var/db/timezone/tz/2026c.1.0/zoneinfo/America/New_York"
+    },
+    "tzdata_version_label": "system tzfile identified by content hash; no Python tzdata package",
+    "python_executable": {
+      "path": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 119424,
+      "sha256": "542c879fdc2cfe0be223e4729082bac529780d90c6d811c853de852765b35a35"
+    }
+  },
+  "budget": {
+    "consumed": 291,
+    "stage9_max": 14,
+    "prospective_max": 305,
+    "remaining": 695
+  },
+  "source": {
+    "root": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD",
+    "config_sha256": "d247e21da88adabade42bb972fbe44322f701f8bf7170904f1ee9521f0fa646b",
+    "identity": {
+      "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/identity.json",
+      "bytes": 124,
+      "sha256": "c6fdca3d24ffa31f0e7c463557a3134c858f3094085364cdca1347454876ab44"
+    },
+    "manifests": {
+      "manifest-002.json": {
+        "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/manifest-002.json",
+        "bytes": 77883,
+        "sha256": "933a647a6ff9aaa1403f6bba05864f1d093d635ba52d2c5cd820057b20009b0e",
+        "verification": "streaming_bytes_this_subtask"
+      },
+      "manifest-003.json": {
+        "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/manifest-003.json",
+        "bytes": 77883,
+        "sha256": "933a647a6ff9aaa1403f6bba05864f1d093d635ba52d2c5cd820057b20009b0e",
+        "verification": "streaming_bytes_this_subtask"
+      }
+    },
+    "months": [
+      {
+        "month_est": "202201",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/completed.json",
+          "bytes": 2844,
+          "sha256": "629918ce43aaf6fcd2a12ce6051c1357f914333bd727a8ffb7a14359ff769188",
+          "expected_sha256_from_historical_evidence": "629918ce43aaf6fcd2a12ce6051c1357f914333bd727a8ffb7a14359ff769188",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1370,
+              "sha256": "c4afd7a75e188c431af32409f60a24728759acddea202cb4642aac2bcc9dbebe"
+            },
+            "observed": {
+              "bytes": 1370,
+              "sha256": "c4afd7a75e188c431af32409f60a24728759acddea202cb4642aac2bcc9dbebe"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "5ea68f2041c65eae8ab0d5f50d7947f65b5ccd8ff776ae7a72bc23923c21f510"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "5ea68f2041c65eae8ab0d5f50d7947f65b5ccd8ff776ae7a72bc23923c21f510"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "d3a5ce6be0f4a995e56edf683ccadad83b8c938c708fd6874d401edbd36a8323"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "d3a5ce6be0f4a995e56edf683ccadad83b8c938c708fd6874d401edbd36a8323"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 8775477,
+              "sha256": "7317b7f57d87b8506b9fd19d2232588fbefd4c9362082eadec10b97742198105"
+            },
+            "observed": {
+              "bytes": 8775477,
+              "sha256": "7317b7f57d87b8506b9fd19d2232588fbefd4c9362082eadec10b97742198105"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202201/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 114166922,
+              "sha256": "743b1fb144942eed73382050e668301f5cbfac6e0c3018d9f925ef7309229bb8"
+            },
+            "observed": {
+              "bytes": 114166922,
+              "sha256": "743b1fb144942eed73382050e668301f5cbfac6e0c3018d9f925ef7309229bb8"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202202",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/completed.json",
+          "bytes": 2798,
+          "sha256": "d603e711dae8cd77643209f284daa9987550e63e35574f3004080e2b76a3f410",
+          "expected_sha256_from_historical_evidence": "d603e711dae8cd77643209f284daa9987550e63e35574f3004080e2b76a3f410",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1327,
+              "sha256": "895100a9e30cb5ef59829686ce35dca6b941e6f69f5ce05ca9928ecd7cee2447"
+            },
+            "observed": {
+              "bytes": 1327,
+              "sha256": "895100a9e30cb5ef59829686ce35dca6b941e6f69f5ce05ca9928ecd7cee2447"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "e798703d8d8907d0dcd3ff7b7181cc7bfcd0b2caf680760335f3d74f18c4f0d4"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "e798703d8d8907d0dcd3ff7b7181cc7bfcd0b2caf680760335f3d74f18c4f0d4"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "25d7050ee7c049ad6ca395c589ffa1e0014c6c39afc59c7e58525ad5eb6b8e5d"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "25d7050ee7c049ad6ca395c589ffa1e0014c6c39afc59c7e58525ad5eb6b8e5d"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 10930132,
+              "sha256": "26724eed3afc3e3e61f5954b4e3d86bc34ed3222cd26b1ea2b200b85233c9f85"
+            },
+            "observed": {
+              "bytes": 10930132,
+              "sha256": "26724eed3afc3e3e61f5954b4e3d86bc34ed3222cd26b1ea2b200b85233c9f85"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202202/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 141464703,
+              "sha256": "37e1d7c9b6c1968178fabf4b2a05b3828bd7f67a373451f09a73623085e0ea8c"
+            },
+            "observed": {
+              "bytes": 141464703,
+              "sha256": "37e1d7c9b6c1968178fabf4b2a05b3828bd7f67a373451f09a73623085e0ea8c"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202203",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/completed.json",
+          "bytes": 2889,
+          "sha256": "f98b454f934891ba06e5807c874c9399a68ef17e50a8889e8592dba929e603fe",
+          "expected_sha256_from_historical_evidence": "f98b454f934891ba06e5807c874c9399a68ef17e50a8889e8592dba929e603fe",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1412,
+              "sha256": "c2f9c623931aaa5cd55abff0d9edb7c1d6a5b2d8c9b23c379cd0b43db20ead94"
+            },
+            "observed": {
+              "bytes": 1412,
+              "sha256": "c2f9c623931aaa5cd55abff0d9edb7c1d6a5b2d8c9b23c379cd0b43db20ead94"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "958ab95a2e946f26917c710848dcd3afa4b152fff7957e27335d269ea59bd1db"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "958ab95a2e946f26917c710848dcd3afa4b152fff7957e27335d269ea59bd1db"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "e5abb7e94cfd49a6c0561fa60c0ba1b4cb27aa468d9ee911983e6173b3b42307"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "e5abb7e94cfd49a6c0561fa60c0ba1b4cb27aa468d9ee911983e6173b3b42307"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 16874192,
+              "sha256": "09720a5c40e625cb7df6c877e200f122fd0b6fd417651adb933a7849d14e504e"
+            },
+            "observed": {
+              "bytes": 16874192,
+              "sha256": "09720a5c40e625cb7df6c877e200f122fd0b6fd417651adb933a7849d14e504e"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202203/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 220597769,
+              "sha256": "cbc2f6f49a17d00ff7ed2152287958187544647a85cb9fe6269fcd8ed410bba8"
+            },
+            "observed": {
+              "bytes": 220597769,
+              "sha256": "cbc2f6f49a17d00ff7ed2152287958187544647a85cb9fe6269fcd8ed410bba8"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202204",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/completed.json",
+          "bytes": 2802,
+          "sha256": "634a9e7f5a782db7955e232601b290e03d8ef30c14442cf764f28ae8588251ce",
+          "expected_sha256_from_historical_evidence": "634a9e7f5a782db7955e232601b290e03d8ef30c14442cf764f28ae8588251ce",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1331,
+              "sha256": "bf5b30edf7c2fcb147addaab00b920d219cab1de227d0b8489b81354174a6a54"
+            },
+            "observed": {
+              "bytes": 1331,
+              "sha256": "bf5b30edf7c2fcb147addaab00b920d219cab1de227d0b8489b81354174a6a54"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "93745b2b3c143aa5d04bec2d43358d15dc68347d3c10090de31dd8d3aa878d41"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "93745b2b3c143aa5d04bec2d43358d15dc68347d3c10090de31dd8d3aa878d41"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "d4ff8738aa2531d1f799222910e5ecdefcffb46a2307a4c593fd18c564dec688"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "d4ff8738aa2531d1f799222910e5ecdefcffb46a2307a4c593fd18c564dec688"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 12842008,
+              "sha256": "5bc28e2218e72d619c263df99a0a0dfa9a19aaac71b3c71ef1c126489bcf9960"
+            },
+            "observed": {
+              "bytes": 12842008,
+              "sha256": "5bc28e2218e72d619c263df99a0a0dfa9a19aaac71b3c71ef1c126489bcf9960"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202204/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 168824443,
+              "sha256": "da2a7dd8173979cac4c349c65c54293f14282afdf4d38968cc6a40ffde51ce88"
+            },
+            "observed": {
+              "bytes": 168824443,
+              "sha256": "da2a7dd8173979cac4c349c65c54293f14282afdf4d38968cc6a40ffde51ce88"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202205",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/completed.json",
+          "bytes": 2890,
+          "sha256": "95c9d0cc4d0dcfb88dd6990ade67a9ed9d64d8a9f31c0050003fa79cd0a398c2",
+          "expected_sha256_from_historical_evidence": "95c9d0cc4d0dcfb88dd6990ade67a9ed9d64d8a9f31c0050003fa79cd0a398c2",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1413,
+              "sha256": "8e2b69b221950ce06d36c60f64e9e33c1564b84f4cbd2e4b7af8803156152e1c"
+            },
+            "observed": {
+              "bytes": 1413,
+              "sha256": "8e2b69b221950ce06d36c60f64e9e33c1564b84f4cbd2e4b7af8803156152e1c"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "dc62f6d585c587b1bd5e2664a986223468ba97992434e69dab078830f72b268a"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "dc62f6d585c587b1bd5e2664a986223468ba97992434e69dab078830f72b268a"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "29d4c0d8b1586e027a299560083f31a46aa06fd6b8ff8cf6bd25ec546eeb4b4f"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "29d4c0d8b1586e027a299560083f31a46aa06fd6b8ff8cf6bd25ec546eeb4b4f"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 16294985,
+              "sha256": "29f994b98fd6191f303acee1879acb92dbdf55bfa526a69ae6cbbe537e877857"
+            },
+            "observed": {
+              "bytes": 16294985,
+              "sha256": "29f994b98fd6191f303acee1879acb92dbdf55bfa526a69ae6cbbe537e877857"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202205/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 215686536,
+              "sha256": "7b95eb4a7e3bab08ef5406902abf3ad8e622aef55c6b978a0c8bf12c2f035883"
+            },
+            "observed": {
+              "bytes": 215686536,
+              "sha256": "7b95eb4a7e3bab08ef5406902abf3ad8e622aef55c6b978a0c8bf12c2f035883"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202206",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/completed.json",
+          "bytes": 2859,
+          "sha256": "c6489ba4baf9f3354d0da29cec286908f45fcdb0c97bd8ccd07beb94e309eef7",
+          "expected_sha256_from_historical_evidence": "c6489ba4baf9f3354d0da29cec286908f45fcdb0c97bd8ccd07beb94e309eef7",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1384,
+              "sha256": "2138b5ca4c76c33c2b08faab1a1273b360d7cc665372b1a261aca3f763becb97"
+            },
+            "observed": {
+              "bytes": 1384,
+              "sha256": "2138b5ca4c76c33c2b08faab1a1273b360d7cc665372b1a261aca3f763becb97"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "75fde1e4c36d21d8f9b3dc12bc3a990c9a3d08b34af0fd18ed20fc966d0ebd8d"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "75fde1e4c36d21d8f9b3dc12bc3a990c9a3d08b34af0fd18ed20fc966d0ebd8d"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "4041a111ec25676f4046a4f57b29a549b7b29c3128d08735e5401ce6746beb30"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "4041a111ec25676f4046a4f57b29a549b7b29c3128d08735e5401ce6746beb30"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 15727545,
+              "sha256": "79d3c5544fcb1c41ca18ef926db7e8b360cb0ea3a7db7287803e77d7189bc60e"
+            },
+            "observed": {
+              "bytes": 15727545,
+              "sha256": "79d3c5544fcb1c41ca18ef926db7e8b360cb0ea3a7db7287803e77d7189bc60e"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202206/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 206777392,
+              "sha256": "69c4749794a3d20865e462993531474950fc052a0ee6ec0f581feaf39eaaf3a3"
+            },
+            "observed": {
+              "bytes": 206777392,
+              "sha256": "69c4749794a3d20865e462993531474950fc052a0ee6ec0f581feaf39eaaf3a3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202207",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/completed.json",
+          "bytes": 2866,
+          "sha256": "d46ea81bc32fd344d25255ca0e317a0c3e39e76a7fd7bb51090f7bbcd1a8e400",
+          "expected_sha256_from_historical_evidence": "d46ea81bc32fd344d25255ca0e317a0c3e39e76a7fd7bb51090f7bbcd1a8e400",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1391,
+              "sha256": "24c054b6cbf4dc60605f341fac6d4eae257a49c966e7a0cb2aea109fefa73de5"
+            },
+            "observed": {
+              "bytes": 1391,
+              "sha256": "24c054b6cbf4dc60605f341fac6d4eae257a49c966e7a0cb2aea109fefa73de5"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "354659b0040a87fd7a535bb184525f58091e2b287c62ceb4adc4e51226e732d6"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "354659b0040a87fd7a535bb184525f58091e2b287c62ceb4adc4e51226e732d6"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "c080b617136b5a89a01629bf09f4e82e1cbc731c844de831448e128599cfb908"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "c080b617136b5a89a01629bf09f4e82e1cbc731c844de831448e128599cfb908"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 18433824,
+              "sha256": "204b0009e7a0564a750d6f5e13e28f21d8012db19dcf64c23d653f4eb85c6308"
+            },
+            "observed": {
+              "bytes": 18433824,
+              "sha256": "204b0009e7a0564a750d6f5e13e28f21d8012db19dcf64c23d653f4eb85c6308"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202207/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 244304768,
+              "sha256": "887d50405541cea1ecaab28dc7305d403b7698abd95fdc1c3bf4570b3cac90eb"
+            },
+            "observed": {
+              "bytes": 244304768,
+              "sha256": "887d50405541cea1ecaab28dc7305d403b7698abd95fdc1c3bf4570b3cac90eb"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202208",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/completed.json",
+          "bytes": 2897,
+          "sha256": "f8d27c6638a79d67f5f55c32720214101283e155f8fa01eba28a4da5d45925b8",
+          "expected_sha256_from_historical_evidence": "f8d27c6638a79d67f5f55c32720214101283e155f8fa01eba28a4da5d45925b8",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1420,
+              "sha256": "0c997852d8b5075fe7dbc0b943bdf82d5054be52fe59ef555d8553fcc90b8be7"
+            },
+            "observed": {
+              "bytes": 1420,
+              "sha256": "0c997852d8b5075fe7dbc0b943bdf82d5054be52fe59ef555d8553fcc90b8be7"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "4b4e40192223e4454b046b633fbe2e0d5f3f3483d748268d1626deb7e14f6c9e"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "4b4e40192223e4454b046b633fbe2e0d5f3f3483d748268d1626deb7e14f6c9e"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "cef29b5dbfeb5d5c89db9409944c5d26cc96e84440f7cb87bd99aaf3507c9433"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "cef29b5dbfeb5d5c89db9409944c5d26cc96e84440f7cb87bd99aaf3507c9433"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 21191558,
+              "sha256": "8bc8587d239929357869dd0e14a59f8219ae71a898df1347086c5da0f0c90900"
+            },
+            "observed": {
+              "bytes": 21191558,
+              "sha256": "8bc8587d239929357869dd0e14a59f8219ae71a898df1347086c5da0f0c90900"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202208/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 289093782,
+              "sha256": "91543e91e0a0c0beed265ade2a0c7c7a165820da07a91abd4cc44c597278348c"
+            },
+            "observed": {
+              "bytes": 289093782,
+              "sha256": "91543e91e0a0c0beed265ade2a0c7c7a165820da07a91abd4cc44c597278348c"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202209",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/completed.json",
+          "bytes": 2842,
+          "sha256": "c0bf694c67fdb008cdb57fac06f26c8ef4364e9d3aac4202bb48a685cd7eb096",
+          "expected_sha256_from_historical_evidence": "c0bf694c67fdb008cdb57fac06f26c8ef4364e9d3aac4202bb48a685cd7eb096",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1369,
+              "sha256": "7d9e01907633ec5987f7d2cda2433c00a3e2b8619b598031c3afdafc1b5d470d"
+            },
+            "observed": {
+              "bytes": 1369,
+              "sha256": "7d9e01907633ec5987f7d2cda2433c00a3e2b8619b598031c3afdafc1b5d470d"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "5efcff1a330f1b4d36943b7e598640be70acff08003e4fc7c3f22efcebf7d7a7"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "5efcff1a330f1b4d36943b7e598640be70acff08003e4fc7c3f22efcebf7d7a7"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "981e20c4a125131ba25c01a247012799985bdbe55bfa544206255ce7f8561f5a"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "981e20c4a125131ba25c01a247012799985bdbe55bfa544206255ce7f8561f5a"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 26950208,
+              "sha256": "e41270e3911ae9121472bddff9353b6646fec6d4e70f9491f3db324fd95dc671"
+            },
+            "observed": {
+              "bytes": 26950208,
+              "sha256": "e41270e3911ae9121472bddff9353b6646fec6d4e70f9491f3db324fd95dc671"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202209/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 367391797,
+              "sha256": "2ca08193579e64177d83fb931bfe96567136afd0afce6f671e32ba20512a5666"
+            },
+            "observed": {
+              "bytes": 367391797,
+              "sha256": "2ca08193579e64177d83fb931bfe96567136afd0afce6f671e32ba20512a5666"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202210",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/completed.json",
+          "bytes": 2970,
+          "sha256": "d92fe60cda15763d3cea7b3167b879b3e2b498e527156a5ae3f762fc7a7da5df",
+          "expected_sha256_from_historical_evidence": "d92fe60cda15763d3cea7b3167b879b3e2b498e527156a5ae3f762fc7a7da5df",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1482,
+              "sha256": "5abbc1f629033afd641058a64f014825003eedcbf60134a450adac424c9fa99e"
+            },
+            "observed": {
+              "bytes": 1482,
+              "sha256": "5abbc1f629033afd641058a64f014825003eedcbf60134a450adac424c9fa99e"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "cc3b84f78d4fb4fd337f48721215933bd9e8cfa173fc7d48d6ec2aac417e79f2"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "cc3b84f78d4fb4fd337f48721215933bd9e8cfa173fc7d48d6ec2aac417e79f2"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 345,
+              "sha256": "3f1a3dea7d662a51d81b9e4694a23f7e0aa45273c4f098b0f197f097088ecad4"
+            },
+            "observed": {
+              "bytes": 345,
+              "sha256": "3f1a3dea7d662a51d81b9e4694a23f7e0aa45273c4f098b0f197f097088ecad4"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 1165467,
+              "sha256": "9938a0817eef2d8b2a6738219943e2e66bc13d5e92675e86f803c21b4db713cc"
+            },
+            "observed": {
+              "bytes": 1165467,
+              "sha256": "9938a0817eef2d8b2a6738219943e2e66bc13d5e92675e86f803c21b4db713cc"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 29098409,
+              "sha256": "c62394f255595c07c51a17042f62ef1bab5002f845b89cc93f8933fafa2cf72a"
+            },
+            "observed": {
+              "bytes": 29098409,
+              "sha256": "c62394f255595c07c51a17042f62ef1bab5002f845b89cc93f8933fafa2cf72a"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202210/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 399482478,
+              "sha256": "3c3a634aba7396def1533e3241be4426c54afce891ff688fbf2a88598e789e27"
+            },
+            "observed": {
+              "bytes": 399482478,
+              "sha256": "3c3a634aba7396def1533e3241be4426c54afce891ff688fbf2a88598e789e27"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202211",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/completed.json",
+          "bytes": 2871,
+          "sha256": "d6f88d630d58a20cd56ce2b144333c79f6861f267a2ea45ee7644862fb696e3a",
+          "expected_sha256_from_historical_evidence": "d6f88d630d58a20cd56ce2b144333c79f6861f267a2ea45ee7644862fb696e3a",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1395,
+              "sha256": "bb645cf4370c747e9fe25a19809b9e173d56c5fc432585be8a43cdb78843a543"
+            },
+            "observed": {
+              "bytes": 1395,
+              "sha256": "bb645cf4370c747e9fe25a19809b9e173d56c5fc432585be8a43cdb78843a543"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "db6fecac36534dcfb73d4128f7aed08cb5db3f1a1c1d368885556147ce42e9c2"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "db6fecac36534dcfb73d4128f7aed08cb5db3f1a1c1d368885556147ce42e9c2"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 345,
+              "sha256": "6934a975c50cd91a184ff06441341ace0e5c85abda6dd3c19266b433ae57144d"
+            },
+            "observed": {
+              "bytes": 345,
+              "sha256": "6934a975c50cd91a184ff06441341ace0e5c85abda6dd3c19266b433ae57144d"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 26684812,
+              "sha256": "b5759ba75c04983afa41cac5e228efb880b1677f68164134b356407b12358811"
+            },
+            "observed": {
+              "bytes": 26684812,
+              "sha256": "b5759ba75c04983afa41cac5e228efb880b1677f68164134b356407b12358811"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202211/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 362825275,
+              "sha256": "f78692184a97135e0731feba03d5da02bf37a98d5fd70589304359804dd1471c"
+            },
+            "observed": {
+              "bytes": 362825275,
+              "sha256": "f78692184a97135e0731feba03d5da02bf37a98d5fd70589304359804dd1471c"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202212",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/completed.json",
+          "bytes": 2842,
+          "sha256": "3b12517806bed35b17eec3fcb41f8739b13dab3f8a2196ad24c5d4b67770b468",
+          "expected_sha256_from_historical_evidence": "3b12517806bed35b17eec3fcb41f8739b13dab3f8a2196ad24c5d4b67770b468",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1368,
+              "sha256": "6a74926f6e3af373ee8be8949b23931e0db64f9d2bef8de9ba3cb9e05dd2391c"
+            },
+            "observed": {
+              "bytes": 1368,
+              "sha256": "6a74926f6e3af373ee8be8949b23931e0db64f9d2bef8de9ba3cb9e05dd2391c"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "dc453debb2ed42da2eb090716ec8f4e180d4c521e52096337ae48f0b49988410"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "dc453debb2ed42da2eb090716ec8f4e180d4c521e52096337ae48f0b49988410"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 345,
+              "sha256": "7ca6abf66508d3166350a58e86f6b79c58f5d7b40dafb826c811075beac0dcc3"
+            },
+            "observed": {
+              "bytes": 345,
+              "sha256": "7ca6abf66508d3166350a58e86f6b79c58f5d7b40dafb826c811075beac0dcc3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 21051166,
+              "sha256": "f1bb9ee51d242c286dbbacac98a6a6c36cbd6a17422b6d308c5c8668c48ed801"
+            },
+            "observed": {
+              "bytes": 21051166,
+              "sha256": "f1bb9ee51d242c286dbbacac98a6a6c36cbd6a17422b6d308c5c8668c48ed801"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202212/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 285294332,
+              "sha256": "ff09a7fc7bd48ee19693155c83e0cb9c864dc2b143eb67ea4f4f09a75ac8000c"
+            },
+            "observed": {
+              "bytes": 285294332,
+              "sha256": "ff09a7fc7bd48ee19693155c83e0cb9c864dc2b143eb67ea4f4f09a75ac8000c"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202301",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/completed.json",
+          "bytes": 2892,
+          "sha256": "263cea56ae34398f3fd62bac9e6035e6375255f6e337b27fa792950c504c129a",
+          "expected_sha256_from_historical_evidence": "263cea56ae34398f3fd62bac9e6035e6375255f6e337b27fa792950c504c129a",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1415,
+              "sha256": "32ffd13cab6a7a603b77f88fbfe9b605032fb165a6e19bb16216f3ec236db8c5"
+            },
+            "observed": {
+              "bytes": 1415,
+              "sha256": "32ffd13cab6a7a603b77f88fbfe9b605032fb165a6e19bb16216f3ec236db8c5"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "269aa55ccbc633554fac16ae9145caa81137ce147c5982ff5b9835e82123c0b8"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "269aa55ccbc633554fac16ae9145caa81137ce147c5982ff5b9835e82123c0b8"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "b6e951037294740f192d6b878978914890eb84ab9837636b41e85ffc35d2004e"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "b6e951037294740f192d6b878978914890eb84ab9837636b41e85ffc35d2004e"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 18175512,
+              "sha256": "ad18725ce707f67889adbb7e63cc13daf53dbd31a1c7fca562e96775e31b322a"
+            },
+            "observed": {
+              "bytes": 18175512,
+              "sha256": "ad18725ce707f67889adbb7e63cc13daf53dbd31a1c7fca562e96775e31b322a"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202301/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 243014889,
+              "sha256": "41c2ad699367f61aa55e0a3f21f1c95bd0697a02d64f23e66b2103750d376cb5"
+            },
+            "observed": {
+              "bytes": 243014889,
+              "sha256": "41c2ad699367f61aa55e0a3f21f1c95bd0697a02d64f23e66b2103750d376cb5"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202302",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/completed.json",
+          "bytes": 2805,
+          "sha256": "58caba80913ae45dde839b363fa5ef8bf75d5aac8a67190ec9a0f5010517fba9",
+          "expected_sha256_from_historical_evidence": "58caba80913ae45dde839b363fa5ef8bf75d5aac8a67190ec9a0f5010517fba9",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1334,
+              "sha256": "fbf7858d340b0c2972f1b23e47dfbfa3403a01e4f5029d7428cc0623fed29ba6"
+            },
+            "observed": {
+              "bytes": 1334,
+              "sha256": "fbf7858d340b0c2972f1b23e47dfbfa3403a01e4f5029d7428cc0623fed29ba6"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "f2562f8427bd6eebd2a96a1ca1b05aef1716ffe121af624a622578fb3144633c"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "f2562f8427bd6eebd2a96a1ca1b05aef1716ffe121af624a622578fb3144633c"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "da1a00f0193506b61520bd66a57df15a9dfbb23274bc66f777aecbd36f0d6b80"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "da1a00f0193506b61520bd66a57df15a9dfbb23274bc66f777aecbd36f0d6b80"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 14514201,
+              "sha256": "05eee0b585d3fdbe4c783302a8cbcb7dd54ceb477a35fa1050ee7a1e9d7a222b"
+            },
+            "observed": {
+              "bytes": 14514201,
+              "sha256": "05eee0b585d3fdbe4c783302a8cbcb7dd54ceb477a35fa1050ee7a1e9d7a222b"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202302/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 195765916,
+              "sha256": "e5bfc310734af8e9c9a8d75ca19077e18acdd30b6fe4b35bb3e9d9345ebbf1b8"
+            },
+            "observed": {
+              "bytes": 195765916,
+              "sha256": "e5bfc310734af8e9c9a8d75ca19077e18acdd30b6fe4b35bb3e9d9345ebbf1b8"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202303",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/completed.json",
+          "bytes": 2855,
+          "sha256": "8da702ac30831f6a0260d71663f467cd6f4e94ab88d452e9540c9ce585399cad",
+          "expected_sha256_from_historical_evidence": "8da702ac30831f6a0260d71663f467cd6f4e94ab88d452e9540c9ce585399cad",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1380,
+              "sha256": "a562d55280e2b3e3c4b2081980d2a4662a5dd4768aad44e1aca37f21fffb81dd"
+            },
+            "observed": {
+              "bytes": 1380,
+              "sha256": "a562d55280e2b3e3c4b2081980d2a4662a5dd4768aad44e1aca37f21fffb81dd"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "929c6b274f74f0569afa1a110eddb0932d261e86fd6b210cb9da84ebef777681"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "929c6b274f74f0569afa1a110eddb0932d261e86fd6b210cb9da84ebef777681"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "152cef5e026956413b2b21826f19d721202a17d2427e8cebb2500e5aebcb6988"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "152cef5e026956413b2b21826f19d721202a17d2427e8cebb2500e5aebcb6988"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 13610560,
+              "sha256": "5610fdaa6070c1cf56830889eda70ef751a211e886bdb0912c7cc8a8d19a41af"
+            },
+            "observed": {
+              "bytes": 13610560,
+              "sha256": "5610fdaa6070c1cf56830889eda70ef751a211e886bdb0912c7cc8a8d19a41af"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202303/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 184944929,
+              "sha256": "4594217a62dc4899367bf1dc33be252188c8df146cee8afd904ca6481e9fcfad"
+            },
+            "observed": {
+              "bytes": 184944929,
+              "sha256": "4594217a62dc4899367bf1dc33be252188c8df146cee8afd904ca6481e9fcfad"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202304",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/completed.json",
+          "bytes": 2812,
+          "sha256": "6c2a54e438c7c77632ab0069c2adff6a0dd40263da8eca1e052ffb20574f0de4",
+          "expected_sha256_from_historical_evidence": "6c2a54e438c7c77632ab0069c2adff6a0dd40263da8eca1e052ffb20574f0de4",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1340,
+              "sha256": "fdd7b046b695c05d7537126a9b28357e687e043c40b4e817cd4b8bc69b76950f"
+            },
+            "observed": {
+              "bytes": 1340,
+              "sha256": "fdd7b046b695c05d7537126a9b28357e687e043c40b4e817cd4b8bc69b76950f"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "05c02896a7e3479292824595814d1f3991c53c08b6ce678026c613eb0d6245c6"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "05c02896a7e3479292824595814d1f3991c53c08b6ce678026c613eb0d6245c6"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "b2b1d32bc64a91f7f926ffc2ff5db17bf4c002e17330fe998b79c75360ca32d7"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "b2b1d32bc64a91f7f926ffc2ff5db17bf4c002e17330fe998b79c75360ca32d7"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 7787764,
+              "sha256": "5d984d13ee8a2692094a7b73450c79f9a353a5bcefdc701fe0b675fd9a3b2e27"
+            },
+            "observed": {
+              "bytes": 7787764,
+              "sha256": "5d984d13ee8a2692094a7b73450c79f9a353a5bcefdc701fe0b675fd9a3b2e27"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202304/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 105761815,
+              "sha256": "851f70f9d2fa207a16d6d569d6f13505cc00971830b56dd7ed9713e45fddeb1f"
+            },
+            "observed": {
+              "bytes": 105761815,
+              "sha256": "851f70f9d2fa207a16d6d569d6f13505cc00971830b56dd7ed9713e45fddeb1f"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202305",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/completed.json",
+          "bytes": 2872,
+          "sha256": "4955d47eacd79b7f01ba88268c4e7ab2db1787eeac0df0440b02b6c2f11ca57c",
+          "expected_sha256_from_historical_evidence": "4955d47eacd79b7f01ba88268c4e7ab2db1787eeac0df0440b02b6c2f11ca57c",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1396,
+              "sha256": "ae4f194ce8f88321f6febba23eaab94afe708c579989b47b104edc10f429d833"
+            },
+            "observed": {
+              "bytes": 1396,
+              "sha256": "ae4f194ce8f88321f6febba23eaab94afe708c579989b47b104edc10f429d833"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "39c89d4e5fa27394f37ce2684c4cb7dcb6aaf82e8f30ddf4021d9f9039207cc0"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "39c89d4e5fa27394f37ce2684c4cb7dcb6aaf82e8f30ddf4021d9f9039207cc0"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "913af33ee19d8bf1a3f86d68c4c2d7b9d5bf14998f7959f476c2e9752a7d2a39"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "913af33ee19d8bf1a3f86d68c4c2d7b9d5bf14998f7959f476c2e9752a7d2a39"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 9266495,
+              "sha256": "26ff261f29b939925b72fcb0346ceb11bcf6e753766a28c795160807e8312e34"
+            },
+            "observed": {
+              "bytes": 9266495,
+              "sha256": "26ff261f29b939925b72fcb0346ceb11bcf6e753766a28c795160807e8312e34"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202305/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 127314740,
+              "sha256": "536936f2abbf7e5ca88f45af897b856621545e6858dd1ab516b639b20918a190"
+            },
+            "observed": {
+              "bytes": 127314740,
+              "sha256": "536936f2abbf7e5ca88f45af897b856621545e6858dd1ab516b639b20918a190"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202306",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/completed.json",
+          "bytes": 2790,
+          "sha256": "3b9a8376581f42e0e872975747f4bc2e1117ab5d42083883c6948a81c916654d",
+          "expected_sha256_from_historical_evidence": "3b9a8376581f42e0e872975747f4bc2e1117ab5d42083883c6948a81c916654d",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1320,
+              "sha256": "fb90c84a1aa61a5cfc06e517013be519dd87d41bbe2d87259ae79f0a927616dc"
+            },
+            "observed": {
+              "bytes": 1320,
+              "sha256": "fb90c84a1aa61a5cfc06e517013be519dd87d41bbe2d87259ae79f0a927616dc"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "1ac57f28c32257c55ba5e365622e8496b08d563fd87b8a05a53851e7c8e8ba71"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "1ac57f28c32257c55ba5e365622e8496b08d563fd87b8a05a53851e7c8e8ba71"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "ec7b113ea70e4aaf4046caba1ca3658bc3bb894db1c8bf13e071cb912e57d58d"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "ec7b113ea70e4aaf4046caba1ca3658bc3bb894db1c8bf13e071cb912e57d58d"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 8392028,
+              "sha256": "1cdc6319178806603766da0fce1e0af49bc9352fca20e0df6e3f6a36c544ca30"
+            },
+            "observed": {
+              "bytes": 8392028,
+              "sha256": "1cdc6319178806603766da0fce1e0af49bc9352fca20e0df6e3f6a36c544ca30"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202306/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 114812640,
+              "sha256": "07fc7ab81c622dbd66a0bf2027a7f0e3c2a6e04215422c912db62907291438ba"
+            },
+            "observed": {
+              "bytes": 114812640,
+              "sha256": "07fc7ab81c622dbd66a0bf2027a7f0e3c2a6e04215422c912db62907291438ba"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202307",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/completed.json",
+          "bytes": 2844,
+          "sha256": "ed557174ddebc1ea5448003e617402739ca40791fd5239d798054ef7f6b0303b",
+          "expected_sha256_from_historical_evidence": "ed557174ddebc1ea5448003e617402739ca40791fd5239d798054ef7f6b0303b",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1370,
+              "sha256": "f0b169ceecdd73c916e7e18665e8f7d5d5f7502e649833bb9747106d7524318a"
+            },
+            "observed": {
+              "bytes": 1370,
+              "sha256": "f0b169ceecdd73c916e7e18665e8f7d5d5f7502e649833bb9747106d7524318a"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "b57f25c111ae56f5fb4ac72e531cf66c57d2765afe54740c66cd8ec2ec73a280"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "b57f25c111ae56f5fb4ac72e531cf66c57d2765afe54740c66cd8ec2ec73a280"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "50fd9568e16dd55e4a31281e94c5859034b13681db801b41c5d7f8f95f43e546"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "50fd9568e16dd55e4a31281e94c5859034b13681db801b41c5d7f8f95f43e546"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 9129673,
+              "sha256": "e2eceddfa96f3cce9cf3c05749fa7692dab829b318d56625fa59fae80e3593b7"
+            },
+            "observed": {
+              "bytes": 9129673,
+              "sha256": "e2eceddfa96f3cce9cf3c05749fa7692dab829b318d56625fa59fae80e3593b7"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202307/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 124770343,
+              "sha256": "eb789c6c0a1a6620695a17d1c84910731f84fbc6ce85eb738a08dcb2725b1315"
+            },
+            "observed": {
+              "bytes": 124770343,
+              "sha256": "eb789c6c0a1a6620695a17d1c84910731f84fbc6ce85eb738a08dcb2725b1315"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202308",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/completed.json",
+          "bytes": 2882,
+          "sha256": "8f80c92c6d8598495949b3bfa92e4e9915583c0c61fbdd8ec86a8e68d2797a58",
+          "expected_sha256_from_historical_evidence": "8f80c92c6d8598495949b3bfa92e4e9915583c0c61fbdd8ec86a8e68d2797a58",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1405,
+              "sha256": "15b7eb24986eb5dcff31471b3c19caee51462444cc505dc465131b187ba574ab"
+            },
+            "observed": {
+              "bytes": 1405,
+              "sha256": "15b7eb24986eb5dcff31471b3c19caee51462444cc505dc465131b187ba574ab"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "b0e344ba2cc8edb15660e6268b9140142e70eb4561b035d372266667b8296a26"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "b0e344ba2cc8edb15660e6268b9140142e70eb4561b035d372266667b8296a26"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "4321df54391dcde88550c7efdc63b58f52cf23191ac1c3d66b64536299b3718f"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "4321df54391dcde88550c7efdc63b58f52cf23191ac1c3d66b64536299b3718f"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 13307821,
+              "sha256": "8ec98242126ad63744665bff7a81abc1c91a12ceb601f0fe7490f3d5d1a2aabf"
+            },
+            "observed": {
+              "bytes": 13307821,
+              "sha256": "8ec98242126ad63744665bff7a81abc1c91a12ceb601f0fe7490f3d5d1a2aabf"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202308/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 182366849,
+              "sha256": "58a1890975397c3132724715dbc4e6c6aea251f5cec9f1018ad19a5273db3aa6"
+            },
+            "observed": {
+              "bytes": 182366849,
+              "sha256": "58a1890975397c3132724715dbc4e6c6aea251f5cec9f1018ad19a5273db3aa6"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202309",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/completed.json",
+          "bytes": 2795,
+          "sha256": "cf3d2039268b7d5c2957c41949c9e1a2785347859ee2f2c1df50c25b9923d152",
+          "expected_sha256_from_historical_evidence": "cf3d2039268b7d5c2957c41949c9e1a2785347859ee2f2c1df50c25b9923d152",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1324,
+              "sha256": "d57107ba8d4c796c60888b4e1697e32e93092376c3caa4cab881f9eab0e22bc4"
+            },
+            "observed": {
+              "bytes": 1324,
+              "sha256": "d57107ba8d4c796c60888b4e1697e32e93092376c3caa4cab881f9eab0e22bc4"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "a13ce7398bceb43fea53e2539b71f1ee2949e528253fcafb53c19e161ed451e7"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "a13ce7398bceb43fea53e2539b71f1ee2949e528253fcafb53c19e161ed451e7"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 343,
+              "sha256": "c0ec3970835fabcef6899b08a5dc1a4b9855fac20e12cb563ceabbfc5ac38198"
+            },
+            "observed": {
+              "bytes": 343,
+              "sha256": "c0ec3970835fabcef6899b08a5dc1a4b9855fac20e12cb563ceabbfc5ac38198"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 10302936,
+              "sha256": "98b2e55a03aed39d302532e146fd7e712136a6332df4ab720e17d61194cb78a5"
+            },
+            "observed": {
+              "bytes": 10302936,
+              "sha256": "98b2e55a03aed39d302532e146fd7e712136a6332df4ab720e17d61194cb78a5"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202309/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 140007040,
+              "sha256": "80f01816cf30967ad127022b3c8a412341ab0377285774965ecfa462a7b51af9"
+            },
+            "observed": {
+              "bytes": 140007040,
+              "sha256": "80f01816cf30967ad127022b3c8a412341ab0377285774965ecfa462a7b51af9"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202310",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/completed.json",
+          "bytes": 2985,
+          "sha256": "bc30fbfad1747b19963448a51de5ef172cc31b67c6a40139d832cdf1c1f15561",
+          "expected_sha256_from_historical_evidence": "bc30fbfad1747b19963448a51de5ef172cc31b67c6a40139d832cdf1c1f15561",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1496,
+              "sha256": "12814bc8d09dc6800e65f9124f08f78a89f6a5dac66f7194a08d66c89971ca8c"
+            },
+            "observed": {
+              "bytes": 1496,
+              "sha256": "12814bc8d09dc6800e65f9124f08f78a89f6a5dac66f7194a08d66c89971ca8c"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "48ef13979a76977dcadfb33adf26f28b8544e52513ec3503aa9ce7fb234dda56"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "48ef13979a76977dcadfb33adf26f28b8544e52513ec3503aa9ce7fb234dda56"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 345,
+              "sha256": "8edd354fb1a4926b43419189b13b572c56c75b91b08fc14d4d93e16842a2466d"
+            },
+            "observed": {
+              "bytes": 345,
+              "sha256": "8edd354fb1a4926b43419189b13b572c56c75b91b08fc14d4d93e16842a2466d"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 644870,
+              "sha256": "6672fcc2d300de7195f755ea40f9d3289e5f31db7ef65a6ec8a49c0ae510238f"
+            },
+            "observed": {
+              "bytes": 644870,
+              "sha256": "6672fcc2d300de7195f755ea40f9d3289e5f31db7ef65a6ec8a49c0ae510238f"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 13190360,
+              "sha256": "04ce16bbe3ea2b183d982ba85e3b40f670a7a9ecb9276835cb505ab51bdd5a99"
+            },
+            "observed": {
+              "bytes": 13190360,
+              "sha256": "04ce16bbe3ea2b183d982ba85e3b40f670a7a9ecb9276835cb505ab51bdd5a99"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202310/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 180109376,
+              "sha256": "687c4e3e5504aa6114fff80c9f003010171fa5e257da852992eeabbe2091873b"
+            },
+            "observed": {
+              "bytes": 180109376,
+              "sha256": "687c4e3e5504aa6114fff80c9f003010171fa5e257da852992eeabbe2091873b"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202311",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/completed.json",
+          "bytes": 2851,
+          "sha256": "41be18fbf14e61ec2898d6cdcfdfef57d525c614f52e4ea407aec6ffda66696a",
+          "expected_sha256_from_historical_evidence": "41be18fbf14e61ec2898d6cdcfdfef57d525c614f52e4ea407aec6ffda66696a",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1375,
+              "sha256": "533dd4e9b9ec39ec2bfbfbe39baa782ca9aa0282e97a565bb09a1dc77b3be47e"
+            },
+            "observed": {
+              "bytes": 1375,
+              "sha256": "533dd4e9b9ec39ec2bfbfbe39baa782ca9aa0282e97a565bb09a1dc77b3be47e"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "f5994b979e5cedc505995097fe8451a895d8c183f65f6504a10c9b81dca146ba"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "f5994b979e5cedc505995097fe8451a895d8c183f65f6504a10c9b81dca146ba"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 345,
+              "sha256": "c1e003d9205f62fda1779f6beafc3807f2b420a4eb4752db4e73fecc0e89e046"
+            },
+            "observed": {
+              "bytes": 345,
+              "sha256": "c1e003d9205f62fda1779f6beafc3807f2b420a4eb4752db4e73fecc0e89e046"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 11598307,
+              "sha256": "f0728f0441b6994fdd8d9a9867963e174c4f419f77e3c8808ab28b99fb6564a0"
+            },
+            "observed": {
+              "bytes": 11598307,
+              "sha256": "f0728f0441b6994fdd8d9a9867963e174c4f419f77e3c8808ab28b99fb6564a0"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202311/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 158024550,
+              "sha256": "15ef746aa5399eabfac4497a8af71ac223bfc767f869ca2a425e7c84762c364f"
+            },
+            "observed": {
+              "bytes": 158024550,
+              "sha256": "15ef746aa5399eabfac4497a8af71ac223bfc767f869ca2a425e7c84762c364f"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      },
+      {
+        "month_est": "202312",
+        "attempt": "attempt-001",
+        "completed": {
+          "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/completed.json",
+          "bytes": 2803,
+          "sha256": "2c7e7c56c530d2b634a4ccb4909b66c77345edb193e59876452c52375f7d3f64",
+          "expected_sha256_from_historical_evidence": "2c7e7c56c530d2b634a4ccb4909b66c77345edb193e59876452c52375f7d3f64",
+          "verification": "streaming_bytes_matched_historical_fingerprint_and_JSON_equal_both_manifests"
+        },
+        "files": {
+          "audit.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/audit.json",
+            "expected_from_manifests": {
+              "bytes": 1331,
+              "sha256": "6c099088d6f8ae0306e5a7b8b7cfa98ae187fdcc16ceffce5a499e54bb8e7279"
+            },
+            "observed": {
+              "bytes": 1331,
+              "sha256": "6c099088d6f8ae0306e5a7b8b7cfa98ae187fdcc16ceffce5a499e54bb8e7279"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/form.html",
+            "expected_from_manifests": {
+              "bytes": 31534,
+              "sha256": "4bbfced56416cb219347a431a3e7f1268658c3c27be6d6057cc67c01bb31f1a4"
+            },
+            "observed": {
+              "bytes": 31534,
+              "sha256": "4bbfced56416cb219347a431a3e7f1268658c3c27be6d6057cc67c01bb31f1a4"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "form.html.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/form.html.http.json",
+            "expected_from_manifests": {
+              "bytes": 345,
+              "sha256": "33b759118134df763c31420b1242ca3dc06368c52b0085a36dadde1ee8e24a09"
+            },
+            "observed": {
+              "bytes": 345,
+              "sha256": "33b759118134df763c31420b1242ca3dc06368c52b0085a36dadde1ee8e24a09"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "quarantine.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/quarantine.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/raw.zip",
+            "expected_from_manifests": {
+              "bytes": 12424208,
+              "sha256": "0f641a897b87e5b28a197622aa14fa4bd1d51a2466077bb7698cf13c8e5c6cc1"
+            },
+            "observed": {
+              "bytes": 12424208,
+              "sha256": "0f641a897b87e5b28a197622aa14fa4bd1d51a2466077bb7698cf13c8e5c6cc1"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "raw.zip.http.json": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/raw.zip.http.json",
+            "expected_from_manifests": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "observed": {
+              "bytes": 209,
+              "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "reserved.jsonl": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/reserved.jsonl",
+            "expected_from_manifests": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "observed": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          },
+          "ticks.csv": {
+            "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/ticks.csv",
+            "expected_from_manifests": {
+              "bytes": 171283963,
+              "sha256": "540b6c9c7e4a0f886d1e94a3f503d35c45e22678eaed17fd2058f187a0a7aa26"
+            },
+            "observed": {
+              "bytes": 171283963,
+              "sha256": "540b6c9c7e4a0f886d1e94a3f503d35c45e22678eaed17fd2058f187a0a7aa26"
+            },
+            "verification": "streaming_bytes_matched_both_manifests",
+            "content_parsed": false
+          }
+        }
+      }
+    ]
+  },
+  "planning_reviews": {
+    "diagnosis": {
+      "gate": "issue9-diagnosis-01",
+      "sha256": "17fc8424735b8969cfc0ee7bd2c8ed6587da9d5720926a54935d4ffaa205f859",
+      "result": "APPROVED"
+    },
+    "fix_impact": {
+      "gate": "issue9-fix-impact-01",
+      "sha256": "a2ecdc80ae1364bf2cbf69b32a5e1fa24ed6a814b3acaec3935a3b9786b5634d",
+      "result": "APPROVED"
+    }
+  }
+}
