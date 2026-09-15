@@ -35,6 +35,16 @@ class EconomicCliTests(unittest.TestCase):
                 self.run_case(phase,temp,KeyboardInterrupt,after_rename=True,retry_failure=True)
 
     def test_completion_finishes_report_durability_before_lifecycle_close(self):
+        self.completion_case()
+
+    def test_completion_sync_storage_error_poisons_once_without_close(self):
+        self.completion_case(OSError)
+
+    def test_completion_sync_interruptions_do_not_poison_or_close(self):
+        for error in (KeyboardInterrupt,SystemExit):
+            with self.subTest(error=error.__name__):self.completion_case(error)
+
+    def completion_case(self,error=None):
         source=Path(__file__).resolve().parents[1]/'scripts/run_economic_ticks.py'
         spec=importlib.util.spec_from_file_location('economic_cli_completion_fixture',source)
         cli=importlib.util.module_from_spec(spec);spec.loader.exec_module(cli)
@@ -49,7 +59,10 @@ class EconomicCliTests(unittest.TestCase):
                 {'phase':'DEVELOPMENT_VERIFIED','artifacts':{'report':artifacts['development_models']}},
                 {'phase':'FINAL_MODELS_VERIFIED','artifacts':{'report':artifacts['final_models']}}]}
             events=[];original_fsync=economic_report.os.fsync
-            def synced(fd):events.append(economic_report.os.fstat(fd).st_ino);return original_fsync(fd)
+            def synced(fd):
+                events.append(economic_report.os.fstat(fd).st_ino)
+                if error:raise error('sync transition failure')
+                return original_fsync(fd)
             life.close.side_effect=lambda *args:events.append('close')
             def read(path):
                 if Path(path)==target/'report.json':return result
@@ -57,9 +70,15 @@ class EconomicCliTests(unittest.TestCase):
                 if str(path).endswith('source-evidence.json'):return {}
                 return None
             with patch.object(cli.research,'load_config',return_value={'global_ledger':temp+'/ledger'}),                 patch.object(cli.research,'verify_preregistration'),patch.object(cli.research,'clock_for'),                 patch.object(cli.research,'load_window_data'),patch.object(cli.research,'verify_final_probabilities'),                 patch.object(cli.research,'portfolio_segment',side_effect=lambda *args,**kw:fixture(kw.get('confirmation',False))),                 patch.object(cli,'Lifecycle',return_value=life),patch.object(cli,'read',side_effect=read),                 patch.object(cli,'fingerprint',return_value={'synthetic':True}),                 patch.object(economic_report.os,'fsync',side_effect=synced),patch('sys.stdout',new_callable=io.StringIO):
-                cli.main(['complete','--output',temp,'--preregistered-sha','a'*40])
-            self.assertEqual(events,[target.stat().st_ino,root.stat().st_ino,'close'])
-            life.poison.assert_not_called();life.fit.assert_not_called()
+                if error:
+                    with self.assertRaises(error):cli.main(['complete','--output',temp,'--preregistered-sha','a'*40])
+                else:cli.main(['complete','--output',temp,'--preregistered-sha','a'*40])
+            if error:
+                self.assertEqual(events,[target.stat().st_ino]);life.close.assert_not_called()
+            else:self.assertEqual(events,[target.stat().st_ino,root.stat().st_ino,'close'])
+            if error is OSError:life.poison.assert_called_once_with('Report publication synchronization failed')
+            else:life.poison.assert_not_called()
+            life.fit.assert_not_called()
 
     def run_case(self,phase,temp,error,poison=False,after_rename=False,retry_failure=False):
         source=Path(__file__).resolve().parents[1]/'scripts/run_economic_ticks.py'

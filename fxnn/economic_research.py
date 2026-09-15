@@ -463,13 +463,13 @@ def release_freeze(repo, config, supervisor, preregistered_sha, receipts, artifa
     verify_operational_predictions(config,supervisor,data,clock,artifacts['development_models'],fingerprint(operational))
     portfolios=portfolio_segment(config,supervisor,source_root,source,fingerprint(operational),
         Path(artifacts['development_portfolios']['path']).parent,replay=True)
-    from .economic_report import build_report, sync_report_directory
+    from .economic_report import build_report
     development_models=json.loads(Path(artifacts['development_models']['path']).read_text())
     expected_report=build_report(development_models,final,portfolios,
         artifacts={'development_models':artifacts['development_models'],'final_models':artifacts['final_models']})
     if json.loads(Path(artifacts['development_report']['path']).read_text())!=expected_report:
         raise ValueError('Development report differs from verified complete portfolio replay')
-    sync_report_directory(Path(artifacts['development_report']['path']).parent)
+    synchronize_report_for_transition(supervisor,Path(artifacts['development_report']['path']).parent)
     resource_preflight(supervisor.root,config)
     bound={**{'receipt_'+k:v for k,v in receipts.items()},**artifacts}
     return supervisor.freeze(sha,sha,sha,True,True,contracts,bound,{f'T{i}':True for i in range(1,6)})
@@ -571,3 +571,13 @@ def validate_data_contract(evidence, phase, binding, config):
     expected_window=config['development_utc' if phase=='development' else 'confirmation_utc']
     if [dataset['start_ms'],dataset['end_ms']]!=[utc_ms(v+'T00:00:00+00:00') for v in expected_window]:
         raise ValueError('Dataset window differs from registered phase')
+
+
+
+def synchronize_report_for_transition(supervisor, directory):
+    """Observed persistence faults poison; process interruptions remain recoverable."""
+    from .economic_report import sync_report_directory
+    try:sync_report_directory(directory)
+    except OSError:
+        supervisor.poison('Report publication synchronization failed')
+        raise

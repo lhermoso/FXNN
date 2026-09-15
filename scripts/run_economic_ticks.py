@@ -129,7 +129,7 @@ def main(argv=None):
         verified_confirmation=research.portfolio_segment(config,life,output/'confirmation',evidence('confirmation'),
             read(output/'probabilities-confirmation/report.json')['operational'],
             output/'portfolios-confirmation',confirmation=True,replay=True)
-        from fxnn.economic_report import build_report,sync_report_directory
+        from fxnn.economic_report import build_report
         verified_development=research.portfolio_segment(config,life,output/'development',evidence('development'),
             fingerprint(output/'operational-development.jsonl'),output/'portfolios-development',replay=True)
         expected=build_report(model_report(),model_report(True),verified_development,
@@ -137,7 +137,7 @@ def main(argv=None):
             artifacts={'development_models':model_fp(),'final_models':model_fp(True)})
         if final_report!=expected:
             raise ValueError('Final aggregate differs from verified portfolio replay')
-        sync_report_directory(output/'report-confirmation')
+        research.synchronize_report_for_transition(life,output/'report-confirmation')
         result={'report':fingerprint(output/'report-confirmation/report.json')}
         life.close('COMPLETED',result)
     progress(result)
