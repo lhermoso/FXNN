@@ -69,17 +69,13 @@ def main(argv=None):
     elif args.phase=='confirmation-data':
         result=research.make_confirmation_data(config,life,evidence('development'),output/'confirmation',progress)
     elif args.phase=='confirmation-probabilities':
-        predicted=output/'probabilities-confirmation/report.json'
-        if predicted.exists():
-            research.verify_final_probabilities(config,life,matrix('confirmation'),model_fp(True),
-                fingerprint(predicted),fingerprint(output/'confirmation/source-evidence.json'))
-            result=read(predicted)
-        else:
-            try:
-                result=research.final_probabilities(config,life,matrix('confirmation'),model_fp(True),
-                    output/'probabilities-confirmation',fingerprint(output/'confirmation/source-evidence.json'))
-            except OSError:
-                life.poison('Confirmation prediction persistence failed');raise
+        try:
+            result=research.final_probabilities(config,life,matrix('confirmation'),model_fp(True),
+                output/'probabilities-confirmation',fingerprint(output/'confirmation/source-evidence.json'))
+        except OSError:
+            # Observed persistence faults remain fail-closed. Process death and
+            # KeyboardInterrupt leave canonical prediction intent recoverable.
+            life.poison('Confirmation prediction persistence failed');raise
     elif args.phase in ('development-portfolios','confirmation-portfolios','replay-development','replay-confirmation'):
         confirmation=args.phase in ('confirmation-portfolios','replay-confirmation')
         phase='confirmation' if confirmation else 'development'

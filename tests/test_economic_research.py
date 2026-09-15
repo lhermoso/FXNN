@@ -73,6 +73,28 @@ class EconomicResearchTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'alias conflict'):
                     durable_data_segment(config,output,'development',{'S':'changed'},succeed)
 
+    def test_prospective_review_cannot_authorize_frozen_opening(self):
+        from fxnn.economic_research import verified_review_receipt, RELEASE_CRITERIA, RELEASE_SCOPE
+        sha='a'*40
+        review={'schema_version':1,'verdict':'APPROVED','reviewed_head_sha':sha,
+                'inconclusive_reason':None,'findings':[],
+                'acceptance_criteria':[{'id':'PROSPECTIVE','criterion':'Implementation readiness only; full release review remains mandatory',
+                    'status':'COVERED','explicit':True,'severity':'NONE','evidence':'Not authorization to open 2024'}]}
+        with self.assertRaisesRegex(ValueError,'prospective approval'):verified_review_receipt(review,sha)
+        review['acceptance_criteria']=[{'id':key,'criterion':RELEASE_SCOPE if key=='RELEASE-SCOPE' else key,
+            'status':'COVERED','explicit':True,'severity':'NONE','evidence':'Synthetic full release coverage'} for key in RELEASE_CRITERIA]
+        self.assertTrue(verified_review_receipt(review,sha))
+        for mutation in ('scope','partial','missing','duplicate','implicit','no_evidence'):
+            bad=copy.deepcopy(review)
+            item=next(v for v in bad['acceptance_criteria'] if v['id']=='RELEASE-SCOPE')
+            if mutation=='scope':item['criterion']='Prospective only'
+            if mutation=='partial':item['status']='PARTIAL'
+            if mutation=='missing':bad['acceptance_criteria'].remove(item)
+            if mutation=='duplicate':bad['acceptance_criteria'].append(item)
+            if mutation=='implicit':item['explicit']=False
+            if mutation=='no_evidence':item['evidence']=''
+            with self.assertRaises(ValueError):verified_review_receipt(bad,sha)
+
     def test_ci_requires_exact_sha_and_meaningful_steps(self):
         sha='a'*40
         receipt=dict(head_sha=sha,conclusion='success',required_jobs=['tests'],

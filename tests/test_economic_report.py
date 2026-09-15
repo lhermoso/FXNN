@@ -182,6 +182,22 @@ class PromotionTests(unittest.TestCase):
 
 
 class OutputTests(unittest.TestCase):
+    def test_interrupted_publication_preserves_partial_without_blocking_identical_report(self):
+        from unittest.mock import patch
+        result=report.build_report(None,None,fixture())
+        with tempfile.TemporaryDirectory() as directory:
+            output=Path(directory)/'report'
+            with patch.object(report.os,'fsync',side_effect=KeyboardInterrupt):
+                with self.assertRaises(KeyboardInterrupt):report.write_report(result,output)
+            self.assertFalse(output.exists())
+            partials=list(Path(directory).glob('report.partial-*'))
+            self.assertEqual(len(partials),1)
+            before=(partials[0]/'report.json').read_bytes()
+            manifest=report.write_report(result,output)
+            self.assertEqual((partials[0]/'report.json').read_bytes(),before)
+            self.assertEqual(json.loads((output/'report.json').read_text()),result)
+            self.assertEqual(set(manifest),{'report.json','report.md','aggregates.csv'})
+
     def test_all_scenarios_windows_costs_counts_exact_csv_lf(self):
         result = report.build_report(None, None, fixture(),
             confirmation={'execution_status':'COMPLETED','portfolios':fixture(True)})

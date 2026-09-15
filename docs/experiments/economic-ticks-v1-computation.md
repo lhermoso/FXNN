@@ -137,3 +137,35 @@ recomputes the development report. Completion similarly compares the final
 report with both complete portfolio replays. Runtime bindings verify the actual
 Python binary and New York tzfile against the registered fingerprints; HTTPS
 transport uses the bound `/usr/bin/curl` binary.
+
+### Integrated synthetic construction check
+
+A separate continuous-calendar fixture covered16,000 minutes and32,000 ticks,
+with two quotes per minute, deterministic seed900916 and fixed synthetic
+spread. Actual dataset→labels→flat matrix→purge→weights code produced28features,
+15,759 feature-available rows,14,460 volatility-available rows and9,972
+conclusive labels (2,567TP/7,405SL). At synthetic cutoffs12,000/16,000 minutes,
+4,133/8,062 rows survived full-cap/1,941-bar/strict-preclock admission. Weights
+were finite, positive and normalized to mean1. A future mutation from minute
+9,000 preserved9,001 earlier decisions exactly and changed later features.
+
+Dataset construction took7.23seconds, labels10.72seconds, loading0.40seconds,
+admission/weights0.10seconds and the mutated dataset7.52seconds; total26.22s.
+Peak RSS was170,770,432bytes including runtime imports; private artifacts
+occupied47,622,199bytes. This used no fits, actual market inputs, downloads or
+scientific ledger writes. It proves this integrated synthetic path, not the
+60-million-tick resource envelope or any economic result. Evidence SHA256:
+`3ef2ab3f6be8547cc349bfc2c8af288531b77d8f61764191bcae8ce87e51d642`.
+
+Confirmation prediction construction also has one canonical, exclusively
+locked intent binding S/P, both model identities, source evidence and output.
+A killed process after directory creation or between model-family exports
+leaves a recoverable construction; the interrupted directory is preserved
+under a registered archive name, then deterministic predictions are rebuilt
+without fitting or changing the guard. Death after candidate publication
+requires verification only. Completed artifacts must match their recorded
+hash and mathematical replay; corrupt or observed-failed constructions cannot
+be silently rebuilt. Alternate output paths do not create a new attempt.
+Synthetic process-kill and concurrent-caller tests exercise these transitions.
+Reports publish a complete fsynced directory atomically, retaining interrupted
+staging directories without exposing a partial final report.

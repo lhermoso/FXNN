@@ -20,6 +20,9 @@ from .tick_economic_source import verified_month, digest
 
 LEDGER = '/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl'
 EXPERIMENT = 'economic_ticks_v1'
+RELEASE_SCOPE = 'Full preconfirmation release review for the one-time frozen 2024 opening'
+RELEASE_CRITERIA = frozenset({'RELEASE-SCOPE','RELEASE-IMPLEMENTATION','RELEASE-DEVELOPMENT',
+    'RELEASE-FINAL-MODELS','RELEASE-REPLAY','RELEASE-CI','RELEASE-UNOPENED','RELEASE-RESOURCES'})
 
 
 def load_config(path):
@@ -302,7 +305,7 @@ def _make_confirmation_data(config, supervisor, development_evidence, output, pr
     return evidence
 
 
-def final_probabilities(config, supervisor, matrix, final_model_report_artifact, output,
+def _final_probabilities(config, supervisor, matrix, final_model_report_artifact, output,
                         confirmation_evidence_artifact):
     """Generate only under OPENED; terminal verification uses the readonly helper."""
     import os
@@ -333,6 +336,28 @@ def final_probabilities(config, supervisor, matrix, final_model_report_artifact,
     verify_final_probabilities(config,supervisor,matrix,final_model_report_artifact,
                               report_artifact,confirmation_evidence_artifact)
     return report
+
+
+def final_probabilities(config, supervisor, matrix, final_model_report_artifact, output,
+                        confirmation_evidence_artifact):
+    """One contract-bound prediction construction; interrupted work is preserved."""
+    from .economic_lifecycle import identity
+    from .economic_prediction_replay import authenticate_frozen_models, authenticate_confirmation_matrix
+    from .economic_prediction_recovery import prediction_construction
+    snapshot,models=authenticate_frozen_models(config,supervisor,final_model_report_artifact)
+    authenticate_confirmation_matrix(supervisor,snapshot,matrix,confirmation_evidence_artifact)
+    contract=dict(S=snapshot['S'],freeze_sha256=snapshot['P']['sha256'],
+                  models={family:{'F':fitted['F'],'contract_sha256':identity(fitted['contract'])}
+                          for family,(_,fitted) in models.items()},
+                  final_report=final_model_report_artifact,
+                  confirmation_evidence=confirmation_evidence_artifact,config_sha256=identity(config))
+    def construct(path):
+        return _final_probabilities(config,supervisor,matrix,final_model_report_artifact,path,
+                                    confirmation_evidence_artifact)
+    def verify(artifact):
+        return verify_final_probabilities(config,supervisor,matrix,final_model_report_artifact,
+                                          artifact,confirmation_evidence_artifact)
+    return prediction_construction(supervisor,contract,output,construct,verify)
 
 
 def verified_ci_receipt(receipt, release_sha):
@@ -366,8 +391,15 @@ def verified_review_receipt(receipt, release_sha):
         raise ValueError('Conclusive independent exact-SHA review required')
     if any(f.get('severity') in ('P0','P1','P2') for f in receipt.get('findings',[])):
         raise ValueError('Independent review retains blocking findings')
-    if not receipt.get('acceptance_criteria'):
-        raise ValueError('Review scope lacks explicit acceptance evidence')
+    criteria=receipt.get('acceptance_criteria',[])
+    by_id={item.get('id'):item for item in criteria}
+    if len(by_id)!=len(criteria) or not RELEASE_CRITERIA <= set(by_id):
+        raise ValueError('Full release review acceptance scope missing; prospective approval is insufficient')
+    if (by_id['RELEASE-SCOPE'].get('criterion')!=RELEASE_SCOPE or
+            any(by_id[key].get('status')!='COVERED' or by_id[key].get('explicit') is not True
+                or by_id[key].get('severity')!='NONE' or not by_id[key].get('evidence')
+                for key in RELEASE_CRITERIA)):
+        raise ValueError('Required full release acceptance coverage incomplete')
     return True
 
 

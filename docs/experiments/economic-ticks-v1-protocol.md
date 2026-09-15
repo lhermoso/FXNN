@@ -212,3 +212,26 @@ Stage8 PR23 is merged at 04b355fe3ef8afd04ffe22b41b8ee7127497e8c9; issues6/7/8/1
 Training cutoffs occur before clock events. A bar ending exactly at a cutoff has not yet been emitted and cannot count toward its 1941-observed-bar buffer. Diagnostic classification metrics include only conclusive labels whose information end is at or before that evaluation end; probabilities remain available for every causal signal including future censoring, unfilled entries and calendar tails. Feature variances use local centered arithmetic for the same inherited formulas, verified against a Decimal70 reference; historical cumulative floating-point cancellation is not a new feature.
 
 The new disk index uses the prospectively permitted bounded-block scan variant, B=1024, exact base10 coefficients and explicit arbitrary-integer fallback. Ordered eligible group counts accompany price extrema; source ordinals are never interpreted as quote counts. Synthetic benchmarks must bind final source hashes before real processing.
+
+## Release-review evidence scope
+
+An implementation-readiness approval is not the preconfirmation release
+review. The original gateway receipt must cover the exact release SHA and
+contain all eight explicit, `COVERED`, severity`NONE` acceptance IDs:
+`RELEASE-SCOPE`, `RELEASE-IMPLEMENTATION`, `RELEASE-DEVELOPMENT`,
+`RELEASE-FINAL-MODELS`, `RELEASE-REPLAY`, `RELEASE-CI`, `RELEASE-UNOPENED` and
+`RELEASE-RESOURCES`. `RELEASE-SCOPE` must have the exact criterion:
+“Full preconfirmation release review for the one-time frozen 2024 opening”.
+Each item requires actual evidence. The remaining IDs cover complete causal
+implementation, verified development artifacts regardless of economic sign,
+two available final models, zero-fit replay, meaningful exact-SHA CI,
+unchanged scientific package with guard stillUNOPENED, and validated runtime,
+disk/memory and canonical fit budget. Missing, prospective, partial or implicit
+coverage cannot seal the package. Final issue acceptance after confirmation
+is another review; no preconfirmation receipt claims those results exist.
+
+The first prospective implementation review identified this scope check and
+interrupted prediction-output recovery before any real processing, labels,
+fits or confirmation access. Corrections preserve all scientific parameters,
+windows, fourteen-slot ceiling and interpretation rules; the corrected commit
+supersedes the initial implementation preregistration before execution.

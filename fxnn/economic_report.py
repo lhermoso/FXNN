@@ -397,20 +397,29 @@ def aggregate_csv(report):
 
 
 def write_report(report, output):
-    """Exclusive aggregate publication only. Outer supervisor owns poisoning."""
+    """Publish a complete directory atomically; retain interrupted staging outputs."""
     encoded = json.dumps(report, ensure_ascii=False, sort_keys=True, allow_nan=False, indent=2)+'\n'
     contents = {'report.json': encoded, 'report.md': markdown(report), 'aggregates.csv': aggregate_csv(report)}
     directory = Path(output)
-    directory.mkdir(exist_ok=False)
+    if directory.exists():raise FileExistsError(str(directory))
+    import uuid
+    staging=directory.with_name(directory.name+'.partial-'+uuid.uuid4().hex)
+    staging.mkdir(exist_ok=False)
     result = {}
     for name, content in contents.items():
-        path = directory/name
+        path = staging/name
         data = content.encode('utf8')
         with path.open('xb') as stream:
             stream.write(data)
             stream.flush()
             os.fsync(stream.fileno())
-        result[name] = {'path': str(path.resolve()), 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
+        result[name] = {'path': str((directory/name).resolve()), 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
+    fd=os.open(staging,os.O_RDONLY)
+    try:os.fsync(fd)
+    finally:os.close(fd)
+    # Only a complete fsynced directory becomes the public aggregate output.
+    # Interrupted attempts remain forensic siblings; they are never adopted.
+    staging.rename(directory)
     for parent in (directory, directory.parent):
         fd = os.open(parent, os.O_RDONLY)
         try:
