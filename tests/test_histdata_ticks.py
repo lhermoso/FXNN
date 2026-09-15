@@ -106,3 +106,36 @@ class TickTests(unittest.TestCase):
                 with self.assertRaises(ValueError):acquire_month(root,'202201','wrong')
                 (root/'202201'/'attempt-001'/'ticks.csv').write_text('tamper')
                 with self.assertRaises(ValueError):acquire_month(root,'202201','hash')
+
+    def test_malformed_timestamps_never_expose_price_text(self):
+        sentinels = ['1.23456789', '1.23456891', 'PRICE_SENTINEL']
+        malformed = [
+            '20231231 190000000;1.23456789;1.23456891;0',
+            '20231231 190000000 1.23456789 1.23456891 0',
+            ',1.23456789,1.23456891,0',
+            'PRICE_SENTINEL,1.23456789,1.23456891,0',
+            '20231231 190000000 PRICE_SENTINEL,1.23456789,1.23456891,0',
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = root / 'raw.zip'
+            with ZipFile(archive, 'w') as z:
+                z.writestr('DAT_ASCII_EURUSD_T_202312.csv', '\n'.join(malformed) + '\n')
+            report = audit(archive, root, '202312')
+            self.assertEqual(report['invalid_rows'], len(malformed))
+            self.assertEqual(report['valid_rows'], 0)
+            self.assertEqual(report['reserved_rows'], 0)
+            outputs = json.dumps(report) + ''.join(
+                path.read_text() for path in root.iterdir() if path != archive)
+            for sentinel in sentinels:
+                self.assertNotIn(sentinel, outputs)
+            records = [json.loads(line) for line in (root / 'quarantine.jsonl').read_text().splitlines()]
+            self.assertEqual([r['source_sequence'] for r in records], list(range(1, 6)))
+            for record in records:
+                self.assertIsNone(record['source_timestamp_est'])
+                self.assertIsNone(record['timestamp_utc'])
+                self.assertTrue(record['prices_redacted'])
+            with ZipFile(archive) as z:
+                raw = z.read('DAT_ASCII_EURUSD_T_202312.csv').decode()
+            for sentinel in sentinels:
+                self.assertIn(sentinel, raw)

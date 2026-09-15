@@ -135,7 +135,9 @@ def audit(archive, output, month):
                     raise ValueError('Wrong source month')
             except ValueError:
                 counts['invalid_rows'] += 1
-                quarantine.write(json.dumps({'source_sequence': sequence, 'source_timestamp_est': timestamp,
+                # Unvalidated text may contain an entire malformed row, including
+                # reserved prices. Keep it exclusively in the original ZIP.
+                quarantine.write(json.dumps({'source_sequence': sequence, 'source_timestamp_est': None,
                     'timestamp_utc': None, 'reasons': ['invalid_timestamp_or_source_month'], 'prices_redacted': True}) + '\n')
                 continue
             if not START <= current < END:
