@@ -198,3 +198,17 @@ sem novos fits: mudança de distribuição e associações familiares instáveis
 diferenças pré-entrada entre conclusivos/censurados, sem mecanismo causal
 exclusivo nem contribuição preditiva estável demonstrada. Ledger na integração:
 103/1.000. Nenhuma evidência de lucro; resultados negativos preservados.
+
+## Etapa 6 — barreiras por volatilidade
+
+[Pré-registro volatility_barriers_v1](experiments/volatility-barriers-v1-protocol.md):
+duas tarefas distintas, fixa 50/20 e dinâmica 2,5v/v, no mesmo universo causal
+de 2022–2023. Volatilidade diária simples com lag exato de 1.440 minutos abertos,
+janela finita de 500 endpoints anteriores e buffer de 1.941 candles observados.
+Logística e constante própria por tarefa/população, até 48 fits novos. Nunca
+ordenar tarefas por LL bruto. Dinâmica continua mecanicamente em #7, sem seleção
+pelos externos; 2024 continua fechado nesta etapa. Execução e resultados serão
+documentados separadamente após o commit deste pré-registro.
+
+Documentos da integração de sessão: [dataset](experiments/session-dataset-v1.md),
+[modelos](experiments/session-models-v1.md) e [auditoria](experiments/session-v1-audit.md).
