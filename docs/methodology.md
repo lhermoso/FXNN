@@ -247,3 +247,12 @@ classe não permite redraw ou reparo do divisor. O teto é 156 novos fits sobre
 161 já consumidos; referências ponderadas são replay, sem fit novo. Pré-registro
 não constitui evidência de melhora nem abre confirmação 2024–2025. Resultados
 científicos serão registrados depois da execução e replay auditados.
+
+[Resultado da etapa 8](experiments/sequential-bagging-v1.md): 130 fits novos,
+ledger 161→291/1.000, todos bem-sucedidos. Sequencial não apresentou ganho
+consistente nas duas seeds; temporal teve ΔBrier médio entre folds positivo
+em ambas, com Q2 limitado a três negativos. CUSUM permanece inconclusivo
+pelo externo Q2 vazio. Q3 preserva probabilidades, mas não decisões calibradas.
+Replay integral de sorteios, modelos, predições e relatório passou sem novos
+fits nem alteração do ledger. Nenhuma seleção de seed, lucro alegado ou
+abertura de 2024/2025.
