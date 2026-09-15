@@ -1,7 +1,9 @@
 from decimal import Decimal, localcontext
+import sys
 import unittest
+from unittest.mock import patch
 import numpy as np
-from fxnn.sequential_bootstrap import IntervalIndex, sample, canonical_order, seed_for
+from fxnn.sequential_bootstrap import ATOL, RTOL, IntervalIndex, sample, canonical_order, seed_for
 
 FIXTURE = np.array([(0,3),(2,4),(4,6),(0,10),(0,10),(3,7),(6,12),(10,15),(14,20),(20,25),(25,30),(0,30)], dtype=np.int64)
 
@@ -13,7 +15,58 @@ def dense_probabilities(intervals, chosen):
     return u/u.sum()
 
 
+def decimal_uniqueness(intervals, chosen):
+    """Independent integer-input oracle; never consume rounded index terms."""
+    intervals = [(int(a), int(b)) for a, b in intervals]
+    edges = sorted({x for interval in intervals for x in interval})
+    positions = {edge: i for i, edge in enumerate(edges)}
+    changes = [0] * len(edges)
+    for event in chosen:
+        a, b = intervals[event]
+        changes[positions[a]] += 1
+        changes[positions[b]] -= 1
+    with localcontext() as context:
+        context.prec = 80
+        prefix = [Decimal(0)]
+        concurrency = 0
+        for i, (a, b) in enumerate(zip(edges, edges[1:])):
+            concurrency += changes[i]
+            prefix.append(prefix[-1] + Decimal(b-a)/Decimal(concurrency+1))
+        return [(prefix[positions[b]]-prefix[positions[a]])/Decimal(b-a)
+                for a, b in intervals]
+
+
 class SequentialTests(unittest.TestCase):
+    def assert_decimal_bounds(self, intervals, chosen, all_tree=False):
+        index = IntervalIndex(intervals[:, 0], intervals[:, 1])
+        for event in chosen:
+            index.add(event)
+        visits = []
+        previous = sys.getprofile()
+        tree_code = getattr(IntervalIndex._tree_queries, '__code__', None)
+        def capture(frame, event, arg):
+            if event == 'return' and frame.f_code is tree_code:
+                visits.append((frame.f_locals['contributions'].copy(), frame.f_locals['levels']))
+        try:
+            sys.setprofile(capture)
+            values, info = index.uniqueness()
+        finally:
+            sys.setprofile(previous)
+        with localcontext() as context:
+            context.prec = 80
+            for value, exact, bound in zip(values, decimal_uniqueness(intervals, chosen), info['errors']):
+                actual_error = abs(Decimal.from_float(float(value))-exact)
+                self.assertLessEqual(actual_error, Decimal.from_float(float(bound)))
+                self.assertLessEqual(actual_error, Decimal.from_float(ATOL)+Decimal.from_float(RTOL)*abs(exact))
+        self.assertLessEqual(info['max_levels'], index.height+1)
+        for contributions, levels in visits:
+            self.assertTrue(np.all(contributions <= 2*index.height+2))
+            self.assertLessEqual(levels, index.height+1)
+        if all_tree:
+            self.assertEqual(info['tree_queries'], len(intervals))
+            self.assertEqual(sum(len(counts) for counts, _ in visits), len(intervals))
+        return index, values, info
+
     def test_manual_and_dense_every_draw(self):
         index = IntervalIndex(FIXTURE[:3,0], FIXTURE[:3,1])
         index.add(1)
@@ -43,6 +96,43 @@ class SequentialTests(unittest.TestCase):
                 self.assertLessEqual(abs(Decimal(float(value))-exact), Decimal(float(bound)))
         self.assertGreater(info['tree_queries'], 0)
         self.assertLessEqual(info['max_levels'], index.height+1)
+
+    def test_positive_inaccurate_prefix_inside_mathematical_bounds(self):
+        intervals = np.array([(0, 10**18), (10**18, 10**18+100)], dtype=np.int64)
+        index, values, info = self.assert_decimal_bounds(intervals, [0, 1])
+        prefix = np.r_[0., np.cumsum(index.d/(index.c+1))]
+        naive = (prefix[index.R]-prefix[index.L])/index.D
+        self.assertGreater(naive[1], 1/(index.draw_count+1))
+        self.assertLess(naive[1], 1)
+        self.assertGreater(abs(naive[1]-.5), .1)
+        self.assertEqual(values[1], .5)
+        self.assertEqual(info['tree_queries'], 1)
+        # A guard-bypass mutant is numerically plausible but fails the independent oracle.
+        with patch.object(IntervalIndex, '_tree_queries', return_value=(naive[1:].copy(), 1)):
+            with self.assertRaises(AssertionError):
+                self.assert_decimal_bounds(intervals, [0, 1])
+
+    def test_decimal_overlapping_ranges_and_tree_boundaries(self):
+        # Seventeen leaves exercise power-of-two boundaries and zero padding.
+        edges = [0, 10**18]
+        for width in (3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59):
+            edges.append(edges[-1]+width)
+        intervals = list(zip(edges, edges[1:]))
+        intervals += [(edges[a], edges[b]) for a, b in ((1, 9), (3, 16), (8, 16), (1, 17), (4, 12))]
+        intervals = np.array(intervals, dtype=np.int64)
+        chosen = [0, 17, 17, 18, 20, 21, 8, 8, 8]
+        index, _, info = self.assert_decimal_bounds(intervals, chosen)
+        self.assertEqual(len(index.d), 17)
+        self.assertEqual(index.size, 32)
+        self.assertGreater(len(np.unique(index.c)), 3)
+        self.assertGreater(info['tree_queries'], 10)
+
+    def test_all_candidates_use_bounded_tree_against_decimal80(self):
+        edges = np.r_[0, np.cumsum((np.arange(4097) % 17)+1)]
+        intervals = list(zip(edges[:-1], edges[1:]))
+        intervals += [(edges[a], edges[b]) for a, b in ((0, 4097), (1, 2048), (1023, 4096), (2048, 4097))]
+        intervals = np.array(intervals, dtype=np.int64)
+        self.assert_decimal_bounds(intervals, [4097, 4098, 4098, 4099, 4100, 1023], all_tree=True)
 
     def test_order_repeats_and_raw_uniqueness(self):
         ids = np.array([9,3,8])

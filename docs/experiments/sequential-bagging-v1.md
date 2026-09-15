@@ -142,3 +142,39 @@ Replay científico: **verificado por evidência vinculada fornecida pelo root**.
 Agregador confere terminal/hash e reconcilia slots; não substitui replay de modelos/sorteios/traces nem revisão/CI. Custos de fit incluem persistência; não há tempo CPU isolado registrado. Dependência temporal e desenho informado mantêm inferência inconclusiva. 2024/2025 não abertos.
 
 [Métricas e diversidade](sequential-bagging-v1-metrics.csv) · [Thresholds](sequential-bagging-v1-thresholds.csv) · [Amostragem](sequential-bagging-v1-sampling.csv) · [Auditoria](sequential-bagging-v1-audit.json)
+
+## Suplemento de validação após revisão — 15/09/2026
+
+Revisão de aderência identificou duas lacunas no pré-registro implementado:
+casos adversariais do oráculo numérico estavam incompletos; o benchmark original
+não registrou hashes dos inputs nem todos os tempos por componente prometidos.
+Os resultados científicos acima e o protocolo permanecem congelados. Este
+suplemento é posterior à execução e ao replay, não evidência contemporânea
+recuperada nem correção retroativa da cronologia.
+
+Testes sintéticos adicionais usam Decimal com precisão 80 a partir dos inteiros
+originais de duração e concorrência. Cobrem subtração positiva incorreta
+(0,64 em lugar de 0,5, ainda dentro dos limites matemáticos), intervalos
+sobrepostos de durações/concorrências diferentes, bordas de nós, padding e
+4.101 candidatos que exigem fallback para a árvore. Erro real é comparado ao
+limite informado e à tolerância registrada. Instrumentação observa contagens
+reais de nós/níveis; uma mutação que ignora a proteção falha no oráculo.
+
+[Benchmark suplementar](sequential-bagging-v1-benchmark-supplement.json),
+executado às 20:47:54–20:49:11 UTC, registra hashes/shape/dtype dos inputs,
+tempos separados, memória e limites de trabalho. Receita preservada: N=100.000,
+K=512, PCG64(20260915), starts inteiros em [0,750000), seguidos de durações
+em [1,4321); IDs arange(N); uniforms PCG64(0). Método instrumentado tem AST
+idêntica ao original quando retiradas apenas as medições. Traces/sorteios
+coincidem tanto com o benchmark original quanto com uma execução sintética
+nova sem instrumentação. Nenhum fit ou dado real foi acessado.
+
+Tempo instrumentado 39,7461 s; preparação de inputs 0,01592 s e de índice
+0,06541 s. Nos 512 sorteios, construção da árvore 0,16004 s e consultas
+36,52321 s; escrita/conversão do trace 0,74868 s, fsync 0,001256 s e hash
+0,21432 s. Tempos são aninhados, com overhead de medição; não somar componentes
+aos totais nem comparar como velocidade equivalente ao ensaio original.
+Todas as 51,2 milhões de consultas prospectivas usaram árvore: máximo de
+17 contribuições por candidato (limite 38) e 11 níveis (limite 19).
+Peak RSS de 116.817.920 bytes cobre os dois passes sintéticos; trace de
+409.600.000 bytes. Diagnóstico final tem contagens separadas no JSON.
