@@ -91,7 +91,7 @@ def main(argv=None):
                                           output/('portfolios-'+phase),confirmation=confirmation,replay=replay)
         if not replay:atomic_json(output/('aggregate-'+phase+'.json'),result)
     elif args.phase in ('development-report','confirmation-report'):
-        from fxnn.economic_report import build_report,write_report,markdown,aggregate_csv
+        from fxnn.economic_report import build_report,write_report,markdown,aggregate_csv,sync_report_directory
         confirmation=args.phase=='confirmation-report'
         kwargs={}
         if confirmation:
@@ -106,6 +106,7 @@ def main(argv=None):
                                 'report.md':markdown(report),'aggregates.csv':aggregate_csv(report)}
                 if any((report_output/name).read_bytes()!=text.encode('utf8') for name,text in expected_files.items()):
                     raise ValueError('Existing report differs from recomputed aggregates')
+                sync_report_directory(report_output)
                 result={name:fingerprint(report_output/name) for name in expected_files}
             else:result=write_report(report,report_output)
         except Exception:
@@ -128,7 +129,7 @@ def main(argv=None):
         verified_confirmation=research.portfolio_segment(config,life,output/'confirmation',evidence('confirmation'),
             read(output/'probabilities-confirmation/report.json')['operational'],
             output/'portfolios-confirmation',confirmation=True,replay=True)
-        from fxnn.economic_report import build_report
+        from fxnn.economic_report import build_report,sync_report_directory
         verified_development=research.portfolio_segment(config,life,output/'development',evidence('development'),
             fingerprint(output/'operational-development.jsonl'),output/'portfolios-development',replay=True)
         expected=build_report(model_report(),model_report(True),verified_development,
@@ -136,6 +137,7 @@ def main(argv=None):
             artifacts={'development_models':model_fp(),'final_models':model_fp(True)})
         if final_report!=expected:
             raise ValueError('Final aggregate differs from verified portfolio replay')
+        sync_report_directory(output/'report-confirmation')
         result={'report':fingerprint(output/'report-confirmation/report.json')}
         life.close('COMPLETED',result)
     progress(result)

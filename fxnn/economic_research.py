@@ -463,12 +463,13 @@ def release_freeze(repo, config, supervisor, preregistered_sha, receipts, artifa
     verify_operational_predictions(config,supervisor,data,clock,artifacts['development_models'],fingerprint(operational))
     portfolios=portfolio_segment(config,supervisor,source_root,source,fingerprint(operational),
         Path(artifacts['development_portfolios']['path']).parent,replay=True)
-    from .economic_report import build_report
+    from .economic_report import build_report, sync_report_directory
     development_models=json.loads(Path(artifacts['development_models']['path']).read_text())
     expected_report=build_report(development_models,final,portfolios,
         artifacts={'development_models':artifacts['development_models'],'final_models':artifacts['final_models']})
     if json.loads(Path(artifacts['development_report']['path']).read_text())!=expected_report:
         raise ValueError('Development report differs from verified complete portfolio replay')
+    sync_report_directory(Path(artifacts['development_report']['path']).parent)
     resource_preflight(supervisor.root,config)
     bound={**{'receipt_'+k:v for k,v in receipts.items()},**artifacts}
     return supervisor.freeze(sha,sha,sha,True,True,contracts,bound,{f'T{i}':True for i in range(1,6)})

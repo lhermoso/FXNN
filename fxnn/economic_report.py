@@ -420,10 +420,14 @@ def write_report(report, output):
     # Only a complete fsynced directory becomes the public aggregate output.
     # Interrupted attempts remain forensic siblings; they are never adopted.
     staging.rename(directory)
-    for parent in (directory, directory.parent):
-        fd = os.open(parent, os.O_RDONLY)
-        try:
-            os.fsync(fd)
-        finally:
-            os.close(fd)
+    sync_report_directory(directory)
     return result
+
+
+def sync_report_directory(directory):
+    """Finish publication durability, including after a visible interrupted rename."""
+    directory=Path(directory)
+    for parent in (directory,directory.parent):
+        fd=os.open(parent,os.O_RDONLY)
+        try:os.fsync(fd)
+        finally:os.close(fd)
