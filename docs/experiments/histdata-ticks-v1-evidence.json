@@ -1,0 +1,1387 @@
+{
+  "acquisition_manifest_sha256": "933a647a6ff9aaa1403f6bba05864f1d093d635ba52d2c5cd820057b20009b0e",
+  "config_sha256": "d247e21da88adabade42bb972fbe44322f701f8bf7170904f1ee9521f0fa646b",
+  "csv_bytes": 4944087247,
+  "dataset": "histdata_ticks_v1",
+  "fits_in_issue19": 0,
+  "invalid_minute_ranges_utc": [
+    "2022-10-31T00:00 through 00:59",
+    "2023-10-30T00:00 through 00:59"
+  ],
+  "invalid_utc_minutes": 120,
+  "ledger": {
+    "baseline_fit_count": 103,
+    "baseline_lines": 219,
+    "baseline_prefix_sha256": "3e9ed64b3307b346e0108e8710ceb8031d93645b4504065f5de6ef76f058a2d1",
+    "note": "First local fingerprint taken after pilot acquisition. Baseline prefix matches root pre-acquisition hash. Subsequent 38 fits belong to independent issue6; downloader never reads/writes ledger.",
+    "post_acquisition_fit_count": 141,
+    "post_acquisition_sha256": "430161fa2aa56aa0a653f527f0b3467bee19b972b4a2591345d1a3e271f4e1d7"
+  },
+  "local_directory": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD",
+  "months": [
+    {
+      "anomalies": {
+        "source_rows": 1405943,
+        "valid_rows": 1405943
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "629918ce43aaf6fcd2a12ce6051c1357f914333bd727a8ffb7a14359ff769188",
+      "files": {
+        "audit.json": {
+          "bytes": 1370,
+          "sha256": "c4afd7a75e188c431af32409f60a24728759acddea202cb4642aac2bcc9dbebe"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "5ea68f2041c65eae8ab0d5f50d7947f65b5ccd8ff776ae7a72bc23923c21f510"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "d3a5ce6be0f4a995e56edf683ccadad83b8c938c708fd6874d401edbd36a8323"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 8775477,
+          "sha256": "7317b7f57d87b8506b9fd19d2232588fbefd4c9362082eadec10b97742198105"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 114166922,
+          "sha256": "743b1fb144942eed73382050e668301f5cbfac6e0c3018d9f925ef7309229bb8"
+        }
+      },
+      "first_utc": "2022-01-02T22:03:54.650000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-02-01T04:59:24.913000+00:00",
+      "max_gap_seconds_unclassified": 172804.685,
+      "month_est": "202201",
+      "reserved_rows": 0,
+      "source_rows": 1405943,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/1",
+      "spread_max": "0.000920",
+      "spread_mean": "0.00003337197169444280458027103517",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 27,
+      "valid_rows": 1405943
+    },
+    {
+      "anomalies": {
+        "source_rows": 1738863,
+        "valid_rows": 1738863
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "d603e711dae8cd77643209f284daa9987550e63e35574f3004080e2b76a3f410",
+      "files": {
+        "audit.json": {
+          "bytes": 1327,
+          "sha256": "895100a9e30cb5ef59829686ce35dca6b941e6f69f5ce05ca9928ecd7cee2447"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "e798703d8d8907d0dcd3ff7b7181cc7bfcd0b2caf680760335f3d74f18c4f0d4"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "25d7050ee7c049ad6ca395c589ffa1e0014c6c39afc59c7e58525ad5eb6b8e5d"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 10930132,
+          "sha256": "26724eed3afc3e3e61f5954b4e3d86bc34ed3222cd26b1ea2b200b85233c9f85"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 141464703,
+          "sha256": "37e1d7c9b6c1968178fabf4b2a05b3828bd7f67a373451f09a73623085e0ea8c"
+        }
+      },
+      "first_utc": "2022-02-01T05:00:06.460000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-03-01T04:59:57.403000+00:00",
+      "max_gap_seconds_unclassified": 172804.362,
+      "month_est": "202202",
+      "reserved_rows": 0,
+      "source_rows": 1738863,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/2",
+      "spread_max": "0.000920",
+      "spread_mean": "0.00003636428516795170177294013387",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 25,
+      "valid_rows": 1738863
+    },
+    {
+      "anomalies": {
+        "source_rows": 2703982,
+        "valid_rows": 2703982
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "f98b454f934891ba06e5807c874c9399a68ef17e50a8889e8592dba929e603fe",
+      "files": {
+        "audit.json": {
+          "bytes": 1412,
+          "sha256": "c2f9c623931aaa5cd55abff0d9edb7c1d6a5b2d8c9b23c379cd0b43db20ead94"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "958ab95a2e946f26917c710848dcd3afa4b152fff7957e27335d269ea59bd1db"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "e5abb7e94cfd49a6c0561fa60c0ba1b4cb27aa468d9ee911983e6173b3b42307"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 16874192,
+          "sha256": "09720a5c40e625cb7df6c877e200f122fd0b6fd417651adb933a7849d14e504e"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 220597769,
+          "sha256": "cbc2f6f49a17d00ff7ed2152287958187544647a85cb9fe6269fcd8ed410bba8"
+        }
+      },
+      "first_utc": "2022-03-01T05:00:01.451000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-04-01T04:59:48.931000+00:00",
+      "max_gap_seconds_unclassified": 176413.657,
+      "month_est": "202203",
+      "reserved_rows": 0,
+      "source_rows": 2703982,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/3",
+      "spread_max": "0.001110",
+      "spread_mean": "0.00003817908551166390900531142589",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 28,
+      "valid_rows": 2703982
+    },
+    {
+      "anomalies": {
+        "source_rows": 2072552,
+        "valid_rows": 2072552
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "634a9e7f5a782db7955e232601b290e03d8ef30c14442cf764f28ae8588251ce",
+      "files": {
+        "audit.json": {
+          "bytes": 1331,
+          "sha256": "bf5b30edf7c2fcb147addaab00b920d219cab1de227d0b8489b81354174a6a54"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "93745b2b3c143aa5d04bec2d43358d15dc68347d3c10090de31dd8d3aa878d41"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "d4ff8738aa2531d1f799222910e5ecdefcffb46a2307a4c593fd18c564dec688"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 12842008,
+          "sha256": "5bc28e2218e72d619c263df99a0a0dfa9a19aaac71b3c71ef1c126489bcf9960"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 168824443,
+          "sha256": "da2a7dd8173979cac4c349c65c54293f14282afdf4d38968cc6a40ffde51ce88"
+        }
+      },
+      "first_utc": "2022-04-01T05:00:00.096000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-04-29T21:59:49.462000+00:00",
+      "max_gap_seconds_unclassified": 173047.423,
+      "month_est": "202204",
+      "reserved_rows": 0,
+      "source_rows": 2072552,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/4",
+      "spread_max": "0.001680",
+      "spread_mean": "0.00004260975840413171780490911688",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 25,
+      "valid_rows": 2072552
+    },
+    {
+      "anomalies": {
+        "source_rows": 2644082,
+        "valid_rows": 2644082
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "95c9d0cc4d0dcfb88dd6990ade67a9ed9d64d8a9f31c0050003fa79cd0a398c2",
+      "files": {
+        "audit.json": {
+          "bytes": 1413,
+          "sha256": "8e2b69b221950ce06d36c60f64e9e33c1564b84f4cbd2e4b7af8803156152e1c"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "dc62f6d585c587b1bd5e2664a986223468ba97992434e69dab078830f72b268a"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "29d4c0d8b1586e027a299560083f31a46aa06fd6b8ff8cf6bd25ec546eeb4b4f"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 16294985,
+          "sha256": "29f994b98fd6191f303acee1879acb92dbdf55bfa526a69ae6cbbe537e877857"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 215686536,
+          "sha256": "7b95eb4a7e3bab08ef5406902abf3ad8e622aef55c6b978a0c8bf12c2f035883"
+        }
+      },
+      "first_utc": "2022-05-01T22:04:02.192000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-06-01T04:59:50.109000+00:00",
+      "max_gap_seconds_unclassified": 173042.165,
+      "month_est": "202205",
+      "reserved_rows": 0,
+      "source_rows": 2644082,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/5",
+      "spread_max": "0.002480",
+      "spread_mean": "0.00004038867554031985392283597861",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 28,
+      "valid_rows": 2644082
+    },
+    {
+      "anomalies": {
+        "source_rows": 2535438,
+        "valid_rows": 2535438
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "c6489ba4baf9f3354d0da29cec286908f45fcdb0c97bd8ccd07beb94e309eef7",
+      "files": {
+        "audit.json": {
+          "bytes": 1384,
+          "sha256": "2138b5ca4c76c33c2b08faab1a1273b360d7cc665372b1a261aca3f763becb97"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "75fde1e4c36d21d8f9b3dc12bc3a990c9a3d08b34af0fd18ed20fc966d0ebd8d"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "4041a111ec25676f4046a4f57b29a549b7b29c3128d08735e5401ce6746beb30"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 15727545,
+          "sha256": "79d3c5544fcb1c41ca18ef926db7e8b360cb0ea3a7db7287803e77d7189bc60e"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 206777392,
+          "sha256": "69c4749794a3d20865e462993531474950fc052a0ee6ec0f581feaf39eaaf3a3"
+        }
+      },
+      "first_utc": "2022-06-01T05:00:04.444000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-07-01T04:59:59.952000+00:00",
+      "max_gap_seconds_unclassified": 173069.568,
+      "month_est": "202206",
+      "reserved_rows": 0,
+      "source_rows": 2535438,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/6",
+      "spread_max": "0.002670",
+      "spread_mean": "0.00003915286826181511833458361041",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 27,
+      "valid_rows": 2535438
+    },
+    {
+      "anomalies": {
+        "source_rows": 2993113,
+        "valid_rows": 2993113
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "d46ea81bc32fd344d25255ca0e317a0c3e39e76a7fd7bb51090f7bbcd1a8e400",
+      "files": {
+        "audit.json": {
+          "bytes": 1391,
+          "sha256": "24c054b6cbf4dc60605f341fac6d4eae257a49c966e7a0cb2aea109fefa73de5"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "354659b0040a87fd7a535bb184525f58091e2b287c62ceb4adc4e51226e732d6"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "c080b617136b5a89a01629bf09f4e82e1cbc731c844de831448e128599cfb908"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 18433824,
+          "sha256": "204b0009e7a0564a750d6f5e13e28f21d8012db19dcf64c23d653f4eb85c6308"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 244304768,
+          "sha256": "887d50405541cea1ecaab28dc7305d403b7698abd95fdc1c3bf4570b3cac90eb"
+        }
+      },
+      "first_utc": "2022-07-01T05:00:00.533000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-08-01T04:59:59.314000+00:00",
+      "max_gap_seconds_unclassified": 173051.618,
+      "month_est": "202207",
+      "reserved_rows": 0,
+      "source_rows": 2993113,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/7",
+      "spread_max": "0.002010",
+      "spread_mean": "0.00004227742821604129212629125596",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 27,
+      "valid_rows": 2993113
+    },
+    {
+      "anomalies": {
+        "source_rows": 3539349,
+        "valid_rows": 3539349
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "f8d27c6638a79d67f5f55c32720214101283e155f8fa01eba28a4da5d45925b8",
+      "files": {
+        "audit.json": {
+          "bytes": 1420,
+          "sha256": "0c997852d8b5075fe7dbc0b943bdf82d5054be52fe59ef555d8553fcc90b8be7"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "4b4e40192223e4454b046b633fbe2e0d5f3f3483d748268d1626deb7e14f6c9e"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "cef29b5dbfeb5d5c89db9409944c5d26cc96e84440f7cb87bd99aaf3507c9433"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 21191558,
+          "sha256": "8bc8587d239929357869dd0e14a59f8219ae71a898df1347086c5da0f0c90900"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 289093782,
+          "sha256": "91543e91e0a0c0beed265ade2a0c7c7a165820da07a91abd4cc44c597278348c"
+        }
+      },
+      "first_utc": "2022-08-01T05:00:00.993000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-09-01T04:59:59.155000+00:00",
+      "max_gap_seconds_unclassified": 173040.457,
+      "month_est": "202208",
+      "reserved_rows": 0,
+      "source_rows": 3539349,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/8",
+      "spread_max": "0.002190",
+      "spread_mean": "0.00004955317489176681926535077496",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 28,
+      "valid_rows": 3539349
+    },
+    {
+      "anomalies": {
+        "source_rows": 4494304,
+        "valid_rows": 4494304
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "c0bf694c67fdb008cdb57fac06f26c8ef4364e9d3aac4202bb48a685cd7eb096",
+      "files": {
+        "audit.json": {
+          "bytes": 1369,
+          "sha256": "7d9e01907633ec5987f7d2cda2433c00a3e2b8619b598031c3afdafc1b5d470d"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "5efcff1a330f1b4d36943b7e598640be70acff08003e4fc7c3f22efcebf7d7a7"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "981e20c4a125131ba25c01a247012799985bdbe55bfa544206255ce7f8561f5a"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 26950208,
+          "sha256": "e41270e3911ae9121472bddff9353b6646fec6d4e70f9491f3db324fd95dc671"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 367391797,
+          "sha256": "2ca08193579e64177d83fb931bfe96567136afd0afce6f671e32ba20512a5666"
+        }
+      },
+      "first_utc": "2022-09-01T05:00:00.050000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-09-30T21:59:58.203000+00:00",
+      "max_gap_seconds_unclassified": 173045.357,
+      "month_est": "202209",
+      "reserved_rows": 0,
+      "source_rows": 4494304,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/9",
+      "spread_max": "0.001930",
+      "spread_mean": "0.00005028627124466880745049734063",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 26,
+      "valid_rows": 4494304
+    },
+    {
+      "anomalies": {
+        "invalid_rows": 4624,
+        "out_of_order": 4624,
+        "simultaneous_timestamp": 1,
+        "source_rows": 4890316,
+        "valid_rows": 4885692
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "d92fe60cda15763d3cea7b3167b879b3e2b498e527156a5ae3f762fc7a7da5df",
+      "files": {
+        "audit.json": {
+          "bytes": 1482,
+          "sha256": "5abbc1f629033afd641058a64f014825003eedcbf60134a450adac424c9fa99e"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "cc3b84f78d4fb4fd337f48721215933bd9e8cfa173fc7d48d6ec2aac417e79f2"
+        },
+        "form.html.http.json": {
+          "bytes": 345,
+          "sha256": "3f1a3dea7d662a51d81b9e4694a23f7e0aa45273c4f098b0f197f097088ecad4"
+        },
+        "quarantine.jsonl": {
+          "bytes": 1165467,
+          "sha256": "9938a0817eef2d8b2a6738219943e2e66bc13d5e92675e86f803c21b4db713cc"
+        },
+        "raw.zip": {
+          "bytes": 29098409,
+          "sha256": "c62394f255595c07c51a17042f62ef1bab5002f845b89cc93f8933fafa2cf72a"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 399482478,
+          "sha256": "3c3a634aba7396def1533e3241be4426c54afce891ff688fbf2a88598e789e27"
+        }
+      },
+      "first_utc": "2022-10-02T22:04:02.059000+00:00",
+      "invalid_rows": 4624,
+      "last_utc": "2022-11-01T04:59:59.696000+00:00",
+      "max_gap_seconds_unclassified": 172808.673,
+      "month_est": "202210",
+      "reserved_rows": 0,
+      "source_rows": 4890316,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/10",
+      "spread_max": "0.002250",
+      "spread_mean": "0.00005115702135951263403423711523",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 27,
+      "valid_rows": 4885692
+    },
+    {
+      "anomalies": {
+        "source_rows": 4438606,
+        "valid_rows": 4438606
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "d6f88d630d58a20cd56ce2b144333c79f6861f267a2ea45ee7644862fb696e3a",
+      "files": {
+        "audit.json": {
+          "bytes": 1395,
+          "sha256": "bb645cf4370c747e9fe25a19809b9e173d56c5fc432585be8a43cdb78843a543"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "db6fecac36534dcfb73d4128f7aed08cb5db3f1a1c1d368885556147ce42e9c2"
+        },
+        "form.html.http.json": {
+          "bytes": 345,
+          "sha256": "6934a975c50cd91a184ff06441341ace0e5c85abda6dd3c19266b433ae57144d"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 26684812,
+          "sha256": "b5759ba75c04983afa41cac5e228efb880b1677f68164134b356407b12358811"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 362825275,
+          "sha256": "f78692184a97135e0731feba03d5da02bf37a98d5fd70589304359804dd1471c"
+        }
+      },
+      "first_utc": "2022-11-01T05:00:00.234000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-12-01T04:59:59.579000+00:00",
+      "max_gap_seconds_unclassified": 176406.99,
+      "month_est": "202211",
+      "reserved_rows": 0,
+      "source_rows": 4438606,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/11",
+      "spread_max": "0.001170",
+      "spread_mean": "0.00005460406938574858863345834255",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 27,
+      "valid_rows": 4438606
+    },
+    {
+      "anomalies": {
+        "source_rows": 3493032,
+        "valid_rows": 3493032
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "3b12517806bed35b17eec3fcb41f8739b13dab3f8a2196ad24c5d4b67770b468",
+      "files": {
+        "audit.json": {
+          "bytes": 1368,
+          "sha256": "6a74926f6e3af373ee8be8949b23931e0db64f9d2bef8de9ba3cb9e05dd2391c"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "dc453debb2ed42da2eb090716ec8f4e180d4c521e52096337ae48f0b49988410"
+        },
+        "form.html.http.json": {
+          "bytes": 345,
+          "sha256": "7ca6abf66508d3166350a58e86f6b79c58f5d7b40dafb826c811075beac0dcc3"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 21051166,
+          "sha256": "f1bb9ee51d242c286dbbacac98a6a6c36cbd6a17422b6d308c5c8668c48ed801"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 285294332,
+          "sha256": "ff09a7fc7bd48ee19693155c83e0cb9c864dc2b143eb67ea4f4f09a75ac8000c"
+        }
+      },
+      "first_utc": "2022-12-01T05:00:00.257000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2022-12-30T21:59:57.894000+00:00",
+      "max_gap_seconds_unclassified": 172870.105,
+      "month_est": "202212",
+      "reserved_rows": 0,
+      "source_rows": 3493032,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2022/12",
+      "spread_max": "0.001950",
+      "spread_mean": "0.00005610211128898905020051347941",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 26,
+      "valid_rows": 3493032
+    },
+    {
+      "anomalies": {
+        "source_rows": 2977382,
+        "valid_rows": 2977382
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "263cea56ae34398f3fd62bac9e6035e6375255f6e337b27fa792950c504c129a",
+      "files": {
+        "audit.json": {
+          "bytes": 1415,
+          "sha256": "32ffd13cab6a7a603b77f88fbfe9b605032fb165a6e19bb16216f3ec236db8c5"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "269aa55ccbc633554fac16ae9145caa81137ce147c5982ff5b9835e82123c0b8"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "b6e951037294740f192d6b878978914890eb84ab9837636b41e85ffc35d2004e"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 18175512,
+          "sha256": "ad18725ce707f67889adbb7e63cc13daf53dbd31a1c7fca562e96775e31b322a"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 243014889,
+          "sha256": "41c2ad699367f61aa55e0a3f21f1c95bd0697a02d64f23e66b2103750d376cb5"
+        }
+      },
+      "first_utc": "2023-01-01T22:04:01.067000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-02-01T04:59:54.919000+00:00",
+      "max_gap_seconds_unclassified": 172806.741,
+      "month_est": "202301",
+      "reserved_rows": 0,
+      "source_rows": 2977382,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/1",
+      "spread_max": "0.003420",
+      "spread_mean": "0.00005420765289774708116056320620",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 28,
+      "valid_rows": 2977382
+    },
+    {
+      "anomalies": {
+        "source_rows": 2401122,
+        "valid_rows": 2401122
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "58caba80913ae45dde839b363fa5ef8bf75d5aac8a67190ec9a0f5010517fba9",
+      "files": {
+        "audit.json": {
+          "bytes": 1334,
+          "sha256": "fbf7858d340b0c2972f1b23e47dfbfa3403a01e4f5029d7428cc0623fed29ba6"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "f2562f8427bd6eebd2a96a1ca1b05aef1716ffe121af624a622578fb3144633c"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "da1a00f0193506b61520bd66a57df15a9dfbb23274bc66f777aecbd36f0d6b80"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 14514201,
+          "sha256": "05eee0b585d3fdbe4c783302a8cbcb7dd54ceb477a35fa1050ee7a1e9d7a222b"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 195765916,
+          "sha256": "e5bfc310734af8e9c9a8d75ca19077e18acdd30b6fe4b35bb3e9d9345ebbf1b8"
+        }
+      },
+      "first_utc": "2023-02-01T05:00:00.917000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-03-01T04:59:59.969000+00:00",
+      "max_gap_seconds_unclassified": 176404.239,
+      "month_est": "202302",
+      "reserved_rows": 0,
+      "source_rows": 2401122,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/2",
+      "spread_max": "0.001380",
+      "spread_mean": "0.00005030875149201081827578940179",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 25,
+      "valid_rows": 2401122
+    },
+    {
+      "anomalies": {
+        "source_rows": 2269166,
+        "valid_rows": 2269166
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "8da702ac30831f6a0260d71663f467cd6f4e94ab88d452e9540c9ce585399cad",
+      "files": {
+        "audit.json": {
+          "bytes": 1380,
+          "sha256": "a562d55280e2b3e3c4b2081980d2a4662a5dd4768aad44e1aca37f21fffb81dd"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "929c6b274f74f0569afa1a110eddb0932d261e86fd6b210cb9da84ebef777681"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "152cef5e026956413b2b21826f19d721202a17d2427e8cebb2500e5aebcb6988"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 13610560,
+          "sha256": "5610fdaa6070c1cf56830889eda70ef751a211e886bdb0912c7cc8a8d19a41af"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 184944929,
+          "sha256": "4594217a62dc4899367bf1dc33be252188c8df146cee8afd904ca6481e9fcfad"
+        }
+      },
+      "first_utc": "2023-03-01T05:00:00.366000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-03-31T21:59:56.463000+00:00",
+      "max_gap_seconds_unclassified": 180000.963,
+      "month_est": "202303",
+      "reserved_rows": 0,
+      "source_rows": 2269166,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/3",
+      "spread_max": "0.000880",
+      "spread_mean": "0.00004047224398743855672083928633",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 27,
+      "valid_rows": 2269166
+    },
+    {
+      "anomalies": {
+        "source_rows": 1303430,
+        "valid_rows": 1303430
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "6c2a54e438c7c77632ab0069c2adff6a0dd40263da8eca1e052ffb20574f0de4",
+      "files": {
+        "audit.json": {
+          "bytes": 1340,
+          "sha256": "fdd7b046b695c05d7537126a9b28357e687e043c40b4e817cd4b8bc69b76950f"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "05c02896a7e3479292824595814d1f3991c53c08b6ce678026c613eb0d6245c6"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "b2b1d32bc64a91f7f926ffc2ff5db17bf4c002e17330fe998b79c75360ca32d7"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 7787764,
+          "sha256": "5d984d13ee8a2692094a7b73450c79f9a353a5bcefdc701fe0b675fd9a3b2e27"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 105761815,
+          "sha256": "851f70f9d2fa207a16d6d569d6f13505cc00971830b56dd7ed9713e45fddeb1f"
+        }
+      },
+      "first_utc": "2023-04-02T22:00:00.164000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-05-01T04:59:54.871000+00:00",
+      "max_gap_seconds_unclassified": 248642.029,
+      "month_est": "202304",
+      "reserved_rows": 0,
+      "source_rows": 1303430,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/4",
+      "spread_max": "0.001070",
+      "spread_mean": "0.00002998839216528697360042349800",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 26,
+      "valid_rows": 1303430
+    },
+    {
+      "anomalies": {
+        "source_rows": 1566300,
+        "valid_rows": 1566300
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "4955d47eacd79b7f01ba88268c4e7ab2db1787eeac0df0440b02b6c2f11ca57c",
+      "files": {
+        "audit.json": {
+          "bytes": 1396,
+          "sha256": "ae4f194ce8f88321f6febba23eaab94afe708c579989b47b104edc10f429d833"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "39c89d4e5fa27394f37ce2684c4cb7dcb6aaf82e8f30ddf4021d9f9039207cc0"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "913af33ee19d8bf1a3f86d68c4c2d7b9d5bf14998f7959f476c2e9752a7d2a39"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 9266495,
+          "sha256": "26ff261f29b939925b72fcb0346ceb11bcf6e753766a28c795160807e8312e34"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 127314740,
+          "sha256": "536936f2abbf7e5ca88f45af897b856621545e6858dd1ab516b639b20918a190"
+        }
+      },
+      "first_utc": "2023-05-01T05:00:00.497000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-06-01T04:59:53.651000+00:00",
+      "max_gap_seconds_unclassified": 183600.456,
+      "month_est": "202305",
+      "reserved_rows": 0,
+      "source_rows": 1566300,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/5",
+      "spread_max": "0.000900",
+      "spread_mean": "0.00002944008172125391048968907617",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 28,
+      "valid_rows": 1566300
+    },
+    {
+      "anomalies": {
+        "source_rows": 1413820,
+        "valid_rows": 1413820
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "3b9a8376581f42e0e872975747f4bc2e1117ab5d42083883c6948a81c916654d",
+      "files": {
+        "audit.json": {
+          "bytes": 1320,
+          "sha256": "fb90c84a1aa61a5cfc06e517013be519dd87d41bbe2d87259ae79f0a927616dc"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "1ac57f28c32257c55ba5e365622e8496b08d563fd87b8a05a53851e7c8e8ba71"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "ec7b113ea70e4aaf4046caba1ca3658bc3bb894db1c8bf13e071cb912e57d58d"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 8392028,
+          "sha256": "1cdc6319178806603766da0fce1e0af49bc9352fca20e0df6e3f6a36c544ca30"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 114812640,
+          "sha256": "07fc7ab81c622dbd66a0bf2027a7f0e3c2a6e04215422c912db62907291438ba"
+        }
+      },
+      "first_utc": "2023-06-01T05:00:00.236000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-06-30T21:59:57.926000+00:00",
+      "max_gap_seconds_unclassified": 183600.372,
+      "month_est": "202306",
+      "reserved_rows": 0,
+      "source_rows": 1413820,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/6",
+      "spread_max": "0.000900",
+      "spread_mean": "0.00002919181366793509782009025194",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 25,
+      "valid_rows": 1413820
+    },
+    {
+      "anomalies": {
+        "source_rows": 1535263,
+        "valid_rows": 1535263
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "ed557174ddebc1ea5448003e617402739ca40791fd5239d798054ef7f6b0303b",
+      "files": {
+        "audit.json": {
+          "bytes": 1370,
+          "sha256": "f0b169ceecdd73c916e7e18665e8f7d5d5f7502e649833bb9747106d7524318a"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "b57f25c111ae56f5fb4ac72e531cf66c57d2765afe54740c66cd8ec2ec73a280"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "50fd9568e16dd55e4a31281e94c5859034b13681db801b41c5d7f8f95f43e546"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 9129673,
+          "sha256": "e2eceddfa96f3cce9cf3c05749fa7692dab829b318d56625fa59fae80e3593b7"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 124770343,
+          "sha256": "eb789c6c0a1a6620695a17d1c84910731f84fbc6ce85eb738a08dcb2725b1315"
+        }
+      },
+      "first_utc": "2023-07-02T23:00:00.184000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-08-01T04:59:57.466000+00:00",
+      "max_gap_seconds_unclassified": 183842.258,
+      "month_est": "202307",
+      "reserved_rows": 0,
+      "source_rows": 1535263,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/7",
+      "spread_max": "0.002000",
+      "spread_mean": "0.00003009612685253275823100016088",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 27,
+      "valid_rows": 1535263
+    },
+    {
+      "anomalies": {
+        "source_rows": 2237719,
+        "valid_rows": 2237719
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "8f80c92c6d8598495949b3bfa92e4e9915583c0c61fbdd8ec86a8e68d2797a58",
+      "files": {
+        "audit.json": {
+          "bytes": 1405,
+          "sha256": "15b7eb24986eb5dcff31471b3c19caee51462444cc505dc465131b187ba574ab"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "b0e344ba2cc8edb15660e6268b9140142e70eb4561b035d372266667b8296a26"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "4321df54391dcde88550c7efdc63b58f52cf23191ac1c3d66b64536299b3718f"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 13307821,
+          "sha256": "8ec98242126ad63744665bff7a81abc1c91a12ceb601f0fe7490f3d5d1a2aabf"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 182366849,
+          "sha256": "58a1890975397c3132724715dbc4e6c6aea251f5cec9f1018ad19a5273db3aa6"
+        }
+      },
+      "first_utc": "2023-08-01T05:00:00.064000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-09-01T04:59:50.046000+00:00",
+      "max_gap_seconds_unclassified": 173034.79,
+      "month_est": "202308",
+      "reserved_rows": 0,
+      "source_rows": 2237719,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/8",
+      "spread_max": "0.001160",
+      "spread_mean": "0.00003016694231938862743713576191",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 28,
+      "valid_rows": 2237719
+    },
+    {
+      "anomalies": {
+        "source_rows": 1721099,
+        "valid_rows": 1721099
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "cf3d2039268b7d5c2957c41949c9e1a2785347859ee2f2c1df50c25b9923d152",
+      "files": {
+        "audit.json": {
+          "bytes": 1324,
+          "sha256": "d57107ba8d4c796c60888b4e1697e32e93092376c3caa4cab881f9eab0e22bc4"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "a13ce7398bceb43fea53e2539b71f1ee2949e528253fcafb53c19e161ed451e7"
+        },
+        "form.html.http.json": {
+          "bytes": 343,
+          "sha256": "c0ec3970835fabcef6899b08a5dc1a4b9855fac20e12cb563ceabbfc5ac38198"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 10302936,
+          "sha256": "98b2e55a03aed39d302532e146fd7e712136a6332df4ab720e17d61194cb78a5"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 140007040,
+          "sha256": "80f01816cf30967ad127022b3c8a412341ab0377285774965ecfa462a7b51af9"
+        }
+      },
+      "first_utc": "2023-09-01T05:00:03.613000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-09-29T21:59:56.147000+00:00",
+      "max_gap_seconds_unclassified": 172829.917,
+      "month_est": "202309",
+      "reserved_rows": 0,
+      "source_rows": 1721099,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/9",
+      "spread_max": "0.001530",
+      "spread_mean": "0.00002805125097394165007358670245",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 25,
+      "valid_rows": 1721099
+    },
+    {
+      "anomalies": {
+        "invalid_rows": 2558,
+        "out_of_order": 2558,
+        "simultaneous_timestamp": 1,
+        "source_rows": 2212747,
+        "valid_rows": 2210189
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "bc30fbfad1747b19963448a51de5ef172cc31b67c6a40139d832cdf1c1f15561",
+      "files": {
+        "audit.json": {
+          "bytes": 1496,
+          "sha256": "12814bc8d09dc6800e65f9124f08f78a89f6a5dac66f7194a08d66c89971ca8c"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "48ef13979a76977dcadfb33adf26f28b8544e52513ec3503aa9ce7fb234dda56"
+        },
+        "form.html.http.json": {
+          "bytes": 345,
+          "sha256": "8edd354fb1a4926b43419189b13b572c56c75b91b08fc14d4d93e16842a2466d"
+        },
+        "quarantine.jsonl": {
+          "bytes": 644870,
+          "sha256": "6672fcc2d300de7195f755ea40f9d3289e5f31db7ef65a6ec8a49c0ae510238f"
+        },
+        "raw.zip": {
+          "bytes": 13190360,
+          "sha256": "04ce16bbe3ea2b183d982ba85e3b40f670a7a9ecb9276835cb505ab51bdd5a99"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 180109376,
+          "sha256": "687c4e3e5504aa6114fff80c9f003010171fa5e257da852992eeabbe2091873b"
+        }
+      },
+      "first_utc": "2023-10-01T22:00:29.625000+00:00",
+      "invalid_rows": 2558,
+      "last_utc": "2023-11-01T04:59:59.408000+00:00",
+      "max_gap_seconds_unclassified": 173067.761,
+      "month_est": "202310",
+      "reserved_rows": 0,
+      "source_rows": 2212747,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/10",
+      "spread_max": "0.001370",
+      "spread_mean": "0.00002814481476471016732053231647",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 28,
+      "valid_rows": 2210189
+    },
+    {
+      "anomalies": {
+        "source_rows": 1940836,
+        "valid_rows": 1940836
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "41be18fbf14e61ec2898d6cdcfdfef57d525c614f52e4ea407aec6ffda66696a",
+      "files": {
+        "audit.json": {
+          "bytes": 1375,
+          "sha256": "533dd4e9b9ec39ec2bfbfbe39baa782ca9aa0282e97a565bb09a1dc77b3be47e"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "f5994b979e5cedc505995097fe8451a895d8c183f65f6504a10c9b81dca146ba"
+        },
+        "form.html.http.json": {
+          "bytes": 345,
+          "sha256": "c1e003d9205f62fda1779f6beafc3807f2b420a4eb4752db4e73fecc0e89e046"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 11598307,
+          "sha256": "f0728f0441b6994fdd8d9a9867963e174c4f419f77e3c8808ab28b99fb6564a0"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 158024550,
+          "sha256": "15ef746aa5399eabfac4497a8af71ac223bfc767f869ca2a425e7c84762c364f"
+        }
+      },
+      "first_utc": "2023-11-01T05:00:00.096000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-12-01T04:59:58.867000+00:00",
+      "max_gap_seconds_unclassified": 176406.516,
+      "month_est": "202311",
+      "reserved_rows": 0,
+      "source_rows": 1940836,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/11",
+      "spread_max": "0.001860",
+      "spread_mean": "0.00002902837746208334964932637276",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 27,
+      "valid_rows": 1940836
+    },
+    {
+      "anomalies": {
+        "source_rows": 2102540,
+        "valid_rows": 2102540
+      },
+      "attempt": "attempt-001",
+      "completed_record_sha256": "2c7e7c56c530d2b634a4ccb4909b66c77345edb193e59876452c52375f7d3f64",
+      "files": {
+        "audit.json": {
+          "bytes": 1331,
+          "sha256": "6c099088d6f8ae0306e5a7b8b7cfa98ae187fdcc16ceffce5a499e54bb8e7279"
+        },
+        "form.html": {
+          "bytes": 31534,
+          "sha256": "4bbfced56416cb219347a431a3e7f1268658c3c27be6d6057cc67c01bb31f1a4"
+        },
+        "form.html.http.json": {
+          "bytes": 345,
+          "sha256": "33b759118134df763c31420b1242ca3dc06368c52b0085a36dadde1ee8e24a09"
+        },
+        "quarantine.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "raw.zip": {
+          "bytes": 12424208,
+          "sha256": "0f641a897b87e5b28a197622aa14fa4bd1d51a2466077bb7698cf13c8e5c6cc1"
+        },
+        "raw.zip.http.json": {
+          "bytes": 209,
+          "sha256": "1c79e735a08a74cdcfc89fd1c8965a762b3b46a9bc68e22de8a95a88583e37b3"
+        },
+        "reserved.jsonl": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ticks.csv": {
+          "bytes": 171283963,
+          "sha256": "540b6c9c7e4a0f886d1e94a3f503d35c45e22678eaed17fd2058f187a0a7aa26"
+        }
+      },
+      "first_utc": "2023-12-01T05:00:00.077000+00:00",
+      "invalid_rows": 0,
+      "last_utc": "2023-12-29T21:59:59.385000+00:00",
+      "max_gap_seconds_unclassified": 176477.937,
+      "month_est": "202312",
+      "reserved_rows": 0,
+      "source_rows": 2102540,
+      "source_url": "https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/eurusd/2023/12",
+      "spread_max": "0.002040",
+      "spread_mean": "0.00003013089406146850951706031752",
+      "spread_min": "0.000010",
+      "status": "completed",
+      "utc_days_with_valid_quotes": 25,
+      "valid_rows": 2102540
+    }
+  ],
+  "preregistration_commit": "971af1ef37fc5798182466380301618ea7c24025",
+  "protocol_sha256": "7d6d1f72b5bf871450e0a0d9291841ff1b3fa3a2ebde6e2f905b6c9cc6d0422a",
+  "script_sha256": "8aa9aaafabdee3e0d9471e66b7e59dfc37745cfeb89620baf5f5a1f01a9381fb",
+  "summary": {
+    "consecutive_exact_duplicate": 0,
+    "invalid_rows": 7182,
+    "out_of_order": 7182,
+    "reserved_rows": 0,
+    "simultaneous_timestamp": 2,
+    "source_rows": 60631004,
+    "valid_rows": 60623822
+  },
+  "verified_resume_manifest_sha256": "933a647a6ff9aaa1403f6bba05864f1d093d635ba52d2c5cd820057b20009b0e",
+  "zip_bytes": 366554181
+}
