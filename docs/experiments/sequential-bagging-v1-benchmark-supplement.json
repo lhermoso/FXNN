@@ -1,0 +1,149 @@
+{
+  "kind": "post_scientific_run_supplemental_synthetic_only",
+  "recorded_at_start_utc": "2026-09-15T20:47:54.332418+00:00",
+  "completed_at_utc": "2026-09-15T20:49:11.613405+00:00",
+  "N": 100000,
+  "K": 512,
+  "model_fits": 0,
+  "real_data_access": false,
+  "provenance": {
+    "script_sha256": "c69883733e3a65d20ad657dbaed1d55a35de31b6fc7fbf08d8109f2f3a57ad2a",
+    "sampler_path": "/Users/leohermoso/FXNN-issue8/fxnn/sequential_bootstrap.py",
+    "sampler_sha256": "7c0b117a8e3dd6c86f820833d64c656b8e7021f2f2b2bffdafcdcf3e7a0ce4ca",
+    "head": "38f230c1312ac962a657e5e52d6374948f2ab28c",
+    "prior_report_sha256": "63deb5ed777aa2904de86e7c711733e425898b36bfced09f06c882932720f62b",
+    "prior_script_sha256": "c5c8fac827ae60b74498927fd2eaa4f33c3a0bb47c37bac0dbf1050385fcd11e",
+    "instrumentation_ast_identical_after_removing_measurements": true,
+    "original_missing_metrics_recovered": false,
+    "note": "New measurements taken after scientific execution/replay; not retroactive preregistration evidence."
+  },
+  "inputs": {
+    "starts": {
+      "shape": [
+        100000
+      ],
+      "dtype": "<i8",
+      "sha256": "ff4a24ecd6b8e4ddb2e8f391b0bd60d78af88ae5d75ff91fb80aa5a5044fe4bd",
+      "byte_order": "C contiguous bytes; little endian inputs on recorded host"
+    },
+    "ends": {
+      "shape": [
+        100000
+      ],
+      "dtype": "<i8",
+      "sha256": "a96651f3053db0b51b3feac5f9ccb345f5a7b27e42054a181465e88bdf04064b",
+      "byte_order": "C contiguous bytes; little endian inputs on recorded host"
+    },
+    "ids": {
+      "shape": [
+        100000
+      ],
+      "dtype": "<i8",
+      "sha256": "baa5f49fbad78af4964d9ec7eaf2d6327b2d2ca1f4dcf54e2394dfff2e36d58e",
+      "byte_order": "C contiguous bytes; little endian inputs on recorded host"
+    },
+    "uniforms": {
+      "shape": [
+        512
+      ],
+      "dtype": "<f8",
+      "sha256": "477e147872f1e2a0564969eac9cd0d225a76b3408922cb7391f0273a873502cf",
+      "byte_order": "C contiguous bytes; little endian inputs on recorded host"
+    },
+    "durations": {
+      "shape": [
+        100000
+      ],
+      "dtype": "<i8",
+      "sha256": "a41c6233da3448def50f9415a64acd854fcfa6860c135daf5cafc1140a95f030",
+      "byte_order": "C contiguous bytes; little endian inputs on recorded host"
+    }
+  },
+  "index": {
+    "segments": 175571,
+    "height": 18,
+    "padded_leaves": 262144,
+    "node_bound_per_candidate": 38,
+    "level_bound": 19,
+    "tree_allocation_nodes": 524288
+  },
+  "stats": {
+    "prospective": {
+      "calls": 512,
+      "candidates": 51200000,
+      "fast_candidates": 0,
+      "tree_construction_seconds": 0.16004420522949658,
+      "tree_query_seconds": 36.523213834821945,
+      "uniqueness_total_seconds": 38.49536937169614,
+      "tree_nodes_total": 434944000,
+      "max_nodes_per_candidate": 17,
+      "max_levels": 11,
+      "max_error_tolerance_ratio": 0.013630460896388625,
+      "non_tree_uniqueness_and_checks_seconds": 1.8121113316447008
+    },
+    "diagnostic": {
+      "calls": 1,
+      "candidates": 100000,
+      "fast_candidates": 0,
+      "tree_construction_seconds": 0.00028508302057161927,
+      "tree_query_seconds": 0.06777766699087806,
+      "uniqueness_total_seconds": 0.07131054101046175,
+      "tree_nodes_total": 849500,
+      "max_nodes_per_candidate": 17,
+      "max_levels": 11,
+      "max_error_tolerance_ratio": 0.013630460896388625,
+      "non_tree_uniqueness_and_checks_seconds": 0.003247790999012068
+    }
+  },
+  "timings": {
+    "input_preparation_seconds": 0.01592016697395593,
+    "input_hash_seconds": 0.0015591249975841492,
+    "interval_index_preparation_seconds": 0.06540570899960585,
+    "sampling_instrumented_seconds": 39.746148709004046,
+    "trace_write_including_conversion_seconds": 0.7486751271353569,
+    "trace_flush_seconds": 4.749977961182594e-06,
+    "trace_fsync_seconds": 0.0012561670155264437,
+    "trace_hash_seconds": 0.21432262499001808,
+    "uninstrumented_fresh_sampling_with_stream_hash_seconds": 37.28195891701034
+  },
+  "outputs": {
+    "trace_sha256": "fda34e7dfffe015bfd0bf34f78f61569cef6bd2252cd1e06c8ce449165cff2a6",
+    "trace_bytes": 409600000,
+    "draws": {
+      "shape": [
+        512
+      ],
+      "dtype": "<i8",
+      "sha256": "5df8e7ef058c854c4f657db3ff6510a84b1ec2b987d6444707c4ff99dd0e7214",
+      "byte_order": "C contiguous bytes; little endian inputs on recorded host"
+    }
+  },
+  "equality": {
+    "original_uninstrumented_trace": true,
+    "original_uninstrumented_draws": true,
+    "fresh_uninstrumented_trace": true,
+    "fresh_uninstrumented_draws": true,
+    "fresh_chosen_probabilities": true
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.4.6",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "peak_rss_bytes": 116817920,
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "interpretation": [
+    "All timings are from this supplemental execution, not the original benchmark.",
+    "uniqueness_total includes tree build/query; do not sum nested totals.",
+    "Non-tree uniqueness residual includes prefix/error checks and instrumentation bookkeeping, not isolated error-check CPU.",
+    "Tree query timer excludes final division; residual includes it. Node-count reductions add measurement overhead.",
+    "Instrumented sampling wall includes preparation, uniqueness/normalization/CDF/update/diagnostics, callback, flush/fsync/close.",
+    "Fresh plain timing includes stream SHA256 updates instead of disk writes; not an apples-to-apples speed comparison.",
+    "RSS is process highwater across both passes; trace is one 409600000-byte file. No real trace/model rerun."
+  ]
+}

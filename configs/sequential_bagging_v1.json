@@ -1,0 +1,345 @@
+{
+  "experiment": "sequential_bagging_v1",
+  "kind": "paired_unit_weight_bagging",
+  "source_years": [
+    2022,
+    2023
+  ],
+  "source": {
+    "source_preregistration": "175d1757acfd1086e343d90ceda52f4064652cbe",
+    "source_head": "106c2d3d8de62ee7f3285f817787280dd1255569",
+    "source_pr": 22,
+    "source_merge_pending": false,
+    "source_dataset": "/Users/leohermoso/FXNN-issue7/output/meta_dataset_v1",
+    "source_models": "/Users/leohermoso/FXNN-issue7/output/meta_primary_v1",
+    "source_dataset_manifest_sha256": "a677fe09514c86433f64aac4439047dca2db8f80e683283f5313e8ebecf52120",
+    "source_dataset_report_sha256": "309dbdb530f2742a1e3bbb451b72f66d79a5304e3547d723c7fb1952ab98a9b1",
+    "source_models_report_sha256": "bda526a764671dfbf314b40ab60abb585ef193341b6921ac646d5793551e3e1c",
+    "source_config_sha256": "2f232ddf833065462e2c1ab47a736eb23a2124002a1e3e592805d591c8906cf7",
+    "source_protocol_sha256": "75124b455f913184a59a59e38d919b9023eda320737460e6486e2437954f55fd",
+    "source_artifacts": {
+      "dataset": {
+        "sha256": "8670c8e4cde0232ed98544f903900929aff6be4b19169494ade904fe9a447786",
+        "bytes": 86719516,
+        "arrays": {
+          "X": {
+            "shape": [
+              482341,
+              28
+            ],
+            "dtype": "float64"
+          },
+          "y": {
+            "shape": [
+              482341
+            ],
+            "dtype": "int8"
+          },
+          "starts": {
+            "shape": [
+              482341
+            ],
+            "dtype": "int64"
+          },
+          "ends": {
+            "shape": [
+              482341
+            ],
+            "dtype": "int64"
+          },
+          "info_ends": {
+            "shape": [
+              482341
+            ],
+            "dtype": "int64"
+          },
+          "entry_indices": {
+            "shape": [
+              482341
+            ],
+            "dtype": "int64"
+          },
+          "sides": {
+            "shape": [
+              482341
+            ],
+            "dtype": "int8"
+          },
+          "feature_names": {
+            "shape": [
+              28
+            ],
+            "dtype": "<U14"
+          },
+          "opening_rows": {
+            "shape": [
+              482341
+            ],
+            "dtype": "int64"
+          },
+          "last_information_bar_end": {
+            "shape": [
+              482341
+            ],
+            "dtype": "int64"
+          },
+          "cusum_0.0005": {
+            "shape": [
+              482341
+            ],
+            "dtype": "bool"
+          },
+          "cusum_0.001": {
+            "shape": [
+              482341
+            ],
+            "dtype": "bool"
+          },
+          "2023Q2_train": {
+            "shape": [
+              303616
+            ],
+            "dtype": "int64"
+          },
+          "2023Q2_refit": {
+            "shape": [
+              355996
+            ],
+            "dtype": "int64"
+          },
+          "2023Q2_validation": {
+            "shape": [
+              46240
+            ],
+            "dtype": "int64"
+          },
+          "2023Q2_test": {
+            "shape": [
+              3
+            ],
+            "dtype": "int64"
+          },
+          "2023Q3_train": {
+            "shape": [
+              355996
+            ],
+            "dtype": "int64"
+          },
+          "2023Q3_refit": {
+            "shape": [
+              355999
+            ],
+            "dtype": "int64"
+          },
+          "2023Q3_validation": {
+            "shape": [
+              3
+            ],
+            "dtype": "int64"
+          },
+          "2023Q3_test": {
+            "shape": [
+              42201
+            ],
+            "dtype": "int64"
+          },
+          "2023Q4_train": {
+            "shape": [
+              355999
+            ],
+            "dtype": "int64"
+          },
+          "2023Q4_refit": {
+            "shape": [
+              397760
+            ],
+            "dtype": "int64"
+          },
+          "2023Q4_validation": {
+            "shape": [
+              42201
+            ],
+            "dtype": "int64"
+          },
+          "2023Q4_test": {
+            "shape": [
+              76144
+            ],
+            "dtype": "int64"
+          }
+        }
+      },
+      "opportunities": {
+        "sha256": "7a10365d86415f741ef83056818a08b929abce91a161e018bb7915f4df781ce8",
+        "bytes": 118413907,
+        "arrays": {
+          "starts": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int64"
+          },
+          "entry_indices": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int64"
+          },
+          "observed_indices": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int64"
+          },
+          "candidate_rows": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int64"
+          },
+          "X": {
+            "shape": [
+              692087,
+              28
+            ],
+            "dtype": "float64"
+          },
+          "causal_valid": {
+            "shape": [
+              692087
+            ],
+            "dtype": "bool"
+          },
+          "causal_reason": {
+            "shape": [
+              692087
+            ],
+            "dtype": "<U24"
+          },
+          "side": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int8"
+          },
+          "primary_available": {
+            "shape": [
+              692087
+            ],
+            "dtype": "bool"
+          },
+          "primary_reason": {
+            "shape": [
+              692087
+            ],
+            "dtype": "<U24"
+          },
+          "cusum_0.0005": {
+            "shape": [
+              692087
+            ],
+            "dtype": "bool"
+          },
+          "cusum_0.001": {
+            "shape": [
+              692087
+            ],
+            "dtype": "bool"
+          },
+          "outcomes": {
+            "shape": [
+              692087
+            ],
+            "dtype": "<U24"
+          },
+          "ends": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int64"
+          },
+          "info_ends": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int64"
+          },
+          "last_information_bar_end": {
+            "shape": [
+              692087
+            ],
+            "dtype": "int64"
+          },
+          "conclusive": {
+            "shape": [
+              692087
+            ],
+            "dtype": "bool"
+          }
+        }
+      }
+    },
+    "source_audit_sha256": "5e6460177fd742862d707a9a2c73a7d89ac996f578d8f179fd20acf047dd5036",
+    "expected_prior_fits": 161,
+    "ledger_before_sha256": "9e861f81cc713f3b583ca4a82df2beebced78fac3a7868725bd862daaefbd6ec",
+    "max_new_fits": 156,
+    "max_after": 317,
+    "replay_probabilities": 488292,
+    "replay_projection_arrays": 41,
+    "release_tests": 212,
+    "source_merge_sha": "9ded952a727ba539dd1c29ce6f5cae207849bf5a",
+    "source_issue_closed": true,
+    "source_adherence_verdict": "APPROVED",
+    "source_full_review_verdict": "APPROVED",
+    "source_review_findings": 0,
+    "source_full_review_sha256": "45308394d65c554e678e29e4d3f413425eca824a36d0d11d6bbe4ae0183e87f5",
+    "source_ci_runs": [
+      35010189273,
+      35010122902
+    ],
+    "source_ci_exact_head": "106c2d3d8de62ee7f3285f817787280dd1255569",
+    "source_ci_meaningful_success": true
+  },
+  "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl",
+  "expected_prior_fits": 161,
+  "ledger_before_sha256": "9e861f81cc713f3b583ca4a82df2beebced78fac3a7868725bd862daaefbd6ec",
+  "max_model_fits": 156,
+  "draw_count": 512,
+  "members": 3,
+  "master_seeds": [
+    0,
+    1
+  ],
+  "schemes": [
+    "uniform",
+    "sequential"
+  ],
+  "thresholds": [
+    0.0005,
+    0.001
+  ],
+  "history_buffer": 1941,
+  "logistic": {
+    "C": 1.0,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 1000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": 0,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.4.6",
+    "sklearn": "1.8.0"
+  },
+  "weighting": "unit_per_occurrence_including_duplicates",
+  "confirmation_opened": false
+}
