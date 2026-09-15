@@ -1,0 +1,55 @@
+{
+  "experiment": "meta_primary_v1",
+  "kind": "deterministic_primary_meta_filter",
+  "source_years": [
+    2022,
+    2023
+  ],
+  "source_task": "dynamic",
+  "source_dataset_manifest_sha256": "f884af4bdc922f048ac78bfe8228af2cb9965dd722864029787c38281c8dbc5b",
+  "source_dataset_report_sha256": "384b51b38be2d4bd1b573ccd86ba68a2cf6ca2028d9732edd73f0b30d8c5f1f5",
+  "source_models_report_sha256": "b57ce52754dbd38d97567a5cbd2a05d109eb182efdcc48e10b89ab75a1bb4412",
+  "source_observed_sha256": "8ab0207207e2f9712171c2c05317c24064170e38898ef92229a743380f886e74",
+  "source_dynamic_dataset_sha256": "f30450ee33189e225882ca96269036e9d13f9935022e1431be2b47fe98a091d3",
+  "source_dynamic_candidates_sha256": "1db07bb05c80da10a42998874c18cc8bfa588fb2aabd2958684461187d4d55e5",
+  "source_config_sha256": "dd5574fb88b9bd43653b57f9bab97860ed74f9dfc77efd455a885a001efb2df7",
+  "source_protocol_sha256": "68e8bb22ae8c71c5d2febd345a204b680b6c994477304643a02a6b190378294b",
+  "parent_protocol_sha256": "ad288bd306d53ae07faff867ffed78c1490df9d4fc7f9b137204594bdaf191c8",
+  "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl",
+  "expected_prior_fits": 141,
+  "ledger_before_sha256": "430161fa2aa56aa0a653f527f0b3467bee19b972b4a2591345d1a3e271f4e1d7",
+  "max_model_fits": 24,
+  "history_buffer": 1941,
+  "primary_observed_history": 61,
+  "thresholds": [
+    0.0005,
+    0.001
+  ],
+  "acceptance_thresholds": [
+    0.3,
+    0.4,
+    0.5
+  ],
+  "logistic": {
+    "C": 1.0,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 1000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": 0,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.4.6",
+    "sklearn": "1.8.0"
+  },
+  "confirmation_opened": false
+}
