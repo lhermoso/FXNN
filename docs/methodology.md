@@ -235,3 +235,15 @@ indisponível por calibração Q2 sem positivos. Maior precisão condicional em 
 vem com forte perda de recall/F1, sem demonstração de contribuição estável ou
 lucro. Replay exato de 41 arrays de projeção e 488.292 probabilidades; resultados
 negativos e todas oportunidades preservados.
+
+## Etapa 8 — bootstrap uniforme versus sequencial pré-registrado
+
+O [protocolo sequential-bagging-v1](experiments/sequential-bagging-v1-protocol.md)
+compara membros logísticos com pesos unitários por ocorrência, mantendo fonte
+unilateral dinâmica, folds, features e universos da etapa 7. Sorteios usam o fim
+informacional conservador no relógio aberto; expurgo usa o horizonte completo e
+1941 barras de buffer. Dois seeds, três membros e K=512 ficam fixos. Ausência de
+classe não permite redraw ou reparo do divisor. O teto é 156 novos fits sobre
+161 já consumidos; referências ponderadas são replay, sem fit novo. Pré-registro
+não constitui evidência de melhora nem abre confirmação 2024–2025. Resultados
+científicos serão registrados depois da execução e replay auditados.
