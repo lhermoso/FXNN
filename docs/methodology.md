@@ -228,3 +228,10 @@ buffer 1.941 mantido. Threshold escolhido por F1 interno, sem empréstimo entre
 períodos; Q2 sem positivos torna filtro externo Q3 indisponível. Probabilidades e
 todas oportunidades causais permanecem visíveis, incluindo futuras censuras e
 fim de trimestre. Ausência de decisão não equivale a rejeição. 2024 fechado.
+
+[Resultado da etapa 7](experiments/meta-primary-v1.md): 20 fits novos, global
+161/1.000. Meta-modelo melhora LL/Brier em Q3 e piora em Q4; decisão Q3
+indisponível por calibração Q2 sem positivos. Maior precisão condicional em Q4
+vem com forte perda de recall/F1, sem demonstração de contribuição estável ou
+lucro. Replay exato de 41 arrays de projeção e 488.292 probabilidades; resultados
+negativos e todas oportunidades preservados.
