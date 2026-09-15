@@ -108,7 +108,7 @@ def main(argv=None):
                     raise ValueError('Existing report differs from recomputed aggregates')
                 result={name:fingerprint(report_output/name) for name in expected_files}
             else:result=write_report(report,report_output)
-        except BaseException:
+        except Exception:
             life.poison('Aggregate report publication failed');raise
     elif args.phase=='freeze':
         if args.receipts is None:raise ValueError('Original CI/review/dependency/validation receipts required')
