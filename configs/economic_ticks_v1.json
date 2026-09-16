@@ -1,0 +1,325 @@
+{
+  "experiment": "economic_ticks_v1",
+  "source": "HistData EURUSD Generic ASCII ticks",
+  "development_utc": [
+    "2022-01-01",
+    "2024-01-01"
+  ],
+  "confirmation_utc": [
+    "2024-01-01",
+    "2025-01-01"
+  ],
+  "population": "temporal",
+  "primary": "sign(close[i-1]-close[i-61])",
+  "filter": "weighted_logistic_C1_seed0",
+  "threshold": 0.5,
+  "calibration": "identity_no_fit",
+  "initial_capital_usd": 10000,
+  "position_eur": 1000,
+  "max_positions": 1,
+  "margin_notional_fraction": 1.0,
+  "pending_entry_seconds": 30,
+  "quote_gap_open_seconds": 60,
+  "horizon_open_minutes": 4320,
+  "timeout_fill_open_seconds": 60,
+  "history_buffer_observed_bars": 1941,
+  "tp_volatility_multiple": 2.5,
+  "sl_volatility_multiple": 1.0,
+  "uncertainty_policies": [
+    "P0_absorbing_unresolved",
+    "P1_first_return_adverse_liquidation_scenario"
+  ],
+  "cost_bundles": [
+    {
+      "id": "S0",
+      "commission_usd_per_100k_eur_per_fill": 0,
+      "market_slippage_pips": 0,
+      "annual_funding_debit": 0
+    },
+    {
+      "id": "S1",
+      "commission_usd_per_100k_eur_per_fill": 3.5,
+      "market_slippage_pips": 0.1,
+      "annual_funding_debit": 0.05
+    },
+    {
+      "id": "S2",
+      "commission_usd_per_100k_eur_per_fill": 7,
+      "market_slippage_pips": 0.5,
+      "annual_funding_debit": 0.1
+    }
+  ],
+  "funding_basis": "fixed_entry_usd_notional",
+  "funding_rollover": "17:00 America/New_York weekdays; Wed3x other weekdays1x",
+  "max_development_fits": 12,
+  "max_final_fits": 2,
+  "max_total_fits": 14,
+  "folds": [
+    {
+      "name": "2023Q2",
+      "validation_start": "2023-01-01T00:00:00+00:00",
+      "test_start": "2023-04-01T00:00:00+00:00",
+      "test_end": "2023-07-01T00:00:00+00:00"
+    },
+    {
+      "name": "2023Q3",
+      "validation_start": "2023-04-01T00:00:00+00:00",
+      "test_start": "2023-07-01T00:00:00+00:00",
+      "test_end": "2023-10-01T00:00:00+00:00"
+    },
+    {
+      "name": "2023Q4",
+      "validation_start": "2023-07-01T00:00:00+00:00",
+      "test_start": "2023-10-01T00:00:00+00:00",
+      "test_end": "2024-01-01T00:00:00+00:00"
+    }
+  ],
+  "logistic": {
+    "C": 1.0,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 1000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": 0,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.4.6",
+    "sklearn": "1.8.0"
+  },
+  "kind": "offline_economic_confirmation",
+  "global_ledger": "/Users/leohermoso/FXNN/output/multiyear_v1/attempts.jsonl",
+  "expected_prior_fits": 291,
+  "ledger_before_sha256": "a9ac6750b4079365195e2e19c463035f35b0ac88671a6f4a5432fdc6db862bf3",
+  "global_fit_limit": 1000,
+  "source_root": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD",
+  "development_portfolio_utc": [
+    "2023-04-01",
+    "2024-01-01"
+  ],
+  "calendar_utc": [
+    "2022-01-01",
+    "2025-01-10"
+  ],
+  "volatility": {
+    "lag_open_minutes": 1440,
+    "window_observed": 500,
+    "span": 100,
+    "minimum": 100
+  },
+  "feature_windows": [
+    5,
+    15,
+    60,
+    240
+  ],
+  "source_months": [
+    {
+      "month": "202201",
+      "completed_sha256": "629918ce43aaf6fcd2a12ce6051c1357f914333bd727a8ffb7a14359ff769188"
+    },
+    {
+      "month": "202202",
+      "completed_sha256": "d603e711dae8cd77643209f284daa9987550e63e35574f3004080e2b76a3f410"
+    },
+    {
+      "month": "202203",
+      "completed_sha256": "f98b454f934891ba06e5807c874c9399a68ef17e50a8889e8592dba929e603fe"
+    },
+    {
+      "month": "202204",
+      "completed_sha256": "634a9e7f5a782db7955e232601b290e03d8ef30c14442cf764f28ae8588251ce"
+    },
+    {
+      "month": "202205",
+      "completed_sha256": "95c9d0cc4d0dcfb88dd6990ade67a9ed9d64d8a9f31c0050003fa79cd0a398c2"
+    },
+    {
+      "month": "202206",
+      "completed_sha256": "c6489ba4baf9f3354d0da29cec286908f45fcdb0c97bd8ccd07beb94e309eef7"
+    },
+    {
+      "month": "202207",
+      "completed_sha256": "d46ea81bc32fd344d25255ca0e317a0c3e39e76a7fd7bb51090f7bbcd1a8e400"
+    },
+    {
+      "month": "202208",
+      "completed_sha256": "f8d27c6638a79d67f5f55c32720214101283e155f8fa01eba28a4da5d45925b8"
+    },
+    {
+      "month": "202209",
+      "completed_sha256": "c0bf694c67fdb008cdb57fac06f26c8ef4364e9d3aac4202bb48a685cd7eb096"
+    },
+    {
+      "month": "202210",
+      "completed_sha256": "d92fe60cda15763d3cea7b3167b879b3e2b498e527156a5ae3f762fc7a7da5df"
+    },
+    {
+      "month": "202211",
+      "completed_sha256": "d6f88d630d58a20cd56ce2b144333c79f6861f267a2ea45ee7644862fb696e3a"
+    },
+    {
+      "month": "202212",
+      "completed_sha256": "3b12517806bed35b17eec3fcb41f8739b13dab3f8a2196ad24c5d4b67770b468"
+    },
+    {
+      "month": "202301",
+      "completed_sha256": "263cea56ae34398f3fd62bac9e6035e6375255f6e337b27fa792950c504c129a"
+    },
+    {
+      "month": "202302",
+      "completed_sha256": "58caba80913ae45dde839b363fa5ef8bf75d5aac8a67190ec9a0f5010517fba9"
+    },
+    {
+      "month": "202303",
+      "completed_sha256": "8da702ac30831f6a0260d71663f467cd6f4e94ab88d452e9540c9ce585399cad"
+    },
+    {
+      "month": "202304",
+      "completed_sha256": "6c2a54e438c7c77632ab0069c2adff6a0dd40263da8eca1e052ffb20574f0de4"
+    },
+    {
+      "month": "202305",
+      "completed_sha256": "4955d47eacd79b7f01ba88268c4e7ab2db1787eeac0df0440b02b6c2f11ca57c"
+    },
+    {
+      "month": "202306",
+      "completed_sha256": "3b9a8376581f42e0e872975747f4bc2e1117ab5d42083883c6948a81c916654d"
+    },
+    {
+      "month": "202307",
+      "completed_sha256": "ed557174ddebc1ea5448003e617402739ca40791fd5239d798054ef7f6b0303b"
+    },
+    {
+      "month": "202308",
+      "completed_sha256": "8f80c92c6d8598495949b3bfa92e4e9915583c0c61fbdd8ec86a8e68d2797a58"
+    },
+    {
+      "month": "202309",
+      "completed_sha256": "cf3d2039268b7d5c2957c41949c9e1a2785347859ee2f2c1df50c25b9923d152"
+    },
+    {
+      "month": "202310",
+      "completed_sha256": "bc30fbfad1747b19963448a51de5ef172cc31b67c6a40139d832cdf1c1f15561"
+    },
+    {
+      "month": "202311",
+      "completed_sha256": "41be18fbf14e61ec2898d6cdcfdfef57d525c614f52e4ea407aec6ffda66696a"
+    },
+    {
+      "month": "202312",
+      "completed_sha256": "2c7e7c56c530d2b634a4ccb4909b66c77345edb193e59876452c52375f7d3f64"
+    }
+  ],
+  "independent_numerical_failures": true,
+  "index": {
+    "block_size": 1024,
+    "min_free_bytes": 21474836480,
+    "estimated_bytes": 6310000000,
+    "cache_bytes": 268435456,
+    "max_coefficient_bits": 12000,
+    "max_block_bytes": 16777216
+  },
+  "checkpoint_schedule": "UTC_month_boundaries",
+  "metric_admission": "conclusive_label_and_information_end_le_evaluation_end",
+  "training_bar_cutoff": "completed_bar_end_strictly_before_pre_clock_cutoff",
+  "entry_opportunity_predictions": "all_primary_feature_and_volatility_available_rows_including_future_censoring_unfilled_and_calendar_tail",
+  "confirmation_opening": "mandatory_once_if_all_T1_T5_pass_regardless_of_development_economics",
+  "post_open_retuning": false,
+  "years_not_used": [
+    2025
+  ],
+  "confirmation_acquisition": {
+    "version": "economic_confirmation_source_v1",
+    "symbol": "EURUSD",
+    "months": [
+      "202401",
+      "202402",
+      "202403",
+      "202404",
+      "202405",
+      "202406",
+      "202407",
+      "202408",
+      "202409",
+      "202410",
+      "202411",
+      "202412"
+    ],
+    "utc_window": [
+      "2024-01-01",
+      "2025-01-01"
+    ],
+    "source_timezone": "EST_fixed_UTC-05",
+    "attempts_per_month": 2,
+    "redirects": "reject",
+    "zip_bytes_max": 2147483648,
+    "uncompressed_bytes_max": 8589934592,
+    "form_bytes_max": 2097152,
+    "line_bytes_max": 65536
+  },
+  "confirmation_held_december": {
+    "archive": {
+      "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/raw.zip",
+      "bytes": 12424208,
+      "sha256": "0f641a897b87e5b28a197622aa14fa4bd1d51a2466077bb7698cf13c8e5c6cc1"
+    },
+    "metadata": {
+      "path": "/Users/leohermoso/FXNN/data/histdata_ticks_v1/EURUSD/202312/attempt-001/reserved.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "model_phases": [
+    {
+      "name": "2023Q2:inner",
+      "cutoff_ms": 1672531200000,
+      "evaluation_start_ms": 1672531200000,
+      "evaluation_end_ms": 1680307200000
+    },
+    {
+      "name": "2023Q2:refit",
+      "cutoff_ms": 1680307200000,
+      "evaluation_start_ms": 1680307200000,
+      "evaluation_end_ms": 1688169600000
+    },
+    {
+      "name": "2023Q3:inner",
+      "cutoff_ms": 1680307200000,
+      "evaluation_start_ms": 1680307200000,
+      "evaluation_end_ms": 1688169600000
+    },
+    {
+      "name": "2023Q3:refit",
+      "cutoff_ms": 1688169600000,
+      "evaluation_start_ms": 1688169600000,
+      "evaluation_end_ms": 1696118400000
+    },
+    {
+      "name": "2023Q4:inner",
+      "cutoff_ms": 1688169600000,
+      "evaluation_start_ms": 1688169600000,
+      "evaluation_end_ms": 1696118400000
+    },
+    {
+      "name": "2023Q4:refit",
+      "cutoff_ms": 1696118400000,
+      "evaluation_start_ms": 1696118400000,
+      "evaluation_end_ms": 1704067200000
+    },
+    {
+      "name": "final",
+      "cutoff_ms": 1704067200000,
+      "evaluation_start_ms": null,
+      "evaluation_end_ms": null
+    }
+  ]
+}

@@ -1,5 +1,29 @@
 # Metodologia de pesquisa
 
+## Encerramento da sequência — 16/09/2026
+
+A sequência #4–#9 foi executada com contratos próprios, inclusive fonte bid/ask,
+calendário e simulação econômica. O [relatório final](experiments/economic-ticks-v1.md)
+e o [roadmap consolidado](roadmap.md) registram promoção rejeitada: desenvolvimento
+sem operações filtradas; confirmação 2024 com uma operação filtrada, perdendo
+2,95/2,97/3,10 USD em S0/S1/S2. Primário com PnL/DD conclusivos indisponíveis por
+lacunas. Classificação melhor não demonstrou lucro; P1 continua contrafactual.
+
+Abertura ocorreu uma única vez, após revisão/CI do release
+`cac434dd2a2cf9bcb38ec33bca6b0dcba0d3f951` e congelamento P
+`c7aeb1e50de5abdcb33a56f35f1e2a43b590b25db910ca6aa759bc61f6e65aa1`.
+Guard terminal `COMPLETED`, reserva selada, replay integral de confirmação e
+desenvolvimento aprovado e relatório reconstruído idêntico. 301/1.000 fits globais;
+nenhum ajuste na confirmação. O fechamento acrescentou apenas `run_finished`,
+preservando o prefixo do ledger; SHA-256 final `a7cac20a864602ad4ffd5a9dbb9587fbd8a93b3249cf78957d6a47a0780374f1`.
+Não houve novos ajustes após abertura, uso de 2025 ou execução real. 2024 está
+consumido; pesquisa futura requer protocolo e confirmação próprios.
+
+As seções históricas abaixo descrevem o estado e os contratos de cada etapa
+na sua data. Referências anteriores a “2024 fechado” não descrevem o estado
+final atual e não são reescritas como se resultados posteriores fossem conhecidos.
+
+
 Atualização de 14/09/2026: a reconstrução [session_dataset_v1](experiments/session-dataset-v1-protocol.md)
 usa 72 horas de mercado aberto, ignora gaps de até 14 minutos de sessão e
 censura a partir de 15. Features passam a contar candles observados, sem fill.
@@ -256,3 +280,32 @@ pelo externo Q2 vazio. Q3 preserva probabilidades, mas não decisões calibradas
 Replay integral de sorteios, modelos, predições e relatório passou sem novos
 fits nem alteração do ledger. Nenhuma seleção de seed, lucro alegado ou
 abertura de 2024/2025.
+
+## Etapa 9 — execução econômica bid/ask e confirmação única
+
+O [pré-registro economic_ticks_v1](experiments/economic-ticks-v1-protocol.md)
+reconstrói candles causais a partir dos ticks bid/ask HistData2022–2023 e fixa
+um primário temporal, logística ponderada C=1, threshold0,5 e unidade1000EUR.
+Todas oportunidades permanecem registradas; labels futuros não filtram as
+probabilidades operacionais. A carteira mantém uma posição, capital10000USD,
+três cenários de custo e duas políticas explícitas de incerteza. P0 inconclusivo
+não pode ser resgatado pelo cenário contrafactual P1.
+
+A [execução computacional](experiments/economic-ticks-v1-computation.md) fixa
+índice em disco, memória limitada, replay e checkpoints mensais sem reiniciar
+carteiras. Até14 ajustes novos pertencem a uma única reserva canônica. Somente
+após todos critérios técnicos, modelos finais, revisão e CI do SHA congelado
+será aberta2024 uma vez. Resultados negativos de desenvolvimento não dispensam
+confirmação tecnicamente executável.2025 permanece fora desta execução.
+Este registro é prospectivo; não constitui resultado econômico ou abertura.
+
+
+Resultado de desenvolvimento da etapa9 registrado no [relatório](experiments/economic-ticks-v1.md):
+10fits novos, global301/1.000; modelos finais disponíveis, todos131.064 scores
+externos disponíveis abaixo do threshold fixo0,5. Filtro sem operações/PnL;
+primárioP0 inconclusivo por exposição sob lacuna; P1 preservado como cenário,
+sem PnL/drawdown conclusivos. G4/G5 falharam; promoção desta configuração rejeitada.
+Uma correção explícita de publicação serializa frações exatas sem alterar62
+arquivos científicos, S/F ou ajustes. Replay integral das12 carteiras/nove meses
+e relatórios passou sem novos fits ou alteração de ledger/estado/manifest. Revisão
+completa do release permanece pendente neste registro;2024 segue fechado.

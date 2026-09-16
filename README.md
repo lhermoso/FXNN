@@ -4,6 +4,22 @@ Protocolo: [metodologia](docs/methodology.md), [decisões](docs/decisions.md)
 e [roadmap](docs/roadmap.md). Rotulação retrospectiva e previsão causal são etapas
 separadas. Resultados de classificação não representam rentabilidade executável.
 
+## Resultado da sequência de pesquisa — 16/09/2026
+
+A [avaliação econômica bid/ask](docs/experiments/economic-ticks-v1.md) rejeitou
+promoção da configuração registrada. Desenvolvimento 2022–2023: filtro sem
+operações. Confirmação única 2024: uma operação filtrada, com perdas de
+2,95/2,97/3,10 USD em S0/S1/S2. O primário mantém PnL/drawdown conclusivos
+indisponíveis por lacunas; P1 é cenário contrafactual. Melhor classificação
+não demonstrou lucro. Não há estratégia validada nem autorização para ordens reais.
+
+Confirmação encerrada em `COMPLETED`, com replay integral de 2024 e desenvolvimento
+e relatório reconstruído idêntico. 301 fits globais, nenhum novo ajuste em 2024.
+2024 está consumido e não será reutilizado para selecionar variantes. Nenhum
+uso novo de 2025 nesta sequência. [Roadmap final](docs/roadmap.md) registra
+resultados negativos/mistos, limites e decisão de arquivamento desta configuração.
+Os comandos e inventários abaixo preservam os contextos históricos correspondentes.
+
 ## Ambiente e baseline
 
 Python 3.13. Rotulador usa biblioteca padrão; pesquisa adiciona NumPy e scikit-learn.
@@ -30,7 +46,7 @@ Dados brutos, ambiente e outputs volumosos são ignorados pelo Git.
 Primeiro resultado: [research_v1](docs/experiments/research-v1.md). Ganho preditivo
 não foi consistente entre meses; ainda não existe estratégia validada.
 
-## Base disponível — EUR/USD, 2022–2025
+## Inventário histórico de 13/09/2026 — EUR/USD, 2022–2025
 
 Quatro arquivos anuais HistData M1 disponíveis localmente, com registros nos
 12 meses de cada ano. Total: 1.439.606 candles normalizados.
@@ -52,8 +68,10 @@ Validação de ingestão verifica CRC, OHLC, ordem temporal e presença dos 12 m
 12 meses não significa série completa. Lacunas incluem fechamentos de mercado
 e possíveis falhas de dados, ainda sem classificação e sem preenchimento.
 2022 e 2023 tiveram 60 timestamps duplicados cada: todas as 120 ocorrências
-de cada ano foram isoladas. Os novos anos ainda não foram rotulados nem usados
-nos experimentos existentes, que continuam restritos a 2025.
+de cada ano foram isoladas. Naquele inventário, os anos novos ainda não tinham
+sido rotulados ou usados: os experimentos iniciais eram restritos a 2025. Depois,
+a sequência multianual usou desenvolvimento 2022–2023 e consumiu a confirmação
+2024 somente após congelamento econômico, conforme relatório final acima.
 
 ### Base inicial de pesquisa — 2025
 
@@ -298,4 +316,6 @@ não repetir busca após olhar resultados. O protocolo AFML precisa estar commit
 Auditoria de desenvolvimento 2022–2023 concluída sem treino: [resultado e
 suporte por fold](docs/experiments/multiyear-v1-data.md). Contrato executável em
 `configs/multiyear_v1.json`; `.venv/bin/python -m fxnn.data_audit` aplica calendário
-multianual, expurgo e pisos de classe. Confirmação 2024 permanece reservada.
+multianual, expurgo e pisos de classe. A reserva 2024 descrita nesse protocolo
+foi posteriormente consumida uma única vez na etapa econômica congelada; ver
+[resultado final e proveniência](docs/experiments/economic-ticks-v1.md).

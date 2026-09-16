@@ -108,3 +108,28 @@ Todas MLPs perdem para constante em LL/Brier externos. Eventos atingiram diagnó
 de estabilização de loss; temporais não, sem prova de convergência. Igualar updates
 não iguala exposição ou regularização efetiva. Inferência inconclusiva, linhas
 ativas, 2024 fechado, nenhum 2025 ou #6–#9. Histórico preservado.
+
+## Decisão final da sequência #3/#9 — 16/09/2026
+
+A confirmação histórica 2024 foi executada uma única vez após T1–T5, revisão
+completa e CI do release congelado. R=`cac434dd2a2cf9bcb38ec33bca6b0dcba0d3f951`;
+P=`c7aeb1e50de5abdcb33a56f35f1e2a43b590b25db910ca6aa759bc61f6e65aa1`.
+Nenhum retreino, calibração, threshold ou seed foi escolhido após abertura.
+Guard terminal `COMPLETED`, reserva selada, replay integral de confirmação e
+desenvolvimento aprovado e relatório reconstruído idêntico. 301/1.000 fits globais;
+nenhum ajuste na confirmação. O fechamento acrescentou apenas `run_finished`,
+preservando o prefixo do ledger; SHA-256 final `a7cac20a864602ad4ffd5a9dbb9587fbd8a93b3249cf78957d6a47a0780374f1`.
+
+Decisão registrada: **arquivar esta configuração sem promoção
+econômica**. Desenvolvimento teve zero operações filtradas; 2024 teve uma,
+com perdas de 2,95/2,97/3,10 USD em S0/S1/S2. PnL/DD conclusivos do primário
+permaneceram indisponíveis por lacunas; liquidação contrafactual P1 não corrige
+esse limite. G4/G5 falharam nas duas janelas. Melhoras descritivas de scores
+não demonstram lucro nem autorizam ordens reais.
+
+Isso encerra a hipótese econômica registrada, não refuta universalmente CUSUM,
+redes ou novas hipóteses. Linhas exploratórias históricas não viram vencedoras
+por exclusão. 2024 foi consumido e não será reutilizado para seleção; eventual
+pesquisa nova exige outro protocolo/confirmador. Nenhum uso novo de 2025.
+Evidências e limites: [relatório](experiments/economic-ticks-v1.md) e
+[roadmap](roadmap.md). Estado de integração/aceite acompanha PR #24 e issues #9/#3.
