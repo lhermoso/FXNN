@@ -1,4 +1,316 @@
-# FXNN — pesquisa de machine learning para Forex
+# FXNN — machine learning research for Forex
+
+**[English](#english) · [Português](#português)**
+
+---
+
+<a id="english"></a>
+
+# English
+
+Protocol: [methodology](docs/methodology.md), [decisions](docs/decisions.md)
+and [roadmap](docs/roadmap.md). Retrospective labeling and causal prediction are
+separate stages. Classification results do not represent executable profitability.
+
+## Environment and baseline
+
+Python 3.13. The labeler uses the standard library; research adds NumPy and scikit-learn.
+
+```bash
+python3.13 -m venv .venv
+.venv/bin/pip install -r requirements-lock.txt
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+After downloading and labeling the yearly dataset with the commands below:
+
+```bash
+.venv/bin/python -m fxnn.research --output output/research_v1
+```
+
+Implements 28 causal features, uniqueness, temporal purging and logistic regression.
+Family-wise selection happens in the inner validation. July–September are external
+evaluations; October–December stay out of the initial modeling. The JSON report
+includes code/data hashes, parameters and metrics; predictions stay in the local CSV.
+A non-empty experiment directory is refused in order to preserve history.
+Raw data, environment and bulky outputs are ignored by Git.
+
+First result: [research_v1](docs/experiments/research-v1.md). Predictive gain was
+not consistent across months; there is still no validated strategy.
+
+## Available dataset — EUR/USD, 2022–2025
+
+Four yearly HistData M1 files available locally, with records in all 12 months of
+each year. Total: 1,439,606 normalized candles.
+
+| Year | Candles | Quarantined rows | Gaps |
+|---|---:|---:|---:|
+| 2022 | 372,745 | 120 | 1,111 |
+| 2023 | 322,518 | 120 | 1,871 |
+| 2024 | 372,379 | 0 | 1,601 |
+| 2025 | 371,964 | 120 | 966 |
+
+2022–2024 downloaded on 2026-09-13 with the existing downloader. Each year has a
+`data/histdata/EURUSD/EURUSD_<year>_m1_bid_utc.csv`, the original ZIP, a manifest
+with hashes, a gap report and quarantine. To reproduce, run
+`python3 scripts/download_histdata.py --year <year>` for each desired year.
+Ingestion validation checks CRC, OHLC, temporal ordering and presence of all 12 months.
+
+2023 has lower coverage, especially between March and July; presence of all
+12 months does not mean a complete series. Gaps include market closes and possible
+data failures, still unclassified and unfilled. 2022 and 2023 each had 60 duplicated
+timestamps: all 120 occurrences of each year were isolated. The new years have not
+been labeled yet, nor used in the existing experiments, which remain restricted to 2025.
+
+### Initial research dataset — 2025
+
+HistData M1, with all 12 months of 2025. Normalized file:
+`data/histdata/EURUSD/EURUSD_2025_m1_bid_utc.csv`.
+Download/reproduce and validate:
+
+```bash
+python3 scripts/download_histdata.py --year 2025
+```
+
+The original ZIP, the provider report, a manifest with hashes/counts, the gap list
+and quarantine stay in the same folder. The history is **bid-only**; no ask,
+historical spread or traded volume. Timestamps converted from fixed EST
+(UTC−5, no daylight saving), per the provider FAQ, to UTC.
+
+The 2025 file showed 60 repeated timestamps, with 120 rows in hour 19 of
+October 26 in source time. All occurrences were isolated in quarantine; no time
+shift was inferred and no version of the prices was chosen. Remaining gaps are
+recorded and not filled. Covering 12 months does not mean every minute is usable.
+
+This CSV is compatible with the initial labeler:
+
+```bash
+python3 -m fxnn data/histdata/EURUSD/EURUSD_2025_m1_bid_utc.csv --pip-size 0.0001 --bar-minutes 1 --verify-samples 2048 --output output/eurusd_2025
+python3 -m scripts.validate_run data/histdata/EURUSD/EURUSD_2025_m1_bid_utc.csv --output output/eurusd_2025
+```
+
+The command above still uses prices from a single series, without costs, and an
+O(N log N) scanner; it does not represent an executable backtest. Three days bound
+the duration of each trade; **one year is the initial minimum of history**, not three days.
+
+Source/format: https://www.histdata.com/f-a-q/.
+Alternative used after widespread HTTP 503 failures on the Dukascopy feed.
+
+## Dukascopy history
+
+Reproducible yearly attempt: `python3 scripts/download_year.py --year 2025`.
+Uses daily M1 bid/ask files and saves per-file progress in JSONL. An existing
+partial cache does not constitute a complete yearly dataset. Do not automatically
+mix prices from different providers to fill gaps.
+
+Reproducible EUR/USD download, with standard Python and `curl`:
+
+```bash
+python3 scripts/download_dukascopy.py --start 2025-01-01 --end 2025-02-01
+```
+
+Dates in UTC: start inclusive, end exclusive. Files in
+`data/dukascopy/EURUSD/`: raw hourly BI5, compressed tick CSVs, M1 candles with
+separate bid and ask OHLC, and a manifest with status/SHA-256 of each hour.
+Re-running reuses already downloaded and valid files. Run one download at a time
+for the same destination. The script is specific to EUR/USD (scale 100000).
+
+Empty hours, unavailable hours and HTTP errors are recorded; they are not filled
+and not automatically treated as market close. Definitive failures produce partial
+output and an error code. Check the manifest before using the series.
+Volumes are quoted bid/ask amounts, not traded volume.
+
+**These bid/ask files do not yet feed directly into the OHLC labeler below.**
+Adapting the labeling to executable prices is the next stage: a buy enters at the
+ask and exits at the bid; a sell enters at the bid and exits at the ask. Ticks
+preserve the observed sequence to resolve which barrier was hit first.
+
+Format verified at https://www.dukascopy.com/wiki/en/development/data-export/.
+The public endpoint used has **hourly** files and milliseconds since the start of
+the hour; the daily S3 file described in the documentation uses a different time
+base. Months in the URL are zero-based. The `chub` catalog was queried with no
+results for Dukascopy/forex; documentation was obtained directly from the provider.
+
+## Initial OHLC labeler
+
+Prototype in Python 3.11+, with no external dependencies. Evaluates buy and sell
+at the open of each candle. Defaults: TP 50 pips, SL 20 pips, duration strictly
+under 72 calendar hours. It does not train ML yet, nor execute orders.
+
+## Data and execution
+
+CSV of a single pair, with OHLC prices and the candle **open** time in UTC:
+
+```csv
+timestamp,open,high,low,close
+2026-01-05T00:00:00+00:00,1.1000,1.1010,1.0990,1.1000
+2026-01-05T00:01:00+00:00,1.1000,1.1050,1.0990,1.1040
+```
+
+```bash
+python3 -m fxnn historico.csv --pip-size 0.0001 --bar-minutes 1 --tp 50 --sl 20 --max-hours 72
+python3 -m unittest discover -s tests -v
+```
+
+`--pip-size` is explicit: use the pip size of the instrument/source, not the size
+of the last digit of the quote. `--bar-minutes` states the candle resolution.
+There is no automatic data download. The command writes/overwrites files in the
+`output/` folder; change the destination with `--output`.
+
+Outputs:
+
+- `all_trades.csv`: every entry with a conclusive label, losses included.
+- `selected_trades.csv`: winners selected without overlap.
+- `hard_negatives.csv`: SL first, followed by TP within the original deadline.
+- `summary.json`: parameters, counts and raw pips of the selected set.
+- `validation.json`: independent audit, generated by `scripts.validate_run`.
+
+**Ambiguous cases are discarded from all output CSVs.** Censored and uncertain
+cases at the deadline boundary are also discarded. Only counts remain in the
+summary. The original history file stays preserved.
+
+Column `label`: 1 = TP first and within the deadline; 0 = SL first or deadline
+expired without TP. Zero means failure of the criterion, not necessarily a
+monetary loss in the timeout case.
+
+## Labeling rules
+
+- `take_profit`: TP hit before SL, with an upper duration bound < deadline.
+- `stop_loss`: SL hit first.
+- `ambiguous`: high/low touch both within the same candle; sequence unknown.
+  Discarded.
+- `boundary`: TP appears in the last allowed candle; OHLC does not prove a
+  duration strictly shorter than the deadline. Discarded.
+- `timeout`: the deadline ends without touching the barriers; exit at the close.
+- `censored`: data ends or a candle is missing before the trade resolves.
+  Discarded.
+
+### Hard negatives: stop before target
+
+An entry that loses 20 pips and only afterwards reaches +50 pips has `label=0` and
+outcome `stop_loss`. The later gain does not change execution or the trade's PnL.
+`post_stop_target_status=reached` identifies this subtype; the later timestamp goes
+in `target_after_stop_time`. The search uses the original entry's deadline and stops
+at gaps. `not_reached` means complete observation with no target; `censored` means
+history was missing to determine the subtype, although the SL is already a certain
+negative. `boundary` means the target is in the last candle, with an uncertain exact time.
+
+If the SL happens at the open and the TP later in the same candle, the order is known.
+If both appear only in the intrabar high/low, the order is ambiguous and the entry
+is discarded. A target reached after 72 hours does not create a hard negative.
+
+Entries use the open. Intrabar exits use the end of the candle as an upper time
+bound, avoiding assuming precision that does not exist. A touch counts as a hit.
+Price gap at the next open: the stop executes at that open (it may lose more than
+20 pips); the TP executes at the target, assuming a limit order. In that case the
+open determines the event order before the candle's high/low.
+
+Any temporal gap censors pending trades, including the weekend close. Deliberately
+conservative policy until the source calendar is integrated. It does not allow
+crossing gaps by assuming the barriers stayed untouched.
+
+## Overlap removal
+
+With fixed TP and SL, the planned R:R is always 50/20 = 2.5; it does not
+distinguish winners. Initial objective: maximize the sum of raw pips; tie-break:
+minimize total time exposed. With a fixed TP, this is equivalent to maximizing the
+number of compatible winners. Buy and sell compete for the same capacity: one
+position at a time, on this single pair.
+
+Interval dynamic programming solves the global set. Picking a single trade from
+each conflict group can eliminate several successive trades that, together, yield
+more. Intervals are [entry, exit): a new entry can occur exactly at the exit time.
+Remaining ties are deterministic.
+
+A high/low index finds the first touch without walking every candle of each trade:
+labeling O(N log N), memory O(N). Prices stay Decimal. Selection costs O(W log W),
+with W winners. The simple O(N×H) scanner remains as an independent reference,
+including for post-stop classification.
+
+## Validation with EUR/USD 2025
+
+TP 50 / SL 20 / deadline <72h, M1 base of 371,964 candles:
+
+- 743,928 entries evaluated (buy and sell per candle).
+- 424,111 labels exported: 100,777 positives and 323,334 negatives.
+- 35,264 negatives with SL before TP.
+- 508 winners in the non-overlapping set.
+- 319,817 candidates discarded due to gaps/end of series; no ambiguous ones in this
+  specific parameter set. Ambiguous scenarios are covered by tests.
+
+The full run took approximately 12 seconds on this machine. Comparison of 4,096
+randomly drawn labels against the slow reference; additional audit of all 508
+selected and 512 hard negatives. The optimal non-overlapping count was verified by
+an independent algorithm for equal rewards. Randomized and edge-case tests cover
+timeout, gaps, TP/SL ties, direction and the strict bound.
+
+The large discard follows from the conservative policy of stopping at any missing
+minute, weekends included. It is not equivalent to allowing positions open for
+three days across gaps; the calendar and the data policy need to be handled before
+simulating that exposure.
+
+## Limits for the ML stage
+
+Results deliberately use the future to create labels. Selection is retrospective,
+neither an executable strategy nor an expected-return estimate. It does not include
+spread, commission, swaps, position sizing or intrabar slippage. The sum of pips is
+not a portfolio financial return. A future backtest needs those costs and executable prices.
+
+Do not train only with the selected winners: that removes negatives and introduces
+selection bias. Use conclusive labels from both classes and exclude inconclusive ones,
+build features only with data available before the entry and split train/test
+chronologically, purging labels that cross boundaries. The global selection also
+depends on the future; do not use it as a prior filter of a predictive evaluation.
+
+Output fields, PnL, duration, outcome and post-stop target are future **labeling**
+information, never input features. When splitting train/test, account for the extra
+horizon used to determine hard negatives. The labeling stage does not train models.
+The `fxnn.research` command, described above, runs the first baseline following these controls.
+
+## Neural network experiment
+
+MLP 28 → 32 → 16 → 1, three fixed seeds, epoch selection on the inner temporal
+validation. All features are kept in order to compare with the full logistic model.
+[Prior protocol](docs/experiments/neural-v1-protocol.md).
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+  .venv/bin/python -m fxnn.neural --output output/neural_v1
+```
+
+The average of the three networks is the main prediction; individual results are
+also preserved. It does not use random validation, nor pick the seed by the test.
+
+[Result neural_v1](docs/experiments/neural-v1.md): the network lost to the logistic
+model in the three external months; preserve that result before new attempts.
+
+## Audit and fractional differentiation
+
+[Ingestion audit](docs/experiments/universe-v1.md) reconciles labels and monthly
+counts. [afml_v1](docs/experiments/afml-v1.md) compares the logistic model with
+causal FFD of log-prices, choosing d only in the inner validation and using the
+same candidates across all representations. SFI and permutation are diagnostics.
+FFD improved July/August and worsened September: no consistent gain.
+
+```bash
+.venv/bin/python -m fxnn.audit --output output/universe_v1.json
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+  .venv/bin/python -m fxnn.afml --output output/afml_v1
+```
+
+Existing outputs are protected against overwriting. Commands are for reproduction;
+do not repeat the search after looking at results. The AFML protocol must be committed.
+
+Development audit for 2022–2023 completed without training: [result and per-fold
+support](docs/experiments/multiyear-v1-data.md). Executable contract in
+`configs/multiyear_v1.json`; `.venv/bin/python -m fxnn.data_audit` applies the
+multi-year calendar, purging and class floors. The 2024 confirmation remains reserved.
+
+---
+
+<a id="português"></a>
+
+# Português
 
 Protocolo: [metodologia](docs/methodology.md), [decisões](docs/decisions.md)
 e [roadmap](docs/roadmap.md). Rotulação retrospectiva e previsão causal são etapas
