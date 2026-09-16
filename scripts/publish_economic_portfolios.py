@@ -87,16 +87,24 @@ def publish_aggregate(path, decoded, encoded, supervisor):
     """Exclusive same-byte recovery; preserve every failed pending publication."""
     path = Path(path)
     # This lock is publication-only. Read-only replay never calls this function.
-    with (path.parent / (path.name + '.publication.lock')).open('a+b') as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX)
-        try:
+    # Setup/close failures are observed persistence errors too.
+    try:
+        with (path.parent / (path.name + '.publication.lock')).open('a+b') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            pending = path.with_suffix('.pending')
+            preserved_files = sorted(path.parent.glob(pending.name + '.partial-*'))
+            # A prior process may have died immediately after forensic rename.
+            # Finish that preservation before writing or returning success.
+            for preserved in preserved_files:
+                sync(preserved)
+            if preserved_files:
+                sync(path.parent)
             if path.exists():
                 if path.read_bytes() != encoded.encode('utf8'):
                     raise ValueError('Existing aggregate differs from verified exact result')
                 sync(path)
                 sync(path.parent)
                 return fingerprint(path)
-            pending = path.with_suffix('.pending')
             if pending.exists():
                 preserved = pending.with_name(pending.name + '.partial-' + uuid.uuid4().hex)
                 # Exclusive lock plus unique name; never truncate failed bytes.
@@ -107,9 +115,9 @@ def publish_aggregate(path, decoded, encoded, supervisor):
                 sync(path.parent)
             atomic_json(path, decoded)
             return fingerprint(path)
-        except Exception:
-            supervisor.poison('Exact portfolio aggregate publication failed')
-            raise
+    except Exception:
+        supervisor.poison('Exact portfolio aggregate publication failed')
+        raise
 
 
 def model_artifact(snapshot, final):

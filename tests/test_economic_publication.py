@@ -89,27 +89,82 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(len(list(self.root.glob('*.partial-*'))), 1)
         self.life.poison.assert_not_called()
 
-    def test_interruption_after_forensic_rename_is_recoverable(self):
-        self.target.with_suffix('.pending').write_text('forensic')
-        with patch.object(publisher, 'sync', side_effect=KeyboardInterrupt):
-            with self.assertRaises(KeyboardInterrupt):
-                publisher.publish_aggregate(self.target, self.decoded, self.encoded, self.life)
-        self.assertFalse(self.target.exists())
-        self.assertEqual([p.read_text() for p in self.root.glob('*.partial-*')], ['forensic'])
-        publisher.publish_aggregate(self.target, self.decoded, self.encoded, self.life)
+    def test_interruption_before_each_forensic_sync_is_finished_before_retry_write(self):
+        for interrupted_call in (1, 2):
+            with self.subTest(sync_call=interrupted_call):
+                folder = self.root / str(interrupted_call); folder.mkdir()
+                target = folder / self.target.name
+                target.with_suffix('.pending').write_text('forensic')
+                original_sync = publisher.sync
+                calls = 0
+                def interrupted(path):
+                    nonlocal calls
+                    calls += 1
+                    if calls == interrupted_call:
+                        raise KeyboardInterrupt()
+                    original_sync(path)
+                with patch.object(publisher, 'sync', side_effect=interrupted):
+                    with self.assertRaises(KeyboardInterrupt):
+                        publisher.publish_aggregate(target, self.decoded, self.encoded, self.life)
+                preserved = list(folder.glob('*.partial-*'))
+                self.assertEqual([p.read_text() for p in preserved], ['forensic'])
+                self.assertFalse(target.exists())
+                events = []
+                original_atomic = publisher.atomic_json
+                def synced(path):
+                    events.append(('sync', path)); original_sync(path)
+                def published(path, value):
+                    events.append(('write', path)); original_atomic(path, value)
+                with patch.object(publisher, 'sync', side_effect=synced), patch.object(publisher, 'atomic_json', side_effect=published):
+                    publisher.publish_aggregate(target, self.decoded, self.encoded, self.life)
+                self.assertEqual(events[:3], [('sync', preserved[0]), ('sync', folder), ('write', target)])
         self.life.poison.assert_not_called()
 
-    def test_interruption_after_destination_rename_finishes_directory_sync_on_retry(self):
-        original = publisher.atomic_json
-        def interrupted(path, value):
-            original(path, value)
-            raise SystemExit('after durable rename')
-        with patch.object(publisher, 'atomic_json', side_effect=interrupted):
+    def test_interruption_between_destination_rename_and_parent_sync(self):
+        from fxnn import economic_lifecycle
+        original_replace = economic_lifecycle.os.replace
+        def interrupted(source, destination):
+            original_replace(source, destination)
+            raise SystemExit('after rename, before parent fsync')
+        with patch.object(economic_lifecycle.os, 'replace', side_effect=interrupted):
             with self.assertRaises(SystemExit):
                 publisher.publish_aggregate(self.target, self.decoded, self.encoded, self.life)
         with patch.object(publisher, 'sync', wraps=publisher.sync) as sync:
             publisher.publish_aggregate(self.target, self.decoded, self.encoded, self.life)
         self.assertEqual([call.args[0] for call in sync.call_args_list], [self.target, self.root])
+        self.life.poison.assert_not_called()
+
+    def test_existing_aggregate_retry_also_finishes_preserved_file_sync(self):
+        self.target.write_text(self.encoded)
+        preserved = self.root / 'aggregate-development.pending.partial-synthetic'
+        preserved.write_text('preserved')
+        with patch.object(publisher, 'sync', wraps=publisher.sync) as sync:
+            publisher.publish_aggregate(self.target, self.decoded, self.encoded, self.life)
+        self.assertEqual([c.args[0] for c in sync.call_args_list], [preserved, self.root, self.target, self.root])
+
+    def test_lock_open_and_flock_storage_errors_poison_without_data_mutation(self):
+        original_open = Path.open
+        pending = self.target.with_suffix('.pending'); pending.write_text('original')
+        for point in ('open', 'flock'):
+            self.life.reset_mock()
+            def failed_open(path, *args, **kwargs):
+                if path.name.endswith('.publication.lock'):
+                    raise OSError('lock open')
+                return original_open(path, *args, **kwargs)
+            manager = patch.object(Path, 'open', new=failed_open) if point == 'open' else patch.object(publisher.fcntl, 'flock', side_effect=OSError('flock'))
+            with manager:
+                with self.assertRaises(OSError):
+                    publisher.publish_aggregate(self.target, self.decoded, self.encoded, self.life)
+            self.assertFalse(self.target.exists())
+            self.assertEqual(pending.read_text(), 'original')
+            self.assertEqual(list(self.root.glob('*.partial-*')), [])
+            self.life.poison.assert_called_once()
+
+    def test_lock_setup_process_interruption_does_not_poison(self):
+        with patch.object(publisher.fcntl, 'flock', side_effect=KeyboardInterrupt):
+            with self.assertRaises(KeyboardInterrupt):
+                publisher.publish_aggregate(self.target, self.decoded, self.encoded, self.life)
+        self.assertFalse(self.target.exists())
         self.life.poison.assert_not_called()
 
     def test_observed_storage_failure_poisons_without_publishing(self):

@@ -59,7 +59,10 @@ intenção de dados. Aliases são rejeitados. Um lock de publicação exclusivo
 cobre comparação do destino, preservação de parcial e publicação atômica.
 O arquivo `.pending` deixado pela falha é renomeado para um nome forense único,
 com fsync do arquivo e diretório, antes de qualquer nova escrita no caminho
-`.pending`. Nenhum checkpoint, modelo, trilha ou registro do ledger é apagado.
+`.pending`. Na retomada, todos parciais forenses existentes recebem fsync de
+arquivo e diretório antes de nova escrita ou retorno bem-sucedido, mesmo se o
+agregado já existir. Erros de abertura/aquisição do lock também entram no
+tratamento de falha observada. Nenhum checkpoint, modelo, trilha ou registro do ledger é apagado.
 
 Destino existente só permite retomada com bytes idênticos, seguida de fsync do
 arquivo e diretório. Destino divergente permanece intocado e envenena o supervisor;
