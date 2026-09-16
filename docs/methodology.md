@@ -274,3 +274,14 @@ após todos critérios técnicos, modelos finais, revisão e CI do SHA congelado
 será aberta2024 uma vez. Resultados negativos de desenvolvimento não dispensam
 confirmação tecnicamente executável.2025 permanece fora desta execução.
 Este registro é prospectivo; não constitui resultado econômico ou abertura.
+
+
+Resultado de desenvolvimento da etapa9 registrado no [relatório](experiments/economic-ticks-v1.md):
+10fits novos, global301/1.000; modelos finais disponíveis, todos131.064 scores
+externos disponíveis abaixo do threshold fixo0,5. Filtro sem operações/PnL;
+primárioP0 inconclusivo por exposição sob lacuna; P1 preservado como cenário,
+sem PnL/drawdown conclusivos. G4/G5 falharam; promoção desta configuração rejeitada.
+Uma correção explícita de publicação serializa frações exatas sem alterar62
+arquivos científicos, S/F ou ajustes. Replay integral das12 carteiras/nove meses
+e relatórios passou sem novos fits ou alteração de ledger/estado/manifest. Revisão
+completa do release permanece pendente neste registro;2024 segue fechado.

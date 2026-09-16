@@ -95,10 +95,16 @@ fit, aquisição, abertura, freeze ou fechamento. Esses passos, e ambos comandos
 as frações internamente; a nova representação é compatível com as comparações
 exatas de `release_freeze` e `complete`.
 
-## Evidência a completar antes de release
+## Evidência executada e gates restantes
 
 Esta correção não fecha #9, não abre2024 e não satisfaz por si só T1–T5.
-Execução de recuperação, replay integral sem novos fits, suíte completa,
-CI efetivo no SHA publicado e revisão completa do release precisam constar do
-relatório final. A confirmação continua obrigatória quando os testes técnicos
-passarem, inclusive com desenvolvimento economicamente negativo.
+A recuperação foi executada em79,554s no commit
+`f5fb6d8fb9675270fab20825578bdb5ec1e9a16b`, após479 testes, revisão de
+implementação aprovada e CI efetivo. Preservou bytes de ledger/estado/manifest,
+modelos e probabilidades; parcial original permaneceu idêntico por hash.
+Replay integral das12 carteiras/nove meses passou em3416,184s, sem novos fits,
+com ledger, estado e manifest idênticos. Relatórios reconstruídos do replay
+coincidiram em JSON, Markdown e CSV. Evidência no [relatório](economic-ticks-v1.md).
+Revisão completa e CI do release que vinculará esses agregados continuam gates
+anteriores ao congelamento. A confirmação continua obrigatória quando os testes
+técnicos passarem, inclusive com desenvolvimento economicamente negativo.
